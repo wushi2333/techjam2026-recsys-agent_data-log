@@ -15,10 +15,10 @@ KuaiRand-Pure — label `long_view`, primary = mean(GAUC, nDCG@5). Kit `evaluate
 |---|---|---|---|---|
 | Official FM (valid) | 0.6674 | 0.5357 | 0.6016 | — |
 | **Submitted Pure (valid)** — contest CSV | 0.67105 | 0.53774 | **0.60440** | **+0.00280** |
-| Official FM (published test) | 0.6610 | 0.5282 | 0.5946 | — |
-| Contest CSV, scored once after search | — | — | 0.59766 | +0.00306 |
+| Official FM (hidden test) | 0.6610 | 0.5282 | 0.5946 | — |
+| **Submitted Pure (hidden test)** | 0.66486 | 0.53046 | **0.59766** | **+0.00306** |
 | Leaky Pure (valid) | 0.71748 | 0.56202 | 0.63975 | inflated |
-| Leaky CSV, scored once after search | — | — | 0.56790 | worse than FM |
+| Leaky CSV (hidden test, once after search) | 0.62231 | 0.51350 | 0.56790 | worse than FM |
 
 KuaiRand-1K is optional and uses a **different id space**. Do not compare it to Pure.
 
