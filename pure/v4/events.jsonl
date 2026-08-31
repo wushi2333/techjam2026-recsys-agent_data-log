@@ -1,0 +1,248 @@
+{"ts": "2026-08-30T15:33:07.005177+00:00", "type": "trial_start", "trial": "000_fm_baseline", "op": "draft"}
+{"ts": "2026-08-30T15:33:07.013703+00:00", "type": "progress", "op": "draft", "trial": "000_fm_baseline", "arm": "draft", "msg": "start"}
+{"ts": "2026-08-30T15:34:19.044268+00:00", "type": "promoted", "trial": "000_fm_baseline", "primary": 0.6014695167541504}
+{"ts": "2026-08-30T15:34:23.363291+00:00", "type": "eda", "pair_cover": 0.016268739131509762, "new_video": 0.0011762728953117123}
+{"ts": "2026-08-30T15:34:27.957032+00:00", "type": "research", "trial": "004_research", "query": "KuaiRand Pure long_view ranking TechJam track2", "harness": true}
+{"ts": "2026-08-30T15:34:28.019249+00:00", "type": "read_paper", "trial": "005_read_paper", "path": "github/avinazz3_kuairand-starter-kit/README.md", "harness": true}
+{"ts": "2026-08-30T15:34:28.063042+00:00", "type": "read_paper", "trial": "006_read_paper", "path": "github/rbrishi15_kuairand-agent/README.md", "harness": true}
+{"ts": "2026-08-30T15:34:42.165207+00:00", "type": "trial_start", "trial": "007_draft", "op": "draft"}
+{"ts": "2026-08-30T15:34:42.173905+00:00", "type": "progress", "op": "draft", "trial": "007_draft", "arm": "draft", "msg": "start"}
+{"ts": "2026-08-30T15:36:12.529176+00:00", "type": "trial_start", "trial": "008_draft", "op": "draft"}
+{"ts": "2026-08-30T15:36:12.537889+00:00", "type": "progress", "op": "draft", "trial": "008_draft", "arm": "draft", "msg": "start"}
+{"ts": "2026-08-30T15:36:44.865892+00:00", "type": "ablate_start", "n_jobs": 3, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T15:36:44.873505+00:00", "type": "progress", "op": "ablate", "trial": "009_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T15:37:59.790579+00:00", "type": "promoted", "trial": "009_ablate_c0_s0", "primary": 0.6039175987243652, "weak": true}
+{"ts": "2026-08-30T15:39:34.319799+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T15:39:34.329326+00:00", "type": "progress", "op": "ablate", "trial": "013_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T15:40:05.852457+00:00", "type": "progress", "op": "ensemble", "trial": "020_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T15:40:08.275319+00:00", "type": "promoted", "trial": "020_ensemble", "primary": 0.6044114755754368}
+{"ts": "2026-08-30T15:40:08.723186+00:00", "type": "progress", "op": "ensemble", "trial": "021_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T15:40:11.031229+00:00", "type": "not_promoted", "trial": "021_ensemble", "reason": "ensemble no gain"}
+{"ts": "2026-08-30T15:40:25.132565+00:00", "type": "progress", "op": "ensemble", "trial": "022_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T15:40:27.430717+00:00", "type": "not_promoted", "trial": "022_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-30T15:40:50.713056+00:00", "type": "trial_start", "trial": "023_multitask", "op": "improve", "arm": "multitask"}
+{"ts": "2026-08-30T15:40:50.722127+00:00", "type": "progress", "op": "improve", "trial": "023_multitask", "arm": "multitask", "msg": "start"}
+{"ts": "2026-08-30T15:41:58.317980+00:00", "type": "not_promoted", "trial": "023_multitask", "reason": "1-seed miss"}
+{"ts": "2026-08-30T15:42:24.731024+00:00", "type": "trial_start", "trial": "024_features", "op": "improve", "arm": "features"}
+{"ts": "2026-08-30T15:42:24.741104+00:00", "type": "progress", "op": "improve", "trial": "024_features", "arm": "features", "msg": "start"}
+{"ts": "2026-08-30T15:44:19.683969+00:00", "type": "not_promoted", "trial": "024_features", "reason": "1-seed screen only; ablate to confirm"}
+{"ts": "2026-08-30T15:45:06.955459+00:00", "type": "ablate_start", "n_jobs": 3, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T15:45:06.963407+00:00", "type": "progress", "op": "ablate", "trial": "025_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T15:47:22.857879+00:00", "type": "promoted", "trial": "025_ablate_c0_s0", "primary": 0.6154685020446777, "weak": false}
+{"ts": "2026-08-30T15:47:23.325553+00:00", "type": "progress", "op": "ensemble", "trial": "029_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T15:47:25.859266+00:00", "type": "promoted", "trial": "029_ensemble", "primary": 0.6188331873926384}
+{"ts": "2026-08-30T15:47:40.924495+00:00", "type": "progress", "op": "ensemble", "trial": "030_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T15:47:43.427512+00:00", "type": "not_promoted", "trial": "030_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-30T15:47:56.449288+00:00", "type": "trial_start", "trial": "031_watch_time", "op": "improve", "arm": "watch_time"}
+{"ts": "2026-08-30T15:47:56.458224+00:00", "type": "progress", "op": "improve", "trial": "031_watch_time", "arm": "watch_time", "msg": "start"}
+{"ts": "2026-08-30T15:50:01.993897+00:00", "type": "not_promoted", "trial": "031_watch_time", "reason": "temporal split unstable"}
+{"ts": "2026-08-30T15:51:55.547080+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T15:51:55.555922+00:00", "type": "progress", "op": "ablate", "trial": "032_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T15:56:22.999143+00:00", "type": "progress", "op": "ensemble", "trial": "039_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T15:56:25.384757+00:00", "type": "promoted", "trial": "039_ensemble", "primary": 0.6191916158132778}
+{"ts": "2026-08-30T15:56:38.801538+00:00", "type": "progress", "op": "ensemble", "trial": "040_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T15:56:41.127017+00:00", "type": "not_promoted", "trial": "040_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-30T15:56:41.780773+00:00", "type": "progress", "op": "ensemble", "trial": "041_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T15:56:44.058833+00:00", "type": "not_promoted", "trial": "041_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-30T15:56:44.309811+00:00", "type": "trial_start", "trial": "042_crossover", "op": "improve", "arm": "features"}
+{"ts": "2026-08-30T15:56:44.318169+00:00", "type": "progress", "op": "improve", "trial": "042_crossover", "arm": "features", "msg": "start"}
+{"ts": "2026-08-30T15:58:30.607895+00:00", "type": "not_promoted", "trial": "042_crossover", "reason": "1-seed miss"}
+{"ts": "2026-08-30T15:58:30.718602+00:00", "type": "skipped", "trial": "043_crossover", "arm": "features", "reason": "duplicate of 031_watch_time"}
+{"ts": "2026-08-30T15:58:30.785301+00:00", "type": "stagnation_hold", "streak": 7, "pending": "untried"}
+{"ts": "2026-08-30T15:58:30.791370+00:00", "type": "stagnation_hold", "streak": 7, "pending": "untried"}
+{"ts": "2026-08-30T15:58:57.816458+00:00", "type": "trial_start", "trial": "044_features", "op": "improve", "arm": "features"}
+{"ts": "2026-08-30T15:58:57.824574+00:00", "type": "progress", "op": "improve", "trial": "044_features", "arm": "features", "msg": "start"}
+{"ts": "2026-08-30T16:01:08.519978+00:00", "type": "not_promoted", "trial": "044_features", "reason": "1-seed miss"}
+{"ts": "2026-08-30T16:01:08.609744+00:00", "type": "stagnation_hold", "streak": 8, "pending": "core_confirm"}
+{"ts": "2026-08-30T16:01:08.615029+00:00", "type": "stagnation_hold", "streak": 8, "pending": "core_confirm"}
+{"ts": "2026-08-30T16:05:10.204981+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T16:05:10.214475+00:00", "type": "progress", "op": "ablate", "trial": "045_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T16:12:07.719745+00:00", "type": "stagnation_hold", "streak": 8, "pending": "same_config"}
+{"ts": "2026-08-30T16:12:07.726777+00:00", "type": "stagnation_hold", "streak": 8, "pending": "same_config"}
+{"ts": "2026-08-30T16:12:08.919003+00:00", "type": "progress", "op": "ensemble", "trial": "052_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T16:12:13.166585+00:00", "type": "promoted", "trial": "052_ensemble", "primary": 0.6212906903100947}
+{"ts": "2026-08-30T16:12:14.475858+00:00", "type": "progress", "op": "ensemble", "trial": "053_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T16:12:18.694214+00:00", "type": "promoted", "trial": "053_ensemble", "primary": 0.6212906903100947}
+{"ts": "2026-08-30T16:13:00.762695+00:00", "type": "progress", "op": "ensemble", "trial": "054_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T16:13:04.867742+00:00", "type": "not_promoted", "trial": "054_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-30T16:13:05.340901+00:00", "type": "trial_start", "trial": "055_crossover", "op": "improve", "arm": "features"}
+{"ts": "2026-08-30T16:13:05.353189+00:00", "type": "progress", "op": "improve", "trial": "055_crossover", "arm": "features", "msg": "start"}
+{"ts": "2026-08-30T16:14:52.682738+00:00", "type": "not_promoted", "trial": "055_crossover", "reason": "1-seed miss"}
+{"ts": "2026-08-30T16:14:52.767488+00:00", "type": "stagnation_hold", "streak": 3, "pending": "core_confirm"}
+{"ts": "2026-08-30T16:14:52.772627+00:00", "type": "stagnation_hold", "streak": 3, "pending": "core_confirm"}
+{"ts": "2026-08-30T16:16:27.568072+00:00", "type": "ablate_start", "n_jobs": 3, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T16:16:27.577690+00:00", "type": "progress", "op": "ablate", "trial": "056_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T16:19:07.834123+00:00", "type": "stagnation_hold", "streak": 3, "pending": "untried"}
+{"ts": "2026-08-30T16:19:07.840407+00:00", "type": "stagnation_hold", "streak": 3, "pending": "untried"}
+{"ts": "2026-08-30T16:19:26.737818+00:00", "type": "trial_start", "trial": "060_architecture", "op": "improve", "arm": "architecture"}
+{"ts": "2026-08-30T16:19:26.747107+00:00", "type": "progress", "op": "improve", "trial": "060_architecture", "arm": "architecture", "msg": "start"}
+{"ts": "2026-08-30T16:23:02.455818+00:00", "type": "not_promoted", "trial": "060_architecture", "reason": "1-seed screen only; ablate to confirm"}
+{"ts": "2026-08-30T16:24:04.123738+00:00", "type": "ablate_start", "n_jobs": 3, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T16:24:04.133654+00:00", "type": "progress", "op": "ablate", "trial": "061_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T16:28:52.756652+00:00", "type": "promoted", "trial": "061_ablate_c0_s0", "primary": 0.6273303031921387, "weak": false}
+{"ts": "2026-08-30T16:28:54.129074+00:00", "type": "progress", "op": "ensemble", "trial": "065_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T16:28:58.337674+00:00", "type": "promoted", "trial": "065_ensemble", "primary": 0.6305947627446515}
+{"ts": "2026-08-30T16:29:49.808228+00:00", "type": "progress", "op": "ensemble", "trial": "066_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T16:29:53.886349+00:00", "type": "not_promoted", "trial": "066_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-30T16:30:24.575927+00:00", "type": "trial_start", "trial": "067_sequence", "op": "improve", "arm": "sequence"}
+{"ts": "2026-08-30T16:30:24.588801+00:00", "type": "progress", "op": "improve", "trial": "067_sequence", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-30T16:47:14.271536+00:00", "type": "not_promoted", "trial": "067_sequence", "reason": "1-seed miss"}
+{"ts": "2026-08-30T16:48:55.641372+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T16:48:55.654062+00:00", "type": "progress", "op": "ablate", "trial": "068_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T17:19:50.689803+00:00", "type": "progress", "op": "ensemble", "trial": "075_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T17:19:54.914836+00:00", "type": "not_promoted", "trial": "075_ensemble", "reason": "ensemble no gain"}
+{"ts": "2026-08-30T17:19:55.048635+00:00", "type": "stagnation_hold", "streak": 3, "pending": "same_config"}
+{"ts": "2026-08-30T17:19:55.055726+00:00", "type": "stagnation_hold", "streak": 3, "pending": "same_config"}
+{"ts": "2026-08-30T17:19:56.229380+00:00", "type": "progress", "op": "ensemble", "trial": "076_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T17:20:00.283057+00:00", "type": "not_promoted", "trial": "076_ensemble", "reason": "ensemble no gain"}
+{"ts": "2026-08-30T17:20:00.408076+00:00", "type": "stagnation_hold", "streak": 4, "pending": "complementary"}
+{"ts": "2026-08-30T17:20:00.416386+00:00", "type": "stagnation_hold", "streak": 4, "pending": "complementary"}
+{"ts": "2026-08-30T17:20:43.975514+00:00", "type": "progress", "op": "ensemble", "trial": "077_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T17:20:47.991793+00:00", "type": "not_promoted", "trial": "077_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-30T17:20:48.118621+00:00", "type": "stagnation_hold", "streak": 5, "pending": "untried"}
+{"ts": "2026-08-30T17:20:48.128948+00:00", "type": "stagnation_hold", "streak": 5, "pending": "untried"}
+{"ts": "2026-08-30T17:22:05.822602+00:00", "type": "skipped", "trial": "078_watch_time", "arm": "watch_time", "reason": "cross-run CI_hi<0 graveyard"}
+{"ts": "2026-08-30T17:22:05.897049+00:00", "type": "stagnation_hold", "streak": 6, "pending": "untried"}
+{"ts": "2026-08-30T17:22:05.904702+00:00", "type": "stagnation_hold", "streak": 6, "pending": "untried"}
+{"ts": "2026-08-30T17:22:33.261540+00:00", "type": "trial_start", "trial": "079_features", "op": "improve", "arm": "features"}
+{"ts": "2026-08-30T17:22:33.270612+00:00", "type": "progress", "op": "improve", "trial": "079_features", "arm": "features", "msg": "start"}
+{"ts": "2026-08-30T17:26:06.435538+00:00", "type": "not_promoted", "trial": "079_features", "reason": "1-seed screen only; ablate to confirm"}
+{"ts": "2026-08-30T17:26:06.512340+00:00", "type": "stagnation_hold", "streak": 7, "pending": "screen"}
+{"ts": "2026-08-30T17:26:06.518491+00:00", "type": "stagnation_hold", "streak": 7, "pending": "screen"}
+{"ts": "2026-08-30T17:27:34.045356+00:00", "type": "ablate_start", "n_jobs": 3, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T17:27:34.055320+00:00", "type": "progress", "op": "ablate", "trial": "080_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T17:31:54.425779+00:00", "type": "stagnation_hold", "streak": 7, "pending": "same_config"}
+{"ts": "2026-08-30T17:31:54.430508+00:00", "type": "stagnation_hold", "streak": 7, "pending": "same_config"}
+{"ts": "2026-08-30T17:31:54.825415+00:00", "type": "progress", "op": "ensemble", "trial": "084_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T17:31:57.222597+00:00", "type": "promoted", "trial": "084_ensemble", "primary": 0.6305947627446515}
+{"ts": "2026-08-30T17:31:57.308366+00:00", "type": "stagnation_hold", "streak": 8, "pending": "complementary"}
+{"ts": "2026-08-30T17:31:57.313653+00:00", "type": "stagnation_hold", "streak": 8, "pending": "complementary"}
+{"ts": "2026-08-30T17:32:11.676649+00:00", "type": "progress", "op": "ensemble", "trial": "085_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T17:32:13.997526+00:00", "type": "not_promoted", "trial": "085_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-30T17:32:14.068296+00:00", "type": "stagnation_hold", "streak": 9, "pending": "untried"}
+{"ts": "2026-08-30T17:32:14.074858+00:00", "type": "stagnation_hold", "streak": 9, "pending": "untried"}
+{"ts": "2026-08-30T17:32:35.599320+00:00", "type": "trial_start", "trial": "086_multitask", "op": "improve", "arm": "multitask"}
+{"ts": "2026-08-30T17:32:35.607651+00:00", "type": "progress", "op": "improve", "trial": "086_multitask", "arm": "multitask", "msg": "start"}
+{"ts": "2026-08-30T17:34:22.116595+00:00", "type": "not_promoted", "trial": "086_multitask", "reason": "1-seed miss"}
+{"ts": "2026-08-30T17:34:22.187333+00:00", "type": "stagnation_hold", "streak": 10, "pending": "untried"}
+{"ts": "2026-08-30T17:34:22.192810+00:00", "type": "stagnation_hold", "streak": 10, "pending": "untried"}
+{"ts": "2026-08-30T17:34:41.176978+00:00", "type": "trial_start", "trial": "087_capacity", "op": "improve", "arm": "capacity"}
+{"ts": "2026-08-30T17:34:41.185772+00:00", "type": "progress", "op": "improve", "trial": "087_capacity", "arm": "capacity", "msg": "start"}
+{"ts": "2026-08-30T17:36:31.542981+00:00", "type": "not_promoted", "trial": "087_capacity", "reason": "1-seed screen only; ablate to confirm"}
+{"ts": "2026-08-30T17:36:31.628017+00:00", "type": "stagnation_hold", "streak": 11, "pending": "screen"}
+{"ts": "2026-08-30T17:36:31.634641+00:00", "type": "stagnation_hold", "streak": 11, "pending": "screen"}
+{"ts": "2026-08-30T17:37:26.527160+00:00", "type": "ablate_start", "n_jobs": 3, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T17:37:26.535606+00:00", "type": "progress", "op": "ablate", "trial": "088_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T17:40:05.736438+00:00", "type": "promoted", "trial": "088_ablate_c0_s0", "primary": 0.6320827007293701, "weak": false}
+{"ts": "2026-08-30T17:40:05.816825+00:00", "type": "stagnation_hold", "streak": 11, "pending": "same_config"}
+{"ts": "2026-08-30T17:40:05.822099+00:00", "type": "stagnation_hold", "streak": 11, "pending": "same_config"}
+{"ts": "2026-08-30T17:40:06.208661+00:00", "type": "progress", "op": "ensemble", "trial": "092_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T17:40:08.593727+00:00", "type": "promoted", "trial": "092_ensemble", "primary": 0.6333496022436537}
+{"ts": "2026-08-30T17:40:25.712627+00:00", "type": "progress", "op": "ensemble", "trial": "093_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T17:40:28.029077+00:00", "type": "not_promoted", "trial": "093_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-30T17:41:39.545376+00:00", "type": "progress", "op": "read_paper", "trial": "094_read_paper", "arm": "features", "msg": "start"}
+{"ts": "2026-08-30T17:41:39.594022+00:00", "type": "read_paper", "trial": "094_read_paper", "path": "D:\\tictokJam\\recsys-agent\\benchmarks\\kuairand\\skills\\time-decay\\SKILL.md"}
+{"ts": "2026-08-30T17:41:50.561550+00:00", "type": "trial_start", "trial": "095_time_shift", "op": "improve", "arm": "time_shift"}
+{"ts": "2026-08-30T17:41:50.569643+00:00", "type": "progress", "op": "improve", "trial": "095_time_shift", "arm": "time_shift", "msg": "start"}
+{"ts": "2026-08-30T17:44:26.634972+00:00", "type": "not_promoted", "trial": "095_time_shift", "reason": "1-seed miss"}
+{"ts": "2026-08-30T17:45:30.296990+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T17:45:30.304693+00:00", "type": "progress", "op": "ablate", "trial": "096_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T17:50:23.115093+00:00", "type": "progress", "op": "ensemble", "trial": "103_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T17:50:25.402365+00:00", "type": "not_promoted", "trial": "103_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-30T17:50:25.479939+00:00", "type": "stagnation_hold", "streak": 3, "pending": "untried"}
+{"ts": "2026-08-30T17:50:25.486115+00:00", "type": "stagnation_hold", "streak": 3, "pending": "untried"}
+{"ts": "2026-08-30T17:51:11.909018+00:00", "type": "trial_start", "trial": "104_architecture", "op": "improve", "arm": "architecture"}
+{"ts": "2026-08-30T17:51:11.917517+00:00", "type": "progress", "op": "improve", "trial": "104_architecture", "arm": "architecture", "msg": "start"}
+{"ts": "2026-08-30T17:53:33.566626+00:00", "type": "not_promoted", "trial": "104_architecture", "reason": "1-seed miss"}
+{"ts": "2026-08-30T17:53:33.652499+00:00", "type": "stagnation_hold", "streak": 4, "pending": "core_confirm"}
+{"ts": "2026-08-30T17:53:33.658575+00:00", "type": "stagnation_hold", "streak": 4, "pending": "core_confirm"}
+{"ts": "2026-08-30T17:55:18.133260+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T17:55:18.140837+00:00", "type": "progress", "op": "ablate", "trial": "105_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T18:02:49.001892+00:00", "type": "promoted", "trial": "105_ablate_c0_s0", "primary": 0.6330267786979675, "weak": false}
+{"ts": "2026-08-30T18:02:49.076629+00:00", "type": "stagnation_hold", "streak": 4, "pending": "same_config"}
+{"ts": "2026-08-30T18:02:49.081031+00:00", "type": "stagnation_hold", "streak": 4, "pending": "same_config"}
+{"ts": "2026-08-30T18:02:49.453821+00:00", "type": "progress", "op": "ensemble", "trial": "112_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T18:02:51.884610+00:00", "type": "promoted", "trial": "112_ensemble", "primary": 0.6369171931922233}
+{"ts": "2026-08-30T18:03:10.452498+00:00", "type": "progress", "op": "ensemble", "trial": "113_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T18:03:12.795381+00:00", "type": "not_promoted", "trial": "113_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-30T18:05:20.268820+00:00", "type": "trial_start", "trial": "114_features", "op": "improve", "arm": "features"}
+{"ts": "2026-08-30T18:05:20.277010+00:00", "type": "progress", "op": "improve", "trial": "114_features", "arm": "features", "msg": "start"}
+{"ts": "2026-08-30T18:06:38.013933+00:00", "type": "not_promoted", "trial": "114_features", "reason": "temporal split unstable"}
+{"ts": "2026-08-30T18:08:09.549140+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T18:08:09.556895+00:00", "type": "progress", "op": "ablate", "trial": "115_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T18:12:41.818107+00:00", "type": "trial_start", "trial": "122_architecture", "op": "improve", "arm": "architecture"}
+{"ts": "2026-08-30T18:12:41.827789+00:00", "type": "progress", "op": "improve", "trial": "122_architecture", "arm": "architecture", "msg": "start"}
+{"ts": "2026-08-30T18:13:19.188680+00:00", "type": "not_promoted", "trial": "122_architecture", "reason": "temporal split unstable"}
+{"ts": "2026-08-30T18:13:19.270470+00:00", "type": "stagnation_hold", "streak": 3, "pending": "core_confirm"}
+{"ts": "2026-08-30T18:13:19.275890+00:00", "type": "stagnation_hold", "streak": 3, "pending": "core_confirm"}
+{"ts": "2026-08-30T18:17:15.525042+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T18:17:15.534229+00:00", "type": "progress", "op": "ablate", "trial": "123_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T18:18:55.050998+00:00", "type": "stagnation_hold", "streak": 3, "pending": "untried"}
+{"ts": "2026-08-30T18:18:55.057187+00:00", "type": "stagnation_hold", "streak": 3, "pending": "untried"}
+{"ts": "2026-08-30T18:19:32.029539+00:00", "type": "trial_start", "trial": "130_time_shift", "op": "improve", "arm": "time_shift"}
+{"ts": "2026-08-30T18:19:32.037964+00:00", "type": "progress", "op": "improve", "trial": "130_time_shift", "arm": "time_shift", "msg": "start"}
+{"ts": "2026-08-30T18:21:59.683533+00:00", "type": "not_promoted", "trial": "130_time_shift", "reason": "1-seed screen only; ablate to confirm"}
+{"ts": "2026-08-30T18:21:59.765852+00:00", "type": "stagnation_hold", "streak": 4, "pending": "screen"}
+{"ts": "2026-08-30T18:21:59.771862+00:00", "type": "stagnation_hold", "streak": 4, "pending": "screen"}
+{"ts": "2026-08-30T18:25:18.312985+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T18:25:18.320228+00:00", "type": "progress", "op": "ablate", "trial": "131_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T18:32:57.781022+00:00", "type": "stagnation_hold", "streak": 4, "pending": "untried"}
+{"ts": "2026-08-30T18:32:57.787676+00:00", "type": "stagnation_hold", "streak": 4, "pending": "untried"}
+{"ts": "2026-08-30T18:33:14.733349+00:00", "type": "trial_start", "trial": "138_multitask", "op": "improve", "arm": "multitask"}
+{"ts": "2026-08-30T18:33:14.741768+00:00", "type": "progress", "op": "improve", "trial": "138_multitask", "arm": "multitask", "msg": "start"}
+{"ts": "2026-08-30T18:35:36.769651+00:00", "type": "not_promoted", "trial": "138_multitask", "reason": "1-seed screen only; ablate to confirm"}
+{"ts": "2026-08-30T18:35:36.847460+00:00", "type": "stagnation_hold", "streak": 5, "pending": "screen"}
+{"ts": "2026-08-30T18:35:36.853387+00:00", "type": "stagnation_hold", "streak": 5, "pending": "screen"}
+{"ts": "2026-08-30T18:36:35.729969+00:00", "type": "ablate_start", "n_jobs": 3, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T18:36:35.738758+00:00", "type": "progress", "op": "ablate", "trial": "139_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T18:39:33.106083+00:00", "type": "stagnation_hold", "streak": 5, "pending": "same_config"}
+{"ts": "2026-08-30T18:39:33.110686+00:00", "type": "stagnation_hold", "streak": 5, "pending": "same_config"}
+{"ts": "2026-08-30T18:39:33.486072+00:00", "type": "progress", "op": "ensemble", "trial": "143_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T18:39:35.864902+00:00", "type": "promoted", "trial": "143_ensemble", "primary": 0.6393102103380284}
+{"ts": "2026-08-30T18:39:49.286568+00:00", "type": "progress", "op": "ensemble", "trial": "144_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-30T18:39:51.621524+00:00", "type": "not_promoted", "trial": "144_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-30T18:40:25.458746+00:00", "type": "trial_start", "trial": "145_capacity", "op": "improve", "arm": "capacity"}
+{"ts": "2026-08-30T18:40:25.466863+00:00", "type": "progress", "op": "improve", "trial": "145_capacity", "arm": "capacity", "msg": "start"}
+{"ts": "2026-08-30T18:45:11.217401+00:00", "type": "not_promoted", "trial": "145_capacity", "reason": "1-seed miss"}
+{"ts": "2026-08-30T18:46:15.102840+00:00", "type": "trial_start", "trial": "146_loss", "op": "improve", "arm": "loss"}
+{"ts": "2026-08-30T18:46:15.110853+00:00", "type": "progress", "op": "improve", "trial": "146_loss", "arm": "loss", "msg": "start"}
+{"ts": "2026-08-30T18:48:37.058558+00:00", "type": "not_promoted", "trial": "146_loss", "reason": "1-seed miss"}
+{"ts": "2026-08-30T18:48:37.139487+00:00", "type": "stagnation_hold", "streak": 3, "pending": "untried"}
+{"ts": "2026-08-30T18:48:37.146344+00:00", "type": "stagnation_hold", "streak": 3, "pending": "untried"}
+{"ts": "2026-08-30T18:49:13.727132+00:00", "type": "trial_start", "trial": "147_capacity", "op": "improve", "arm": "capacity"}
+{"ts": "2026-08-30T18:49:13.735260+00:00", "type": "progress", "op": "improve", "trial": "147_capacity", "arm": "capacity", "msg": "start"}
+{"ts": "2026-08-30T18:56:04.811524+00:00", "type": "not_promoted", "trial": "147_capacity", "reason": "1-seed miss"}
+{"ts": "2026-08-30T18:56:04.887427+00:00", "type": "stagnation_hold", "streak": 4, "pending": "untried"}
+{"ts": "2026-08-30T18:56:04.896824+00:00", "type": "stagnation_hold", "streak": 4, "pending": "untried"}
+{"ts": "2026-08-30T18:57:07.471432+00:00", "type": "skipped", "trial": "148_watch_time", "arm": "watch_time", "reason": "cross-run CI_hi<0 graveyard"}
+{"ts": "2026-08-30T18:57:07.553384+00:00", "type": "stagnation_hold", "streak": 5, "pending": "untried"}
+{"ts": "2026-08-30T18:57:07.559744+00:00", "type": "stagnation_hold", "streak": 5, "pending": "untried"}
+{"ts": "2026-08-30T18:57:34.466745+00:00", "type": "trial_start", "trial": "149_capacity", "op": "improve", "arm": "capacity"}
+{"ts": "2026-08-30T18:57:34.476205+00:00", "type": "progress", "op": "improve", "trial": "149_capacity", "arm": "capacity", "msg": "start"}
+{"ts": "2026-08-30T19:00:14.876324+00:00", "type": "not_promoted", "trial": "149_capacity", "reason": "1-seed miss"}
+{"ts": "2026-08-30T19:00:14.953139+00:00", "type": "stagnation_hold", "streak": 6, "pending": "untried"}
+{"ts": "2026-08-30T19:00:14.960021+00:00", "type": "stagnation_hold", "streak": 6, "pending": "untried"}
+{"ts": "2026-08-30T19:00:37.749742+00:00", "type": "trial_start", "trial": "150_loss", "op": "improve", "arm": "loss"}
+{"ts": "2026-08-30T19:00:37.758261+00:00", "type": "progress", "op": "improve", "trial": "150_loss", "arm": "loss", "msg": "start"}
+{"ts": "2026-08-30T19:03:00.605138+00:00", "type": "not_promoted", "trial": "150_loss", "reason": "1-seed miss"}
+{"ts": "2026-08-30T19:03:00.690329+00:00", "type": "stagnation_hold", "streak": 7, "pending": "untried"}
+{"ts": "2026-08-30T19:03:00.696514+00:00", "type": "stagnation_hold", "streak": 7, "pending": "untried"}
+{"ts": "2026-08-30T19:04:20.360988+00:00", "type": "progress", "op": "read_paper", "trial": "151_read_paper", "arm": "architecture", "msg": "start"}
+{"ts": "2026-08-30T19:04:20.409736+00:00", "type": "read_paper", "trial": "151_read_paper", "path": "D:\\tictokJam\\recsys-agent\\benchmarks\\kuairand\\skills\\gbm-native\\SKILL.md"}
+{"ts": "2026-08-30T19:04:20.481488+00:00", "type": "stagnation_hold", "streak": 7, "pending": "untried"}
+{"ts": "2026-08-30T19:04:20.487347+00:00", "type": "stagnation_hold", "streak": 7, "pending": "untried"}
+{"ts": "2026-08-30T19:06:48.230696+00:00", "type": "trial_start", "trial": "152_architecture", "op": "improve", "arm": "architecture"}
+{"ts": "2026-08-30T19:06:48.238713+00:00", "type": "progress", "op": "improve", "trial": "152_architecture", "arm": "architecture", "msg": "start"}
+{"ts": "2026-08-30T19:07:09.496933+00:00", "type": "not_promoted", "trial": "152_architecture", "reason": "1-seed miss"}
+{"ts": "2026-08-30T19:07:09.569830+00:00", "type": "stagnation_hold", "streak": 8, "pending": "core_confirm"}
+{"ts": "2026-08-30T19:07:09.575555+00:00", "type": "stagnation_hold", "streak": 8, "pending": "core_confirm"}
+{"ts": "2026-08-30T19:09:49.257882+00:00", "type": "ablate_start", "n_jobs": 3, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-30T19:09:49.265710+00:00", "type": "progress", "op": "ablate", "trial": "153_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-30T19:10:17.744673+00:00", "type": "stagnation_hold", "streak": 8, "pending": "untried"}
+{"ts": "2026-08-30T19:10:17.752285+00:00", "type": "stagnation_hold", "streak": 8, "pending": "untried"}
+{"ts": "2026-08-30T19:11:48.450764+00:00", "type": "skipped", "trial": "157_loss", "arm": "loss", "reason": "no valid config_patch for arm=loss"}
+{"ts": "2026-08-30T19:11:48.526493+00:00", "type": "stagnation_hold", "streak": 9, "pending": "untried"}
+{"ts": "2026-08-30T19:11:48.532929+00:00", "type": "stagnation_hold", "streak": 9, "pending": "untried"}
+{"ts": "2026-08-30T19:12:29.895420+00:00", "type": "skipped", "trial": "158_capacity", "arm": "capacity", "reason": "duplicate of 145_capacity"}
+{"ts": "2026-08-30T19:12:29.966684+00:00", "type": "stagnation_hold", "streak": 10, "pending": "untried"}
+{"ts": "2026-08-31T04:11:14.504835+00:00", "type": "finalize", "source": "139_ablate_c0_s0", "check": "ok"}

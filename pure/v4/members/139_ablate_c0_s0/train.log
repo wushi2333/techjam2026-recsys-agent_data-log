@@ -1,0 +1,23 @@
+encode cache hit key=d8895d3346daa95e_s0_h0_a1_b6_f0_rall_dpure_ae7e6079
+  epoch  1 | loss 0.7148 | valid GAUC 0.5949 nDCG@5 0.4964 primary 0.5457 | 7.7s
+  epoch  2 | loss 0.6092 | valid GAUC 0.6255 nDCG@5 0.5128 primary 0.5691 | 7.9s
+  epoch  3 | loss 0.5892 | valid GAUC 0.6447 nDCG@5 0.5234 primary 0.5840 | 7.8s
+  epoch  4 | loss 0.5797 | valid GAUC 0.6608 nDCG@5 0.5330 primary 0.5969 | 7.8s
+  epoch  5 | loss 0.5750 | valid GAUC 0.6762 nDCG@5 0.5394 primary 0.6078 | 8.0s
+  epoch  6 | loss 0.5693 | valid GAUC 0.6888 nDCG@5 0.5474 primary 0.6181 | 7.9s
+  epoch  7 | loss 0.5663 | valid GAUC 0.6949 nDCG@5 0.5497 primary 0.6223 | 7.9s
+  epoch  8 | loss 0.5630 | valid GAUC 0.7021 nDCG@5 0.5540 primary 0.6281 | 7.9s
+  epoch  9 | loss 0.5586 | valid GAUC 0.7000 nDCG@5 0.5530 primary 0.6265 | 7.9s
+  epoch 10 | loss 0.5548 | valid GAUC 0.7096 nDCG@5 0.5570 primary 0.6333 | 7.9s
+  epoch 11 | loss 0.5489 | valid GAUC 0.7046 nDCG@5 0.5553 primary 0.6300 | 8.0s
+  epoch 12 | loss 0.5413 | valid GAUC 0.7090 nDCG@5 0.5571 primary 0.6330 | 8.0s
+  epoch 13 | loss 0.5338 | valid GAUC 0.7109 nDCG@5 0.5582 primary 0.6345 | 8.0s
+  epoch 14 | loss 0.5263 | valid GAUC 0.7091 nDCG@5 0.5569 primary 0.6330 | 7.9s
+  epoch 15 | loss 0.5199 | valid GAUC 0.7084 nDCG@5 0.5571 primary 0.6327 | 7.7s
+  epoch 16 | loss 0.5139 | valid GAUC 0.7128 nDCG@5 0.5584 primary 0.6356 | 7.5s
+  epoch 17 | loss 0.5083 | valid GAUC 0.7091 nDCG@5 0.5570 primary 0.6330 | 7.6s
+  epoch 18 | loss 0.5001 | valid GAUC 0.7089 nDCG@5 0.5567 primary 0.6328 | 7.4s
+  epoch 19 | loss 0.4932 | valid GAUC 0.7065 nDCG@5 0.5558 primary 0.6312 | 6.7s
+  epoch 20 | loss 0.4844 | valid GAUC 0.7025 nDCG@5 0.5541 primary 0.6283 | 6.7s
+  early stop at epoch 20
+METRICS {"GAUC": 0.712753415107727, "nDCG@5": 0.5584110617637634, "primary": 0.6355822086334229, "users": 22377, "rows": 124909, "itemcf_alpha": 0.0}

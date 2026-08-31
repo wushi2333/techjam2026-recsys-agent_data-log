@@ -1,0 +1,56 @@
+node_id,parent_id,stage,arm,primary,GAUC,nDCG@5,delta_primary,ci95_lo,ci95_hi,confirmed,skip,buggy,error,patch,tokens_in,tokens_out,gpu_seconds
+000_fm_baseline,,draft,draft,0.64203,0.67461,0.60944,,,,true,false,false,,"{""aux_click_weight"": 0.3, ""cwm_weight"": 0.2, ""data_scale"": ""1k"", ""model_family"": ""torch""}",0,0,428.2
+000_fm_s1,000_fm_baseline,improve,ablate,0.64263,0.67458,0.61067,,,,,false,false,,"{""aux_click_weight"": 0.3, ""cwm_weight"": 0.2, ""data_scale"": ""1k"", ""model_family"": ""torch""}",0,0,146.5
+001_fm_s2,000_fm_baseline,improve,ablate,0.64060,0.67439,0.60680,,,,,false,false,,"{""aux_click_weight"": 0.3, ""cwm_weight"": 0.2, ""data_scale"": ""1k"", ""model_family"": ""torch""}",0,0,142.5
+003_eda,000_fm_baseline,eda,eda,,,,,,,,false,false,,eda,0,0,0.0
+004_research,000_fm_baseline,research,research,,,,,,,,false,false,,research:KuaiRand Pure long_view ranking TechJam track2,0,0,0.0
+005_read_paper,000_fm_baseline,read_paper,research,,,,,,,,false,false,,read_paper:github/rbrishi15_kuairand-agent/README.md,0,0,0.0
+006_draft,,draft,draft,0.63535,0.67258,0.59813,-0.00640,-0.01508,-0.00001,,false,false,,"{""arch"": ""deepfm""}",6359,4854,126.7
+007_draft,,draft,draft,,,,,,,,false,true,nonzero_exit,"{""model_family"": ""gbm""}",6476,4759,10.2
+008_debug,007_draft,debug,draft,,,,,,,,true,false,debug noop; refusing to retrain the parent config,skip,6538,12347,0.0
+009_draft,,draft,draft,0.62264,0.66500,0.58028,-0.01911,-0.02708,-0.01219,,false,false,,"{""loss"": ""bpr""}",6486,2606,111.1
+010_ensemble,000_fm_baseline,ensemble,ensemble,0.64181,0.67519,0.60843,0.00006,-0.00348,0.00352,false,false,false,,"ensemble:000_fm_baseline,000_fm_s1,001_fm_s2",0,0,0.0
+011_multitask,000_fm_baseline,improve,multitask,0.64203,0.67461,0.60944,0.00028,0.00000,0.00000,false,false,false,,"{""aux_click"": true}",8926,1515,385.0
+012_capacity,000_fm_baseline,improve,capacity,0.64053,0.67569,0.60538,-0.00122,-0.00571,0.00314,false,false,false,,"{""k"": 32}",9195,8386,156.1
+013_watch_time,000_fm_baseline,improve,watch_time,0.63567,0.67196,0.59938,-0.00608,-0.00920,-0.00271,false,false,false,,"{""wlr_play"": true}",9474,5447,148.8
+014_sequence,000_fm_baseline,improve,sequence,0.64236,0.67515,0.60956,0.00061,-0.00231,0.00309,false,false,false,,"{""seq_len"": 100, ""seq_mode"": ""din""}",10061,1099,531.1
+015_ablate_c0_s0,014_sequence,improve,ablate,0.64236,0.67515,0.60956,0.00061,-0.00231,0.00309,true,false,false,,"{""seed"": 0, ""seq_len"": 100, ""seq_mode"": ""din""}",0,0,266.0
+016_ablate_c0_s1,014_sequence,improve,ablate,0.64423,0.67461,0.61385,0.00248,-0.00229,0.00729,false,false,false,,"{""seed"": 1, ""seq_len"": 100, ""seq_mode"": ""din""}",0,0,241.9
+017_ablate_c0_s2,014_sequence,improve,ablate,0.64356,0.67435,0.61277,0.00181,-0.00241,0.00637,false,false,false,,"{""seed"": 2, ""seq_len"": 100, ""seq_mode"": ""din""}",0,0,241.3
+018_ablate_c1_s0,014_sequence,improve,ablate,0.62204,0.66518,0.57890,-0.01971,-0.02781,-0.01273,false,false,false,,"{""loss"": ""bpr"", ""seed"": 0}",0,0,193.2
+019_ablate_c1_s1,014_sequence,improve,ablate,0.62498,0.66480,0.58517,-0.01677,-0.02417,-0.00941,false,false,false,,"{""loss"": ""bpr"", ""seed"": 1}",0,0,194.9
+020_ablate_c1_s2,014_sequence,improve,ablate,0.62813,0.66538,0.59087,-0.01362,-0.02144,-0.00648,false,false,false,,"{""loss"": ""bpr"", ""seed"": 2}",0,0,169.1
+021_ablate,014_sequence,ablate,ablate,,,,,,,,false,false,,ablate,7470,14940,0.0
+022_ensemble,015_ablate_c0_s0,ensemble,ensemble,0.64401,0.67532,0.61269,0.00063,-0.00138,0.00492,false,false,false,,"ensemble:015_ablate_c0_s0,016_ablate_c0_s1,017_ablate_c0_s2",0,0,0.0
+023_ensemble,015_ablate_c0_s0,ensemble,ensemble,0.64401,0.67532,0.61269,0.00063,-0.00138,0.00492,false,false,false,,"ensemble:000_fm_baseline,000_fm_s1,001_fm_s2,015_ablate_c0_s0,016_ablate_c0_s1,017_ablate_c0_s2",0,0,0.0
+024_ensemble,015_ablate_c0_s0,ensemble,ensemble,0.64280,0.67535,0.61026,-0.00058,-0.00253,0.00404,false,false,false,,"ensemble:000_fm_baseline,000_fm_s1,001_fm_s2,015_ablate_c0_s0,016_ablate_c0_s1,017_ablate_c0_s2",0,0,0.0
+025_crossover,015_ablate_c0_s0,improve,features,,,,,,,false,false,true,data_scale=pure not on disk,"{""aux_click_weight"": 0.3, ""cwm_weight"": 0.2}",0,0,0.0
+026_sequence,015_ablate_c0_s0,improve,sequence,,,,,,,false,false,true,data_scale=pure not on disk,"{""seq_len"": 50, ""seq_mode"": ""din""}",12280,1513,0.0
+027_architecture,015_ablate_c0_s0,improve,architecture,,,,,,,false,false,true,data_scale=pure not on disk,"{""arch"": ""dcnv2""}",12555,1772,0.0
+028_sequence,006_draft,improve,sequence,0.63341,0.67253,0.59429,-0.00997,-0.01646,-0.00181,false,false,false,,"{""seq_len"": 100, ""seq_mode"": ""pool""}",12758,6104,190.9
+029_regularization,015_ablate_c0_s0,improve,regularization,,,,,,,false,false,true,data_scale=pure not on disk,"{""l2"": 1e-05}",13206,2961,0.0
+030_loss,015_ablate_c0_s0,improve,loss,,,,,,,false,false,true,data_scale=pure not on disk,"{""loss"": ""bpr_global""}",13382,3818,0.0
+031_sequence,015_ablate_c0_s0,improve,sequence,,,,,,,false,false,true,data_scale=pure not on disk,"{""seq_len"": 10, ""seq_mode"": ""pool""}",13499,7320,0.0
+032_debug,029_regularization,debug,regularization,0.65061,0.67918,0.62204,,,,,false,false,,config:l2,8475,5717,349.6
+033_regularization,015_ablate_c0_s0,improve,regularization,,,,,,,,true,false,duplicate of 029_regularization,skip,13725,4958,0.0
+034_debug,030_loss,debug,loss,0.61266,0.66284,0.56248,,,,,false,false,,"config:loss,listwise_gain",8585,12007,176.6
+035_architecture,015_ablate_c0_s0,improve,architecture,0.63180,0.67120,0.59240,-0.01158,,,false,false,false,timeout,"{""arch"": ""deepfm"", ""data_scale"": ""1k""}",13655,3668,3600.8
+036_architecture,015_ablate_c0_s0,improve,architecture,0.63800,0.67280,0.60320,-0.00538,,,false,false,false,timeout,"{""arch"": ""dcnv2"", ""data_scale"": ""1k""}",13861,2213,3601.0
+037_sequence,015_ablate_c0_s0,improve,sequence,,,,,,,false,false,true,data_scale=pure not on disk,"{""seq_len"": 20, ""seq_mode"": ""din""}",13895,3709,0.0
+038_features,000_fm_baseline,improve,features,0.64835,0.67567,0.62103,0.00497,-0.00029,0.01281,false,false,false,,"{""use_time_decay"": true}",13806,6327,566.3
+039_ablate_c0_s0,038_features,improve,ablate,0.64835,0.67567,0.62103,0.00497,-0.00029,0.01281,true,false,false,,"{""seed"": 0, ""use_time_decay"": true}",0,0,145.1
+040_ablate_c0_s1,038_features,improve,ablate,0.64569,0.67507,0.61632,0.00231,-0.00388,0.01001,false,false,false,,"{""seed"": 1, ""use_time_decay"": true}",0,0,146.8
+041_ablate_c0_s2,038_features,improve,ablate,0.64522,0.67300,0.61744,0.00184,-0.00576,0.01084,false,false,false,,"{""seed"": 2, ""use_time_decay"": true}",0,0,124.3
+042_ablate_c1_s0,038_features,improve,ablate,0.62304,0.66502,0.58106,-0.02034,-0.02839,-0.01116,false,false,false,,"{""listwise_gain"": ""uniform"", ""loss"": ""listwise"", ""seed"": 0}",0,0,131.4
+043_ablate_c1_s1,038_features,improve,ablate,0.62549,0.66556,0.58542,-0.01789,-0.02487,-0.00803,false,false,false,,"{""listwise_gain"": ""uniform"", ""loss"": ""listwise"", ""seed"": 1}",0,0,130.2
+044_ablate_c1_s2,038_features,improve,ablate,0.62890,0.66652,0.59128,-0.01448,-0.02150,-0.00493,false,false,false,,"{""listwise_gain"": ""uniform"", ""loss"": ""listwise"", ""seed"": 2}",0,0,174.9
+045_ablate,038_features,ablate,ablate,,,,,,,,false,false,,ablate,9070,14074,0.0
+046_ensemble,039_ablate_c0_s0,ensemble,ensemble,0.65045,0.67660,0.62429,0.00403,-0.00415,0.00723,false,false,false,,"ensemble:039_ablate_c0_s0,040_ablate_c0_s1,041_ablate_c0_s2",0,0,0.0
+047_ensemble,039_ablate_c0_s0,ensemble,ensemble,0.65045,0.67660,0.62429,0.00403,-0.00415,0.00723,false,false,false,,"ensemble:000_fm_baseline,000_fm_s1,001_fm_s2,015_ablate_c0_s0,016_ablate_c0_s1,017_ablate_c0_s2,018_ablate_c1_s0,019_ablate_c1_s1,020_ablate_c1_s2,039_ablate_c0_s0,040_ablate_c0_s1,041_ablate_c0_s2,042_ablate_c1_s0,043_ablate_c1_s1,044_ablate_c1_s2",0,0,0.0
+048_loss,039_ablate_c0_s0,improve,loss,,,,,,,false,false,true,data_scale=pure not on disk,"{""loss"": ""bpr_global""}",14438,3492,0.0
+049_architecture,039_ablate_c0_s0,improve,architecture,0.65280,0.67630,0.62940,0.00638,,,false,false,false,timeout,"{""arch"": ""dcnv2"", ""data_scale"": ""1k""}",14452,6281,3600.4
+050_regularization,015_ablate_c0_s0,improve,regularization,,,,,,,false,false,true,data_scale=pure not on disk,"{""l2"": 5e-06}",14502,3202,0.0
+051_architecture,039_ablate_c0_s0,improve,architecture,,,,,,,false,false,true,data_scale=pure not on disk,"{""arch"": ""dcnv2""}",14569,4114,0.0
+052_multitask,006_draft,improve,multitask,0.63535,0.67258,0.59813,-0.01107,-0.02088,-0.00534,false,false,false,,"{""aux_click"": true}",14664,1594,159.4
+053_architecture,039_ablate_c0_s0,improve,architecture,0.64580,0.67160,0.62000,-0.00062,,,false,false,false,timeout,"{""arch"": ""deepfm"", ""data_scale"": ""1k""}",14868,14153,3600.6
+054_finalize,039_ablate_c0_s0,finalize,finalize,0.65001,0.67654,0.62348,,,,,false,false,,finalize,0,0,0.0

@@ -1,0 +1,8 @@
+.env
+*.npz
+*.npy
+*.pt
+*.pth
+hidden_test.json
+__pycache__/
+pack.py

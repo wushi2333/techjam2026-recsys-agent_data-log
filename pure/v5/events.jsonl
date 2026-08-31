@@ -1,0 +1,260 @@
+{"ts": "2026-08-31T05:09:13.330325+00:00", "type": "trial_start", "trial": "000_fm_baseline", "op": "draft"}
+{"ts": "2026-08-31T05:09:13.339130+00:00", "type": "progress", "op": "draft", "trial": "000_fm_baseline", "arm": "draft", "msg": "start"}
+{"ts": "2026-08-31T05:10:42.020668+00:00", "type": "promoted", "trial": "000_fm_baseline", "primary": 0.6014695167541504}
+{"ts": "2026-08-31T05:10:46.464287+00:00", "type": "eda", "pair_cover": 0.016268739131509762, "new_video": 0.0011762728953117123}
+{"ts": "2026-08-31T05:10:50.133463+00:00", "type": "research", "trial": "004_research", "query": "KuaiRand Pure long_view ranking TechJam track2", "harness": true}
+{"ts": "2026-08-31T05:10:50.192055+00:00", "type": "read_paper", "trial": "005_read_paper", "path": "github/OwenWen00_bytedance-techjam-2026-kuairand/README.md", "harness": true}
+{"ts": "2026-08-31T05:10:50.234316+00:00", "type": "read_paper", "trial": "006_read_paper", "path": "github/rbrishi15_kuairand-agent/README.md", "harness": true}
+{"ts": "2026-08-31T05:11:32.702185+00:00", "type": "trial_start", "trial": "007_draft", "op": "draft"}
+{"ts": "2026-08-31T05:11:32.711389+00:00", "type": "progress", "op": "draft", "trial": "007_draft", "arm": "draft", "msg": "start"}
+{"ts": "2026-08-31T05:12:46.017386+00:00", "type": "trial_start", "trial": "008_draft", "op": "draft"}
+{"ts": "2026-08-31T05:12:46.025900+00:00", "type": "progress", "op": "draft", "trial": "008_draft", "arm": "draft", "msg": "start"}
+{"ts": "2026-08-31T05:13:13.822361+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T05:13:13.833478+00:00", "type": "progress", "op": "ablate", "trial": "009_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T05:15:19.292702+00:00", "type": "promoted", "trial": "009_ablate_c0_s0", "primary": 0.6038283705711365, "weak": false}
+{"ts": "2026-08-31T05:15:19.721920+00:00", "type": "progress", "op": "ensemble", "trial": "016_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T05:15:22.025019+00:00", "type": "not_promoted", "trial": "016_ensemble", "reason": "ci vs bag"}
+{"ts": "2026-08-31T05:15:22.510699+00:00", "type": "progress", "op": "ensemble", "trial": "017_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T05:15:24.770304+00:00", "type": "not_promoted", "trial": "017_ensemble", "reason": "ci vs bag"}
+{"ts": "2026-08-31T05:15:38.013346+00:00", "type": "progress", "op": "ensemble", "trial": "018_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T05:15:40.324695+00:00", "type": "not_promoted", "trial": "018_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-31T05:15:40.986038+00:00", "type": "progress", "op": "ensemble", "trial": "019_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T05:15:43.456503+00:00", "type": "not_promoted", "trial": "019_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-31T05:16:04.280015+00:00", "type": "trial_start", "trial": "020_architecture", "op": "improve", "arm": "architecture"}
+{"ts": "2026-08-31T05:16:04.288185+00:00", "type": "progress", "op": "improve", "trial": "020_architecture", "arm": "architecture", "msg": "start"}
+{"ts": "2026-08-31T05:16:54.429691+00:00", "type": "not_promoted", "trial": "020_architecture", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T05:17:56.727038+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T05:17:56.734359+00:00", "type": "progress", "op": "ablate", "trial": "021_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T05:20:02.829162+00:00", "type": "progress", "op": "ensemble", "trial": "028_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T05:20:05.224066+00:00", "type": "not_promoted", "trial": "028_ensemble", "reason": "ci vs bag"}
+{"ts": "2026-08-31T05:20:19.977096+00:00", "type": "progress", "op": "ensemble", "trial": "029_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T05:20:22.396813+00:00", "type": "not_promoted", "trial": "029_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-31T05:21:02.425352+00:00", "type": "trial_start", "trial": "030_loss", "op": "improve", "arm": "loss"}
+{"ts": "2026-08-31T05:21:02.434364+00:00", "type": "progress", "op": "improve", "trial": "030_loss", "arm": "loss", "msg": "start"}
+{"ts": "2026-08-31T05:22:01.942341+00:00", "type": "not_promoted", "trial": "030_loss", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T05:22:14.707189+00:00", "type": "trial_start", "trial": "031_capacity", "op": "improve", "arm": "capacity"}
+{"ts": "2026-08-31T05:22:14.716559+00:00", "type": "progress", "op": "improve", "trial": "031_capacity", "arm": "capacity", "msg": "start"}
+{"ts": "2026-08-31T05:22:52.239541+00:00", "type": "not_promoted", "trial": "031_capacity", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T05:23:42.940866+00:00", "type": "trial_start", "trial": "032_loss", "op": "improve", "arm": "loss"}
+{"ts": "2026-08-31T05:23:42.948945+00:00", "type": "progress", "op": "improve", "trial": "032_loss", "arm": "loss", "msg": "start"}
+{"ts": "2026-08-31T05:24:46.437819+00:00", "type": "not_promoted", "trial": "032_loss", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T05:25:21.703266+00:00", "type": "trial_start", "trial": "033_sequence", "op": "improve", "arm": "sequence"}
+{"ts": "2026-08-31T05:25:21.712986+00:00", "type": "progress", "op": "improve", "trial": "033_sequence", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-31T05:26:36.049557+00:00", "type": "not_promoted", "trial": "033_sequence", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T05:28:16.967960+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T05:28:16.976137+00:00", "type": "progress", "op": "ablate", "trial": "034_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T05:31:19.653202+00:00", "type": "progress", "op": "ensemble", "trial": "041_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T05:31:22.054121+00:00", "type": "not_promoted", "trial": "041_ensemble", "reason": "ci vs bag"}
+{"ts": "2026-08-31T05:31:36.735240+00:00", "type": "progress", "op": "ensemble", "trial": "042_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T05:31:39.038729+00:00", "type": "not_promoted", "trial": "042_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-31T05:31:39.159392+00:00", "type": "skipped", "trial": "043_crossover", "arm": "features", "reason": "duplicate of 033_sequence"}
+{"ts": "2026-08-31T05:31:39.231844+00:00", "type": "stagnation_hold", "streak": 15, "pending": "untried"}
+{"ts": "2026-08-31T05:31:39.237896+00:00", "type": "stagnation_hold", "streak": 15, "pending": "untried"}
+{"ts": "2026-08-31T05:32:05.418023+00:00", "type": "trial_start", "trial": "044_sequence", "op": "improve", "arm": "sequence"}
+{"ts": "2026-08-31T05:32:05.426457+00:00", "type": "progress", "op": "improve", "trial": "044_sequence", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-31T05:33:07.184485+00:00", "type": "not_promoted", "trial": "044_sequence", "reason": "temporal split unstable"}
+{"ts": "2026-08-31T05:33:07.262182+00:00", "type": "stagnation_hold", "streak": 16, "pending": "core_confirm"}
+{"ts": "2026-08-31T05:33:07.267025+00:00", "type": "stagnation_hold", "streak": 16, "pending": "core_confirm"}
+{"ts": "2026-08-31T05:34:13.319144+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T05:34:13.327048+00:00", "type": "progress", "op": "ablate", "trial": "045_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T05:36:51.940087+00:00", "type": "stagnation_hold", "streak": 16, "pending": "same_config"}
+{"ts": "2026-08-31T05:36:51.944334+00:00", "type": "stagnation_hold", "streak": 16, "pending": "same_config"}
+{"ts": "2026-08-31T05:36:52.308031+00:00", "type": "progress", "op": "ensemble", "trial": "052_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T05:36:54.601698+00:00", "type": "not_promoted", "trial": "052_ensemble", "reason": "ci vs bag"}
+{"ts": "2026-08-31T05:36:54.681231+00:00", "type": "stagnation_hold", "streak": 17, "pending": "complementary"}
+{"ts": "2026-08-31T05:36:54.686125+00:00", "type": "stagnation_hold", "streak": 17, "pending": "complementary"}
+{"ts": "2026-08-31T05:37:10.067820+00:00", "type": "progress", "op": "ensemble", "trial": "053_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T05:37:12.493605+00:00", "type": "not_promoted", "trial": "053_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-31T05:37:12.571391+00:00", "type": "stagnation_hold", "streak": 18, "pending": "untried"}
+{"ts": "2026-08-31T05:37:12.577333+00:00", "type": "stagnation_hold", "streak": 18, "pending": "untried"}
+{"ts": "2026-08-31T05:37:12.628657+00:00", "type": "skipped", "trial": "054_crossover", "arm": "features", "reason": "duplicate of 044_sequence"}
+{"ts": "2026-08-31T05:37:12.699968+00:00", "type": "stagnation_hold", "streak": 19, "pending": "untried"}
+{"ts": "2026-08-31T05:37:12.705580+00:00", "type": "stagnation_hold", "streak": 19, "pending": "untried"}
+{"ts": "2026-08-31T05:38:43.574333+00:00", "type": "trial_start", "trial": "055_capacity", "op": "improve", "arm": "capacity"}
+{"ts": "2026-08-31T05:38:43.582165+00:00", "type": "progress", "op": "improve", "trial": "055_capacity", "arm": "capacity", "msg": "start"}
+{"ts": "2026-08-31T05:39:12.269498+00:00", "type": "not_promoted", "trial": "055_capacity", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T05:39:12.341035+00:00", "type": "stagnation_hold", "streak": 20, "pending": "untried"}
+{"ts": "2026-08-31T05:39:12.346757+00:00", "type": "stagnation_hold", "streak": 20, "pending": "untried"}
+{"ts": "2026-08-31T05:39:30.428036+00:00", "type": "trial_start", "trial": "056_sequence", "op": "improve", "arm": "sequence"}
+{"ts": "2026-08-31T05:39:30.436443+00:00", "type": "progress", "op": "improve", "trial": "056_sequence", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-31T05:41:12.089550+00:00", "type": "not_promoted", "trial": "056_sequence", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T05:41:12.164411+00:00", "type": "stagnation_hold", "streak": 21, "pending": "core_confirm"}
+{"ts": "2026-08-31T05:41:12.169623+00:00", "type": "stagnation_hold", "streak": 21, "pending": "core_confirm"}
+{"ts": "2026-08-31T05:41:48.213640+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T05:41:48.221458+00:00", "type": "progress", "op": "ablate", "trial": "057_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T05:46:06.102555+00:00", "type": "stagnation_hold", "streak": 21, "pending": "same_config"}
+{"ts": "2026-08-31T05:46:06.107262+00:00", "type": "stagnation_hold", "streak": 21, "pending": "same_config"}
+{"ts": "2026-08-31T05:46:06.468784+00:00", "type": "progress", "op": "ensemble", "trial": "064_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T05:46:08.787387+00:00", "type": "not_promoted", "trial": "064_ensemble", "reason": "ci vs bag"}
+{"ts": "2026-08-31T05:46:08.870871+00:00", "type": "stagnation_hold", "streak": 22, "pending": "complementary"}
+{"ts": "2026-08-31T05:46:08.876370+00:00", "type": "stagnation_hold", "streak": 22, "pending": "complementary"}
+{"ts": "2026-08-31T05:46:24.867865+00:00", "type": "progress", "op": "ensemble", "trial": "065_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T05:46:27.170504+00:00", "type": "not_promoted", "trial": "065_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-31T05:46:27.238237+00:00", "type": "stagnation_hold", "streak": 23, "pending": "untried"}
+{"ts": "2026-08-31T05:46:27.244020+00:00", "type": "stagnation_hold", "streak": 23, "pending": "untried"}
+{"ts": "2026-08-31T05:46:27.294122+00:00", "type": "skipped", "trial": "066_crossover", "arm": "features", "reason": "duplicate of 056_sequence"}
+{"ts": "2026-08-31T05:46:27.360659+00:00", "type": "stagnation_hold", "streak": 24, "pending": "untried"}
+{"ts": "2026-08-31T05:46:27.366122+00:00", "type": "stagnation_hold", "streak": 24, "pending": "untried"}
+{"ts": "2026-08-31T05:47:13.338080+00:00", "type": "trial_start", "trial": "067_sequence", "op": "improve", "arm": "sequence"}
+{"ts": "2026-08-31T05:47:13.346569+00:00", "type": "progress", "op": "improve", "trial": "067_sequence", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-31T05:52:20.425730+00:00", "type": "not_promoted", "trial": "067_sequence", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T05:52:20.513600+00:00", "type": "stagnation_hold", "streak": 25, "pending": "core_confirm"}
+{"ts": "2026-08-31T05:52:20.520370+00:00", "type": "stagnation_hold", "streak": 25, "pending": "core_confirm"}
+{"ts": "2026-08-31T05:53:26.944061+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T05:53:26.956099+00:00", "type": "progress", "op": "ablate", "trial": "068_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T06:05:55.621160+00:00", "type": "stagnation_hold", "streak": 25, "pending": "same_config"}
+{"ts": "2026-08-31T06:05:55.625761+00:00", "type": "stagnation_hold", "streak": 25, "pending": "same_config"}
+{"ts": "2026-08-31T06:05:55.984433+00:00", "type": "progress", "op": "ensemble", "trial": "075_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T06:05:58.343445+00:00", "type": "not_promoted", "trial": "075_ensemble", "reason": "ci vs bag"}
+{"ts": "2026-08-31T06:05:58.425188+00:00", "type": "stagnation_hold", "streak": 26, "pending": "complementary"}
+{"ts": "2026-08-31T06:05:58.431151+00:00", "type": "stagnation_hold", "streak": 26, "pending": "complementary"}
+{"ts": "2026-08-31T06:06:14.773219+00:00", "type": "progress", "op": "ensemble", "trial": "076_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T06:06:17.087200+00:00", "type": "not_promoted", "trial": "076_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-31T06:06:17.154409+00:00", "type": "stagnation_hold", "streak": 27, "pending": "untried"}
+{"ts": "2026-08-31T06:06:17.161069+00:00", "type": "stagnation_hold", "streak": 27, "pending": "untried"}
+{"ts": "2026-08-31T06:06:40.716384+00:00", "type": "trial_start", "trial": "077_sequence", "op": "improve", "arm": "sequence"}
+{"ts": "2026-08-31T06:06:40.724979+00:00", "type": "progress", "op": "improve", "trial": "077_sequence", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-31T06:08:11.635225+00:00", "type": "not_promoted", "trial": "077_sequence", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T06:08:11.706983+00:00", "type": "stagnation_hold", "streak": 28, "pending": "core_confirm"}
+{"ts": "2026-08-31T06:08:11.713170+00:00", "type": "stagnation_hold", "streak": 28, "pending": "core_confirm"}
+{"ts": "2026-08-31T06:09:07.574514+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T06:09:07.582395+00:00", "type": "progress", "op": "ablate", "trial": "078_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T06:13:24.724890+00:00", "type": "stagnation_hold", "streak": 28, "pending": "same_config"}
+{"ts": "2026-08-31T06:13:24.729203+00:00", "type": "stagnation_hold", "streak": 28, "pending": "same_config"}
+{"ts": "2026-08-31T06:13:25.101439+00:00", "type": "progress", "op": "ensemble", "trial": "085_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T06:13:27.424365+00:00", "type": "not_promoted", "trial": "085_ensemble", "reason": "ci vs bag"}
+{"ts": "2026-08-31T06:13:27.497645+00:00", "type": "stagnation_hold", "streak": 29, "pending": "complementary"}
+{"ts": "2026-08-31T06:13:27.503445+00:00", "type": "stagnation_hold", "streak": 29, "pending": "complementary"}
+{"ts": "2026-08-31T06:13:44.749916+00:00", "type": "progress", "op": "ensemble", "trial": "086_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T06:13:47.063076+00:00", "type": "not_promoted", "trial": "086_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-31T06:13:47.134266+00:00", "type": "stagnation_hold", "streak": 30, "pending": "untried"}
+{"ts": "2026-08-31T06:13:47.139595+00:00", "type": "stagnation_hold", "streak": 30, "pending": "untried"}
+{"ts": "2026-08-31T06:14:14.164998+00:00", "type": "trial_start", "trial": "087_sequence", "op": "improve", "arm": "sequence"}
+{"ts": "2026-08-31T06:14:14.172974+00:00", "type": "progress", "op": "improve", "trial": "087_sequence", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-31T06:16:56.935477+00:00", "type": "not_promoted", "trial": "087_sequence", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T06:16:57.014526+00:00", "type": "stagnation_hold", "streak": 31, "pending": "core_confirm"}
+{"ts": "2026-08-31T06:16:57.020003+00:00", "type": "stagnation_hold", "streak": 31, "pending": "core_confirm"}
+{"ts": "2026-08-31T06:17:58.687002+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T06:17:58.694568+00:00", "type": "progress", "op": "ablate", "trial": "088_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T06:24:53.165032+00:00", "type": "stagnation_hold", "streak": 31, "pending": "same_config"}
+{"ts": "2026-08-31T06:24:53.169433+00:00", "type": "stagnation_hold", "streak": 31, "pending": "same_config"}
+{"ts": "2026-08-31T06:24:53.536701+00:00", "type": "progress", "op": "ensemble", "trial": "095_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T06:24:55.850345+00:00", "type": "not_promoted", "trial": "095_ensemble", "reason": "ci vs bag"}
+{"ts": "2026-08-31T06:24:55.927905+00:00", "type": "stagnation_hold", "streak": 32, "pending": "complementary"}
+{"ts": "2026-08-31T06:24:55.933349+00:00", "type": "stagnation_hold", "streak": 32, "pending": "complementary"}
+{"ts": "2026-08-31T06:25:13.881864+00:00", "type": "progress", "op": "ensemble", "trial": "096_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T06:25:16.215437+00:00", "type": "not_promoted", "trial": "096_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-31T06:25:16.291892+00:00", "type": "stagnation_hold", "streak": 33, "pending": "untried"}
+{"ts": "2026-08-31T06:25:16.297855+00:00", "type": "stagnation_hold", "streak": 33, "pending": "untried"}
+{"ts": "2026-08-31T06:25:44.914590+00:00", "type": "trial_start", "trial": "097_sequence", "op": "improve", "arm": "sequence"}
+{"ts": "2026-08-31T06:25:44.923371+00:00", "type": "progress", "op": "improve", "trial": "097_sequence", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-31T06:28:26.419393+00:00", "type": "not_promoted", "trial": "097_sequence", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T06:28:26.492894+00:00", "type": "stagnation_hold", "streak": 34, "pending": "core_confirm"}
+{"ts": "2026-08-31T06:28:26.498183+00:00", "type": "stagnation_hold", "streak": 34, "pending": "core_confirm"}
+{"ts": "2026-08-31T06:29:27.241594+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T06:29:27.249014+00:00", "type": "progress", "op": "ablate", "trial": "098_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T06:36:35.883832+00:00", "type": "promoted", "trial": "098_ablate_c0_s0", "primary": 0.6038802266120911, "weak": true}
+{"ts": "2026-08-31T06:36:35.969644+00:00", "type": "stagnation_hold", "streak": 34, "pending": "same_config"}
+{"ts": "2026-08-31T06:36:35.974211+00:00", "type": "stagnation_hold", "streak": 34, "pending": "same_config"}
+{"ts": "2026-08-31T06:36:36.345042+00:00", "type": "progress", "op": "ensemble", "trial": "105_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T06:36:38.662434+00:00", "type": "not_promoted", "trial": "105_ensemble", "reason": "ci vs bag"}
+{"ts": "2026-08-31T06:36:38.739450+00:00", "type": "stagnation_hold", "streak": 35, "pending": "complementary"}
+{"ts": "2026-08-31T06:36:38.745009+00:00", "type": "stagnation_hold", "streak": 35, "pending": "complementary"}
+{"ts": "2026-08-31T06:36:57.361317+00:00", "type": "progress", "op": "ensemble", "trial": "106_ensemble", "arm": "ensemble", "msg": "start"}
+{"ts": "2026-08-31T06:36:59.766586+00:00", "type": "not_promoted", "trial": "106_ensemble", "reason": "blend not 2SE vs best bag"}
+{"ts": "2026-08-31T06:36:59.838178+00:00", "type": "stagnation_hold", "streak": 36, "pending": "untried"}
+{"ts": "2026-08-31T06:36:59.845598+00:00", "type": "stagnation_hold", "streak": 36, "pending": "untried"}
+{"ts": "2026-08-31T06:38:20.064281+00:00", "type": "trial_start", "trial": "107_sequence", "op": "improve", "arm": "sequence"}
+{"ts": "2026-08-31T06:38:20.072730+00:00", "type": "progress", "op": "improve", "trial": "107_sequence", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-31T06:42:30.082078+00:00", "type": "not_promoted", "trial": "107_sequence", "reason": "top1 near-dup"}
+{"ts": "2026-08-31T06:42:30.154562+00:00", "type": "stagnation_hold", "streak": 37, "pending": "core_confirm"}
+{"ts": "2026-08-31T06:42:30.159918+00:00", "type": "stagnation_hold", "streak": 37, "pending": "core_confirm"}
+{"ts": "2026-08-31T06:43:35.999385+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T06:43:36.008180+00:00", "type": "progress", "op": "ablate", "trial": "108_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T06:55:01.464471+00:00", "type": "stagnation_hold", "streak": 37, "pending": "untried"}
+{"ts": "2026-08-31T06:55:01.471148+00:00", "type": "stagnation_hold", "streak": 37, "pending": "untried"}
+{"ts": "2026-08-31T06:56:13.981881+00:00", "type": "skipped", "trial": "115_sequence", "arm": "sequence", "reason": "duplicate of 067_sequence"}
+{"ts": "2026-08-31T06:56:14.070742+00:00", "type": "stagnation_hold", "streak": 38, "pending": "untried"}
+{"ts": "2026-08-31T06:56:14.078077+00:00", "type": "stagnation_hold", "streak": 38, "pending": "untried"}
+{"ts": "2026-08-31T06:56:26.143336+00:00", "type": "trial_start", "trial": "116_regularization", "op": "improve", "arm": "regularization"}
+{"ts": "2026-08-31T06:56:26.152048+00:00", "type": "progress", "op": "improve", "trial": "116_regularization", "arm": "regularization", "msg": "start"}
+{"ts": "2026-08-31T06:59:27.152224+00:00", "type": "not_promoted", "trial": "116_regularization", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T06:59:27.231147+00:00", "type": "stagnation_hold", "streak": 39, "pending": "untried"}
+{"ts": "2026-08-31T06:59:27.237714+00:00", "type": "stagnation_hold", "streak": 39, "pending": "untried"}
+{"ts": "2026-08-31T07:00:04.851137+00:00", "type": "trial_start", "trial": "117_regularization", "op": "improve", "arm": "regularization"}
+{"ts": "2026-08-31T07:00:04.859467+00:00", "type": "progress", "op": "improve", "trial": "117_regularization", "arm": "regularization", "msg": "start"}
+{"ts": "2026-08-31T07:03:07.544092+00:00", "type": "not_promoted", "trial": "117_regularization", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T07:03:07.619260+00:00", "type": "stagnation_hold", "streak": 40, "pending": "untried"}
+{"ts": "2026-08-31T07:03:07.626539+00:00", "type": "stagnation_hold", "streak": 40, "pending": "untried"}
+{"ts": "2026-08-31T07:04:36.478428+00:00", "type": "skipped", "trial": "118_sequence", "arm": "sequence", "reason": "cross-run CI_hi<0 graveyard"}
+{"ts": "2026-08-31T07:04:36.560968+00:00", "type": "stagnation_hold", "streak": 41, "pending": "untried"}
+{"ts": "2026-08-31T07:04:36.566931+00:00", "type": "stagnation_hold", "streak": 41, "pending": "untried"}
+{"ts": "2026-08-31T07:05:31.297715+00:00", "type": "trial_start", "trial": "119_capacity", "op": "improve", "arm": "capacity"}
+{"ts": "2026-08-31T07:05:31.306119+00:00", "type": "progress", "op": "improve", "trial": "119_capacity", "arm": "capacity", "msg": "start"}
+{"ts": "2026-08-31T07:07:27.730129+00:00", "type": "not_promoted", "trial": "119_capacity", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T07:07:27.808887+00:00", "type": "stagnation_hold", "streak": 42, "pending": "untried"}
+{"ts": "2026-08-31T07:07:27.815178+00:00", "type": "stagnation_hold", "streak": 42, "pending": "untried"}
+{"ts": "2026-08-31T07:08:13.736417+00:00", "type": "trial_start", "trial": "120_architecture", "op": "improve", "arm": "architecture"}
+{"ts": "2026-08-31T07:08:13.744918+00:00", "type": "progress", "op": "improve", "trial": "120_architecture", "arm": "architecture", "msg": "start"}
+{"ts": "2026-08-31T07:10:45.145576+00:00", "type": "not_promoted", "trial": "120_architecture", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T07:10:45.217780+00:00", "type": "stagnation_hold", "streak": 43, "pending": "core_confirm"}
+{"ts": "2026-08-31T07:10:45.223544+00:00", "type": "stagnation_hold", "streak": 43, "pending": "core_confirm"}
+{"ts": "2026-08-31T07:11:53.309604+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T07:11:53.317588+00:00", "type": "progress", "op": "ablate", "trial": "121_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T07:17:55.198213+00:00", "type": "stagnation_hold", "streak": 43, "pending": "untried"}
+{"ts": "2026-08-31T07:17:55.204459+00:00", "type": "stagnation_hold", "streak": 43, "pending": "untried"}
+{"ts": "2026-08-31T07:19:47.217550+00:00", "type": "skipped", "trial": "128_architecture", "arm": "architecture", "reason": "duplicate of 097_sequence"}
+{"ts": "2026-08-31T07:19:47.296165+00:00", "type": "stagnation_hold", "streak": 44, "pending": "untried"}
+{"ts": "2026-08-31T07:19:47.302545+00:00", "type": "stagnation_hold", "streak": 44, "pending": "untried"}
+{"ts": "2026-08-31T07:21:02.959126+00:00", "type": "skipped", "trial": "129_architecture", "arm": "architecture", "reason": "duplicate of 097_sequence"}
+{"ts": "2026-08-31T07:21:03.038083+00:00", "type": "stagnation_hold", "streak": 45, "pending": "untried"}
+{"ts": "2026-08-31T07:21:03.044257+00:00", "type": "stagnation_hold", "streak": 45, "pending": "untried"}
+{"ts": "2026-08-31T07:23:33.422920+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T07:23:33.430590+00:00", "type": "progress", "op": "ablate", "trial": "130_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T07:31:07.879801+00:00", "type": "stagnation_hold", "streak": 45, "pending": "untried"}
+{"ts": "2026-08-31T07:31:07.886162+00:00", "type": "stagnation_hold", "streak": 45, "pending": "untried"}
+{"ts": "2026-08-31T07:32:07.024554+00:00", "type": "skipped", "trial": "137_architecture", "arm": "architecture", "reason": "duplicate of 097_sequence"}
+{"ts": "2026-08-31T07:32:07.105695+00:00", "type": "stagnation_hold", "streak": 46, "pending": "untried"}
+{"ts": "2026-08-31T07:32:07.112716+00:00", "type": "stagnation_hold", "streak": 46, "pending": "untried"}
+{"ts": "2026-08-31T07:34:26.507920+00:00", "type": "trial_start", "trial": "138_sequence", "op": "improve", "arm": "sequence"}
+{"ts": "2026-08-31T07:34:26.517138+00:00", "type": "progress", "op": "improve", "trial": "138_sequence", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-31T07:35:38.026451+00:00", "type": "not_promoted", "trial": "138_sequence", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T07:35:38.100370+00:00", "type": "stagnation_hold", "streak": 47, "pending": "core_confirm"}
+{"ts": "2026-08-31T07:35:38.107438+00:00", "type": "stagnation_hold", "streak": 47, "pending": "core_confirm"}
+{"ts": "2026-08-31T07:37:38.350095+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T07:37:38.359346+00:00", "type": "progress", "op": "ablate", "trial": "139_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T07:41:54.481251+00:00", "type": "stagnation_hold", "streak": 47, "pending": "untried"}
+{"ts": "2026-08-31T07:41:54.487791+00:00", "type": "stagnation_hold", "streak": 47, "pending": "untried"}
+{"ts": "2026-08-31T07:42:59.727452+00:00", "type": "trial_start", "trial": "146_regularization", "op": "improve", "arm": "regularization"}
+{"ts": "2026-08-31T07:42:59.735869+00:00", "type": "progress", "op": "improve", "trial": "146_regularization", "arm": "regularization", "msg": "start"}
+{"ts": "2026-08-31T07:47:23.102270+00:00", "type": "not_promoted", "trial": "146_regularization", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T07:47:23.193589+00:00", "type": "stagnation_hold", "streak": 48, "pending": "untried"}
+{"ts": "2026-08-31T07:47:23.200716+00:00", "type": "stagnation_hold", "streak": 48, "pending": "untried"}
+{"ts": "2026-08-31T07:49:32.127939+00:00", "type": "trial_start", "trial": "147_sequence", "op": "improve", "arm": "sequence"}
+{"ts": "2026-08-31T07:49:32.135965+00:00", "type": "progress", "op": "improve", "trial": "147_sequence", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-31T07:50:31.860620+00:00", "type": "not_promoted", "trial": "147_sequence", "reason": "temporal split unstable"}
+{"ts": "2026-08-31T07:50:31.936647+00:00", "type": "stagnation_hold", "streak": 49, "pending": "core_confirm"}
+{"ts": "2026-08-31T07:50:31.943781+00:00", "type": "stagnation_hold", "streak": 49, "pending": "core_confirm"}
+{"ts": "2026-08-31T07:51:32.757491+00:00", "type": "ablate_start", "n_jobs": 6, "n_cached": 0, "n_workers": 3}
+{"ts": "2026-08-31T07:51:32.767370+00:00", "type": "progress", "op": "ablate", "trial": "148_ablate", "arm": "ablate", "msg": "start"}
+{"ts": "2026-08-31T07:55:27.466737+00:00", "type": "stagnation_hold", "streak": 49, "pending": "untried"}
+{"ts": "2026-08-31T07:55:27.473271+00:00", "type": "stagnation_hold", "streak": 49, "pending": "untried"}
+{"ts": "2026-08-31T07:56:13.724155+00:00", "type": "progress", "op": "read_paper", "trial": "155_read_paper", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-31T07:56:13.774814+00:00", "type": "read_paper", "trial": "155_read_paper", "path": "D:\\tictokJam\\recsys-agent\\benchmarks\\kuairand\\skills\\steering-rules\\SKILL.md"}
+{"ts": "2026-08-31T07:56:13.853528+00:00", "type": "stagnation_hold", "streak": 49, "pending": "untried"}
+{"ts": "2026-08-31T07:56:13.861473+00:00", "type": "stagnation_hold", "streak": 49, "pending": "untried"}
+{"ts": "2026-08-31T07:57:31.831019+00:00", "type": "trial_start", "trial": "156_sequence", "op": "improve", "arm": "sequence"}
+{"ts": "2026-08-31T07:57:31.839428+00:00", "type": "progress", "op": "improve", "trial": "156_sequence", "arm": "sequence", "msg": "start"}
+{"ts": "2026-08-31T07:58:25.204349+00:00", "type": "not_promoted", "trial": "156_sequence", "reason": "temporal halves miss"}
+{"ts": "2026-08-31T07:58:25.384137+00:00", "type": "stagnation_hold", "streak": 50, "pending": "untried"}
+{"ts": "2026-08-31T07:58:25.393154+00:00", "type": "stagnation_hold", "streak": 50, "pending": "untried"}
+{"ts": "2026-08-31T07:59:46.825803+00:00", "type": "skipped", "trial": "157_sequence", "arm": "sequence", "reason": "no valid config_patch for arm=sequence"}
+{"ts": "2026-08-31T07:59:46.980524+00:00", "type": "stagnation_hold", "streak": 51, "pending": "untried"}
+{"ts": "2026-08-31T07:59:46.987680+00:00", "type": "stagnation_hold", "streak": 51, "pending": "untried"}
+{"ts": "2026-08-31T08:00:53.030873+00:00", "type": "skipped", "trial": "158_sequence", "arm": "sequence", "reason": "duplicate of 067_sequence"}
+{"ts": "2026-08-31T08:00:53.111878+00:00", "type": "stagnation_hold", "streak": 52, "pending": "untried"}
+{"ts": "2026-08-31T08:00:53.119813+00:00", "type": "stagnation_hold", "streak": 52, "pending": "untried"}
+{"ts": "2026-08-31T08:03:52.933340+00:00", "type": "progress", "op": "read_paper", "trial": "159_read_paper", "arm": "architecture", "msg": "start"}
+{"ts": "2026-08-31T08:03:52.985546+00:00", "type": "read_paper", "trial": "159_read_paper", "path": "D:\\tictokJam\\recsys-agent\\benchmarks\\kuairand\\skills\\gbm-native\\SKILL.md"}
+{"ts": "2026-08-31T08:03:53.080234+00:00", "type": "stagnation_hold", "streak": 52, "pending": "untried"}
+{"ts": "2026-08-31T08:29:46.438526+00:00", "type": "finalize", "source": "012_ablate_c1_s0", "check": "ok"}

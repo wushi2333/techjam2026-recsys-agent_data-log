@@ -1,0 +1,29 @@
+encode cache hit key=d8895d3346daa95e_s0_h0_a1_b6_f0_rall_dpure_ae7e6079
+  epoch  1 | loss 0.5228 | valid GAUC 0.5997 nDCG@5 0.4999 primary 0.5498 | 5.3s
+  epoch  2 | loss 0.4396 | valid GAUC 0.6232 nDCG@5 0.5113 primary 0.5673 | 5.4s
+  epoch  3 | loss 0.4246 | valid GAUC 0.6384 nDCG@5 0.5204 primary 0.5794 | 5.2s
+  epoch  4 | loss 0.4185 | valid GAUC 0.6454 nDCG@5 0.5235 primary 0.5845 | 5.4s
+  epoch  5 | loss 0.4150 | valid GAUC 0.6585 nDCG@5 0.5304 primary 0.5945 | 5.3s
+  epoch  6 | loss 0.4114 | valid GAUC 0.6666 nDCG@5 0.5333 primary 0.6000 | 5.4s
+  epoch  7 | loss 0.4088 | valid GAUC 0.6751 nDCG@5 0.5390 primary 0.6071 | 5.4s
+  epoch  8 | loss 0.4068 | valid GAUC 0.6803 nDCG@5 0.5415 primary 0.6109 | 5.6s
+  epoch  9 | loss 0.4053 | valid GAUC 0.6905 nDCG@5 0.5468 primary 0.6187 | 5.3s
+  epoch 10 | loss 0.4042 | valid GAUC 0.6962 nDCG@5 0.5498 primary 0.6230 | 5.3s
+  epoch 11 | loss 0.4018 | valid GAUC 0.6953 nDCG@5 0.5497 primary 0.6225 | 5.3s
+  epoch 12 | loss 0.4003 | valid GAUC 0.6974 nDCG@5 0.5513 primary 0.6243 | 5.5s
+  epoch 13 | loss 0.3988 | valid GAUC 0.6972 nDCG@5 0.5501 primary 0.6236 | 5.3s
+  epoch 14 | loss 0.3966 | valid GAUC 0.6953 nDCG@5 0.5498 primary 0.6225 | 5.3s
+  epoch 15 | loss 0.3971 | valid GAUC 0.6981 nDCG@5 0.5515 primary 0.6248 | 5.4s
+  epoch 16 | loss 0.3936 | valid GAUC 0.7014 nDCG@5 0.5527 primary 0.6271 | 5.4s
+  epoch 17 | loss 0.3924 | valid GAUC 0.7035 nDCG@5 0.5531 primary 0.6283 | 5.4s
+  epoch 18 | loss 0.3907 | valid GAUC 0.7044 nDCG@5 0.5542 primary 0.6293 | 5.5s
+  epoch 19 | loss 0.3888 | valid GAUC 0.7003 nDCG@5 0.5523 primary 0.6263 | 5.3s
+  epoch 20 | loss 0.3863 | valid GAUC 0.7033 nDCG@5 0.5538 primary 0.6285 | 5.4s
+  epoch 21 | loss 0.3844 | valid GAUC 0.6986 nDCG@5 0.5507 primary 0.6247 | 5.2s
+  epoch 22 | loss 0.3805 | valid GAUC 0.7104 nDCG@5 0.5563 primary 0.6334 | 4.9s
+  epoch 23 | loss 0.3758 | valid GAUC 0.7005 nDCG@5 0.5513 primary 0.6259 | 4.9s
+  epoch 24 | loss 0.3723 | valid GAUC 0.7066 nDCG@5 0.5547 primary 0.6306 | 4.9s
+  epoch 25 | loss 0.3682 | valid GAUC 0.7019 nDCG@5 0.5535 primary 0.6277 | 4.6s
+  epoch 26 | loss 0.3637 | valid GAUC 0.7040 nDCG@5 0.5542 primary 0.6291 | 4.6s
+  early stop at epoch 26
+METRICS {"GAUC": 0.7104028463363647, "nDCG@5": 0.5563344955444336, "primary": 0.6333686709403992, "users": 22377, "rows": 124909, "itemcf_alpha": 0.0}

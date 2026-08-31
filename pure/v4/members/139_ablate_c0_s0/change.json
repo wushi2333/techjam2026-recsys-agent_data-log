@@ -1,0 +1,27 @@
+{
+  "id": "139_ablate_c0_s0",
+  "parent": "138_multitask",
+  "stage": "improve",
+  "arm": "ablate",
+  "billed": 38,
+  "hypothesis": "The screened parent 138 (aux_click=True) adds the click BCE auxiliary head to the incumbent dcnv2 + bpr_global + time-decay identity and showed +0.0017 primary over the incumbent bag in a 1-seed screen. This ablate re-measures that identity with 3 seeds to confirm the gain is not seed noise before it can be promoted. Since the loss arm already has bpr_global and bpr_decay_sample active in the incumbent, the only remaining atomic loss patch is bpr_pairs_cap; raising it from 32 to 64 tests whether more within-user pairwise comparisons further improve the local ranking loss on this identity. If the parent fails 3/3 vs the incumbent, aux_click is parent-scoped falsified and the multitask arm is done.",
+  "diff": "ablate_child",
+  "config_patch": {
+    "aux_click": true,
+    "seed": 0
+  },
+  "files": [],
+  "primary": 0.6355822086334229,
+  "delta_primary": 0.0017335017522176477,
+  "delta_gauc": -0.0008536087931451108,
+  "screen_pass": null,
+  "confirmed": false,
+  "buggy": false,
+  "skip": false,
+  "skip_reason": null,
+  "exec_status": "ok",
+  "recovery": null,
+  "incumbent": "112_ensemble",
+  "incumbent_mean": 0.6369171931922233,
+  "wall_hours": 3.1081
+}

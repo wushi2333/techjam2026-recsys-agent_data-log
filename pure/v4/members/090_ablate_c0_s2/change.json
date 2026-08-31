@@ -1,0 +1,27 @@
+{
+  "id": "090_ablate_c0_s2",
+  "parent": "087_capacity",
+  "stage": "improve",
+  "arm": "ablate",
+  "billed": 25,
+  "hypothesis": "Screen 087_capacity found that reducing the FM embedding dimension from 16 to 8 improves primary by about 0.006 over the screen bar on the Pure split, with both GAUC and nDCG moving in the same direction. This suggests that a smaller capacity acts as a regularizer for the within-user ranking task, given the moderate number of rows per user. We ablate this identity with three seeds to confirm that the gain is stable and not a seed artifact, and to obtain a reliable 3-seed mean for comparison against the incumbent. If confirmed, k=8 will become the new capacity setting, and subsequent loss exploration can build on this stronger base.",
+  "diff": "ablate_child",
+  "config_patch": {
+    "k": 8,
+    "seed": 2
+  },
+  "files": [],
+  "primary": 0.6333686709403992,
+  "delta_primary": 0.007642606894175175,
+  "delta_gauc": 0.004628668761938792,
+  "screen_pass": null,
+  "confirmed": false,
+  "buggy": false,
+  "skip": false,
+  "skip_reason": null,
+  "exec_status": "ok",
+  "recovery": null,
+  "incumbent": "088_ablate_c0_s0",
+  "incumbent_mean": 0.6317163904507955,
+  "wall_hours": 2.1172
+}

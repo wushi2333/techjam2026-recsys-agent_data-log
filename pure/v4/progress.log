@@ -1,0 +1,231 @@
+15:33:06 RUN start dir=D:\tictokJam\recsys-agent\run_pure_v4 cap=50 wall=6.0h llm=openai:deepseek-v4-flash smoke=False cuda=1 vram_gb=8.0 families=fm,gbm,torch scales=pure,1k
+15:33:07 [1/50] START draft 000_fm_baseline arm=draft parent=- phase=0_reproduce baseline
+15:34:18 [1/50] DONE 000_fm_baseline draft/draft primary=0.60147 confirmed inc=000_fm_baseline:0.60144 streak=0 wall=0.02h
+       child 000_fm_s1 improve/ablate primary=0.60176
+       child 001_fm_s2 improve/ablate primary=0.60109
+15:34:23 [1/50] DONE 003_eda eda/eda primary=na inc=000_fm_baseline:0.60144 streak=0 wall=0.02h
+15:34:27 [1/50] DONE 004_research research/research primary=na inc=000_fm_baseline:0.60144 streak=0 wall=0.02h
+15:34:28 [1/50] DONE 005_read_paper read_paper/research primary=na inc=000_fm_baseline:0.60144 streak=0 wall=0.02h
+15:34:28 [1/50] DONE 006_read_paper read_paper/research primary=na inc=000_fm_baseline:0.60144 streak=0 wall=0.02h
+15:34:42 [2/50] START draft 007_draft arm=draft parent=- phase=1_local extra
+15:35:45 [2/50] DONE 007_draft draft/draft primary=0.60392 dP=+0.00248 dGAUC=+0.00327 screen_pass patch={'loss': 'bpr_global'} inc=000_fm_baseline:0.60144 streak=0 wall=0.04h
+15:36:12 [3/50] START draft 008_draft arm=draft parent=- phase=1_local extra
+15:36:19 [3/50] DONE 008_draft draft/draft primary=0.57712 dP=-0.02432 dGAUC=-0.03566 patch={'model_family': 'gbm'} inc=000_fm_baseline:0.60144 streak=1 wall=0.05h
+15:36:44 [4/50] START ablate 009_ablate arm=ablate parent=007_draft phase=1_local jobs=3 cache=0 workers=3
+       child 009_ablate_c0_s0 improve/ablate primary=0.60392 dP=+0.00248 dGAUC=+0.00327 confirmed patch={'loss': 'bpr_global', 'seed': 0}
+       child 010_ablate_c0_s1 improve/ablate primary=0.60249 dP=+0.00105 dGAUC=+0.00152 patch={'loss': 'bpr_global', 'seed': 1}
+       child 011_ablate_c0_s2 improve/ablate primary=0.60205 dP=+0.00061 dGAUC=+0.00084 patch={'loss': 'bpr_global', 'seed': 2}
+15:37:59 [4/50] DONE 012_ablate ablate/ablate primary=na inc=009_ablate_c0_s0:0.60282 streak=1 wall=0.08h
+15:39:34 [5/50] START ablate 013_ablate arm=ablate parent=008_draft phase=3_ablate jobs=6 cache=0 workers=3
+       child 013_ablate_c0_s0 improve/ablate primary=0.57712 dP=-0.02570 dGAUC=-0.03893 patch={'model_family': 'gbm', 'seed': 0}
+       child 014_ablate_c0_s1 improve/ablate primary=0.57790 dP=-0.02492 dGAUC=-0.03806 patch={'model_family': 'gbm', 'seed': 1}
+       child 015_ablate_c0_s2 improve/ablate primary=0.57813 dP=-0.02469 dGAUC=-0.03776 patch={'model_family': 'gbm', 'seed': 2}
+       child 016_ablate_c1_s0 improve/ablate primary=0.57712 dP=-0.02570 dGAUC=-0.03893 patch={'loss': 'bpr_global', 'seed': 0}
+       child 017_ablate_c1_s1 improve/ablate primary=0.57790 dP=-0.02492 dGAUC=-0.03806 patch={'loss': 'bpr_global', 'seed': 1}
+       child 018_ablate_c1_s2 improve/ablate primary=0.57813 dP=-0.02469 dGAUC=-0.03776 patch={'loss': 'bpr_global', 'seed': 2}
+15:40:05 [5/50] DONE 019_ablate ablate/ablate primary=na inc=009_ablate_c0_s0:0.60282 streak=1 wall=0.12h
+15:40:05 [6/50] START ensemble 020_ensemble arm=ensemble parent=009_ablate_c0_s0 phase=3_ablate members=009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2
+15:40:08 [5/50] DONE 020_ensemble ensemble/ensemble primary=0.60441 dP=+0.00159 dGAUC=+0.00060 confirmed inc=020_ensemble:0.60441 streak=2 wall=0.12h
+15:40:08 [6/50] START ensemble 021_ensemble arm=ensemble parent=020_ensemble phase=3_ablate members=000_fm_baseline,000_fm_s1,001_fm_s2
+15:40:11 [5/50] DONE 021_ensemble ensemble/ensemble primary=0.60189 dP=-0.00252 dGAUC=-0.00334 inc=020_ensemble:0.60441 streak=3 wall=0.12h
+15:40:25 [6/50] START ensemble 022_ensemble arm=ensemble parent=020_ensemble phase=3_ablate members=000_fm_baseline,000_fm_s1,001_fm_s2,009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2,016_ablate_c1_s0,017_ablate_c1_s1,018_ablate_c1_s2,013_ablate_c0_s0,014_ablate_c0_s1,015_ablate_c0_s2
+15:40:27 [5/50] DONE 022_ensemble ensemble/ensemble primary=0.60189 dP=-0.00252 dGAUC=-0.00334 inc=020_ensemble:0.60441 streak=4 wall=0.12h
+15:40:50 [6/50] START improve 023_multitask arm=multitask parent=020_ensemble phase=1_local
+15:41:58 [6/50] DONE 023_multitask improve/multitask primary=0.60356 dP=+0.00074 dGAUC=+0.00110 patch={'aux_click': True} inc=020_ensemble:0.60441 streak=5 wall=0.15h
+15:42:24 [7/50] START improve 024_features arm=features parent=020_ensemble phase=1_local
+15:44:19 [7/50] DONE 024_features improve/features primary=0.61547 dP=+0.01265 dGAUC=+0.01630 screen_pass patch={'use_time_decay': True} inc=020_ensemble:0.60441 streak=0 wall=0.19h
+15:45:06 [8/50] START ablate 025_ablate arm=ablate parent=024_features phase=1_local jobs=3 cache=0 workers=3
+       child 025_ablate_c0_s0 improve/ablate primary=0.61547 dP=+0.01265 dGAUC=+0.01431 confirmed patch={'use_time_decay': True, 'seed': 0}
+       child 026_ablate_c0_s1 improve/ablate primary=0.61629 dP=+0.01347 dGAUC=+0.01551 patch={'use_time_decay': True, 'seed': 1}
+       child 027_ablate_c0_s2 improve/ablate primary=0.61819 dP=+0.01537 dGAUC=+0.01916 patch={'use_time_decay': True, 'seed': 2}
+15:47:22 [8/50] DONE 028_ablate ablate/ablate primary=na inc=025_ablate_c0_s0:0.61665 streak=0 wall=0.24h
+15:47:23 [9/50] START ensemble 029_ensemble arm=ensemble parent=025_ablate_c0_s0 phase=3_ablate members=025_ablate_c0_s0,026_ablate_c0_s1,027_ablate_c0_s2
+15:47:25 [8/50] DONE 029_ensemble ensemble/ensemble primary=0.61883 dP=+0.00218 dGAUC=+0.00516 confirmed inc=029_ensemble:0.61883 streak=0 wall=0.24h
+15:47:40 [9/50] START ensemble 030_ensemble arm=ensemble parent=029_ensemble phase=3_ablate members=000_fm_baseline,000_fm_s1,001_fm_s2,009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2,016_ablate_c1_s0,017_ablate_c1_s1,018_ablate_c1_s2,025_ablate_c0_s0,026_ablate_c0_s1,027_ablate_c0_s2
+15:47:43 [8/50] DONE 030_ensemble ensemble/ensemble primary=0.61883 dP=+0.00000 dGAUC=+0.00000 inc=029_ensemble:0.61883 streak=1 wall=0.24h
+15:47:56 [9/50] START improve 031_watch_time arm=watch_time parent=029_ensemble phase=1_local
+15:50:01 [9/50] DONE 031_watch_time improve/watch_time primary=0.61686 dP=+0.00021 dGAUC=+0.00038 patch={'wlr_play': True} inc=029_ensemble:0.61883 streak=2 wall=0.28h
+15:51:55 [10/50] START ablate 032_ablate arm=ablate parent=031_watch_time phase=1_local jobs=6 cache=0 workers=3
+       child 032_ablate_c0_s0 improve/ablate primary=0.61686 dP=+0.00021 dGAUC=-0.00276 patch={'wlr_play': True, 'seed': 0}
+       child 033_ablate_c0_s1 improve/ablate primary=0.61566 dP=-0.00099 dGAUC=-0.00373 patch={'wlr_play': True, 'seed': 1}
+       child 034_ablate_c0_s2 improve/ablate primary=0.61766 dP=+0.00101 dGAUC=-0.00118 patch={'wlr_play': True, 'seed': 2}
+       child 035_ablate_c1_s0 improve/ablate primary=0.61686 dP=+0.00021 dGAUC=-0.00276 patch={'loss': 'bpr_global', 'seed': 0}
+       child 036_ablate_c1_s1 improve/ablate primary=0.61566 dP=-0.00099 dGAUC=-0.00373 patch={'loss': 'bpr_global', 'seed': 1}
+       child 037_ablate_c1_s2 improve/ablate primary=0.61766 dP=+0.00101 dGAUC=-0.00118 patch={'loss': 'bpr_global', 'seed': 2}
+15:56:22 [10/50] DONE 038_ablate ablate/ablate primary=na inc=029_ensemble:0.61883 streak=2 wall=0.39h
+15:56:22 [11/50] START ensemble 039_ensemble arm=ensemble parent=029_ensemble phase=3_ablate members=032_ablate_c0_s0,033_ablate_c0_s1,034_ablate_c0_s2
+15:56:25 [10/50] DONE 039_ensemble ensemble/ensemble primary=0.61919 dP=+0.00036 dGAUC=+0.00091 confirmed inc=039_ensemble:0.61919 streak=3 wall=0.39h
+15:56:38 [11/50] START ensemble 040_ensemble arm=ensemble parent=039_ensemble phase=3_ablate members=025_ablate_c0_s0,026_ablate_c0_s1,027_ablate_c0_s2,032_ablate_c0_s0,033_ablate_c0_s1,034_ablate_c0_s2
+15:56:41 [10/50] DONE 040_ensemble ensemble/ensemble primary=0.61919 dP=+0.00000 dGAUC=+0.00000 inc=039_ensemble:0.61919 streak=4 wall=0.39h
+15:56:41 [11/50] START ensemble 041_ensemble arm=ensemble parent=039_ensemble phase=3_ablate members=025_ablate_c0_s0,026_ablate_c0_s1,027_ablate_c0_s2,032_ablate_c0_s0,033_ablate_c0_s1,034_ablate_c0_s2
+15:56:44 [10/50] DONE 041_ensemble ensemble/ensemble primary=0.61940 dP=+0.00021 dGAUC=+0.00041 inc=039_ensemble:0.61919 streak=5 wall=0.39h
+15:56:44 [11/50] START improve 042_crossover arm=features parent=039_ensemble phase=1_local
+15:58:30 [11/50] DONE 042_crossover improve/features primary=0.61686 dP=+0.00013 dGAUC=-0.00020 patch={'use_itemcf': True} inc=039_ensemble:0.61919 streak=6 wall=0.42h
+15:58:30 [12/50] SKIP 043_crossover arm=features reason=duplicate of 031_watch_time
+15:58:57 [13/50] START improve 044_features arm=features parent=039_ensemble phase=1_local
+16:01:08 [13/50] DONE 044_features improve/features primary=0.61671 dP=-0.00001 dGAUC=-0.00078 patch={'use_beh_rank': True} inc=039_ensemble:0.61919 streak=8 wall=0.47h
+16:05:10 [14/50] START ablate 045_ablate arm=ablate parent=044_features phase=1_local jobs=6 cache=0 workers=3
+       child 045_ablate_c0_s0 improve/ablate primary=0.61671 dP=-0.00001 dGAUC=-0.00424 patch={'use_beh_rank': True, 'seed': 0}
+       child 046_ablate_c0_s1 improve/ablate primary=0.61771 dP=+0.00098 dGAUC=-0.00142 patch={'use_beh_rank': True, 'seed': 1}
+       child 047_ablate_c0_s2 improve/ablate primary=0.62251 dP=+0.00578 dGAUC=+0.00469 patch={'use_beh_rank': True, 'seed': 2}
+       child 048_ablate_c1_s0 improve/ablate primary=0.61671 dP=-0.00001 dGAUC=-0.00424 patch={'bpr_decay_sample': True, 'seed': 0}
+       child 049_ablate_c1_s1 improve/ablate primary=0.61771 dP=+0.00098 dGAUC=-0.00142 patch={'bpr_decay_sample': True, 'seed': 1}
+       child 050_ablate_c1_s2 improve/ablate primary=0.62251 dP=+0.00578 dGAUC=+0.00469 patch={'bpr_decay_sample': True, 'seed': 2}
+16:12:07 [14/50] DONE 051_ablate ablate/ablate primary=na inc=039_ensemble:0.61919 streak=8 wall=0.65h
+16:12:08 [15/50] START ensemble 052_ensemble arm=ensemble parent=039_ensemble phase=3_ablate members=045_ablate_c0_s0,046_ablate_c0_s1,047_ablate_c0_s2
+16:12:13 [14/50] DONE 052_ensemble ensemble/ensemble primary=0.62129 dP=+0.00210 dGAUC=+0.00287 confirmed inc=052_ensemble:0.62129 streak=0 wall=0.65h
+16:12:14 [15/50] START ensemble 053_ensemble arm=ensemble parent=052_ensemble phase=3_ablate members=048_ablate_c1_s0,049_ablate_c1_s1,050_ablate_c1_s2
+16:12:18 [14/50] DONE 053_ensemble ensemble/ensemble primary=0.62129 dP=+0.00000 dGAUC=+0.00000 confirmed inc=052_ensemble:0.62129 streak=1 wall=0.65h
+16:13:00 [15/50] START ensemble 054_ensemble arm=ensemble parent=052_ensemble phase=3_ablate members=045_ablate_c0_s0,046_ablate_c0_s1,047_ablate_c0_s2,048_ablate_c1_s0,049_ablate_c1_s1,050_ablate_c1_s2
+16:13:04 [14/50] DONE 054_ensemble ensemble/ensemble primary=0.62129 dP=+0.00000 dGAUC=+0.00000 inc=052_ensemble:0.62129 streak=2 wall=0.67h
+16:13:05 [15/50] START improve 055_crossover arm=features parent=052_ensemble phase=1_local
+16:14:52 [15/50] DONE 055_crossover improve/features primary=0.61671 dP=-0.00226 dGAUC=-0.00392 patch={'bpr_decay_sample': True} inc=052_ensemble:0.62129 streak=3 wall=0.70h
+16:16:27 [16/50] START ablate 056_ablate arm=ablate parent=055_crossover phase=1_local jobs=3 cache=0 workers=3
+       child 056_ablate_c0_s0 improve/ablate primary=0.61671 dP=-0.00226 dGAUC=-0.00712 patch={'bpr_decay_sample': True, 'seed': 0}
+       child 057_ablate_c0_s1 improve/ablate primary=0.61771 dP=-0.00126 dGAUC=-0.00429 patch={'bpr_decay_sample': True, 'seed': 1}
+       child 058_ablate_c0_s2 improve/ablate primary=0.62251 dP=+0.00353 dGAUC=+0.00182 patch={'bpr_decay_sample': True, 'seed': 2}
+16:19:07 [16/50] DONE 059_ablate ablate/ablate primary=na inc=052_ensemble:0.62129 streak=3 wall=0.77h
+16:19:26 [17/50] START improve 060_architecture arm=architecture parent=052_ensemble phase=1_local
+16:23:02 [17/50] DONE 060_architecture improve/architecture primary=0.62733 dP=+0.00835 dGAUC=+0.00953 screen_pass patch={'arch': 'deepfm'} inc=052_ensemble:0.62129 streak=0 wall=0.83h
+16:24:04 [18/50] START ablate 061_ablate arm=ablate parent=060_architecture phase=1_local jobs=3 cache=0 workers=3
+       child 061_ablate_c0_s0 improve/ablate primary=0.62733 dP=+0.00835 dGAUC=+0.00634 confirmed patch={'arch': 'deepfm', 'seed': 0}
+       child 062_ablate_c0_s1 improve/ablate primary=0.62576 dP=+0.00679 dGAUC=+0.00515 patch={'arch': 'deepfm', 'seed': 1}
+       child 063_ablate_c0_s2 improve/ablate primary=0.62408 dP=+0.00511 dGAUC=+0.00341 patch={'arch': 'deepfm', 'seed': 2}
+16:28:52 [18/50] DONE 064_ablate ablate/ablate primary=na inc=061_ablate_c0_s0:0.62573 streak=0 wall=0.93h
+16:28:54 [19/50] START ensemble 065_ensemble arm=ensemble parent=061_ablate_c0_s0 phase=3_ablate members=061_ablate_c0_s0,062_ablate_c0_s1,063_ablate_c0_s2
+16:28:58 [18/50] DONE 065_ensemble ensemble/ensemble primary=0.63059 dP=+0.00487 dGAUC=+0.00519 confirmed inc=065_ensemble:0.63059 streak=0 wall=0.93h
+16:29:49 [19/50] START ensemble 066_ensemble arm=ensemble parent=065_ensemble phase=3_ablate members=000_fm_baseline,000_fm_s1,001_fm_s2,009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2,016_ablate_c1_s0,017_ablate_c1_s1,018_ablate_c1_s2,035_ablate_c1_s0,036_ablate_c1_s1,037_ablate_c1_s2,025_ablate_c0_s0,026_ablate_c0_s1,027_ablate_c0_s2,032_ablate_c0_s0,033_ablate_c0_s1,034_ablate_c0_s2,045_ablate_c0_s0,046_ablate_c0_s1,047_ablate_c0_s2,048_ablate_c1_s0,049_ablate_c1_s1,050_ablate_c1_s2,056_ablate_c0_s0,057_ablate_c0_s1,058_ablate_c0_s2,061_ablate_c0_s0,062_ablate_c0_s1,063_ablate_c0_s2
+16:29:53 [18/50] DONE 066_ensemble ensemble/ensemble primary=0.63059 dP=+0.00000 dGAUC=+0.00000 inc=065_ensemble:0.63059 streak=1 wall=0.95h
+16:30:24 [19/50] START improve 067_sequence arm=sequence parent=065_ensemble phase=1_local
+16:47:14 [19/50] DONE 067_sequence improve/sequence primary=0.62565 dP=-0.00008 dGAUC=-0.00040 patch={'seq_len': 100, 'seq_mode': 'din'} inc=065_ensemble:0.63059 streak=2 wall=1.24h
+16:48:55 [20/50] START ablate 068_ablate arm=ablate parent=067_sequence phase=1_local jobs=6 cache=0 workers=3
+       child 068_ablate_c0_s0 improve/ablate primary=0.62565 dP=-0.00008 dGAUC=-0.00697 patch={'seq_len': 100, 'seq_mode': 'din', 'seed': 0}
+       child 069_ablate_c0_s1 improve/ablate primary=0.62455 dP=-0.00117 dGAUC=-0.00784 patch={'seq_len': 100, 'seq_mode': 'din', 'seed': 1}
+       child 070_ablate_c0_s2 improve/ablate primary=0.62706 dP=+0.00133 dGAUC=-0.00427 patch={'seq_len': 100, 'seq_mode': 'din', 'seed': 2}
+       child 071_ablate_c1_s0 improve/ablate primary=0.62565 dP=-0.00008 dGAUC=-0.00697 patch={'bpr_pairs_cap': 64, 'seed': 0}
+       child 072_ablate_c1_s1 improve/ablate primary=0.62455 dP=-0.00117 dGAUC=-0.00784 patch={'bpr_pairs_cap': 64, 'seed': 1}
+       child 073_ablate_c1_s2 improve/ablate primary=0.62706 dP=+0.00133 dGAUC=-0.00427 patch={'bpr_pairs_cap': 64, 'seed': 2}
+17:19:49 [20/50] DONE 074_ablate ablate/ablate primary=na inc=065_ensemble:0.63059 streak=2 wall=1.78h
+17:19:50 [21/50] START ensemble 075_ensemble arm=ensemble parent=065_ensemble phase=3_ablate members=068_ablate_c0_s0,069_ablate_c0_s1,070_ablate_c0_s2
+17:19:54 [20/50] DONE 075_ensemble ensemble/ensemble primary=0.62809 dP=-0.00251 dGAUC=-0.00306 inc=065_ensemble:0.63059 streak=3 wall=1.78h
+17:19:56 [21/50] START ensemble 076_ensemble arm=ensemble parent=065_ensemble phase=3_ablate members=071_ablate_c1_s0,072_ablate_c1_s1,073_ablate_c1_s2
+17:20:00 [20/50] DONE 076_ensemble ensemble/ensemble primary=0.62809 dP=-0.00251 dGAUC=-0.00306 inc=065_ensemble:0.63059 streak=4 wall=1.78h
+17:20:43 [21/50] START ensemble 077_ensemble arm=ensemble parent=065_ensemble phase=3_ablate members=061_ablate_c0_s0,062_ablate_c0_s1,063_ablate_c0_s2,068_ablate_c0_s0,069_ablate_c0_s1,070_ablate_c0_s2,071_ablate_c1_s0,072_ablate_c1_s1,073_ablate_c1_s2
+17:20:47 [20/50] DONE 077_ensemble ensemble/ensemble primary=0.63059 dP=+0.00000 dGAUC=+0.00000 inc=065_ensemble:0.63059 streak=5 wall=1.80h
+17:22:05 [21/50] SKIP 078_watch_time arm=watch_time reason=cross-run CI_hi<0 graveyard
+17:22:33 [22/50] START improve 079_features arm=features parent=065_ensemble phase=1_local
+17:26:06 [22/50] DONE 079_features improve/features primary=0.62733 dP=+0.00160 dGAUC=+0.00137 screen_pass patch={'use_itemcf': True} inc=065_ensemble:0.63059 streak=7 wall=1.88h
+17:27:34 [23/50] START ablate 080_ablate arm=ablate parent=079_features phase=1_local jobs=3 cache=0 workers=3
+       child 080_ablate_c0_s0 improve/ablate primary=0.62733 dP=+0.00160 dGAUC=-0.00519 patch={'use_itemcf': True, 'seed': 0}
+       child 081_ablate_c0_s1 improve/ablate primary=0.62576 dP=+0.00004 dGAUC=-0.00638 patch={'use_itemcf': True, 'seed': 1}
+       child 082_ablate_c0_s2 improve/ablate primary=0.62408 dP=-0.00164 dGAUC=-0.00811 patch={'use_itemcf': True, 'seed': 2}
+17:31:54 [23/50] DONE 083_ablate ablate/ablate primary=na inc=065_ensemble:0.63059 streak=7 wall=1.98h
+17:31:54 [24/50] START ensemble 084_ensemble arm=ensemble parent=065_ensemble phase=3_ablate members=080_ablate_c0_s0,081_ablate_c0_s1,082_ablate_c0_s2
+17:31:57 [23/50] DONE 084_ensemble ensemble/ensemble primary=0.63059 dP=+0.00000 dGAUC=+0.00000 confirmed inc=065_ensemble:0.63059 streak=8 wall=1.98h
+17:32:11 [24/50] START ensemble 085_ensemble arm=ensemble parent=065_ensemble phase=3_ablate members=061_ablate_c0_s0,062_ablate_c0_s1,063_ablate_c0_s2,068_ablate_c0_s0,069_ablate_c0_s1,070_ablate_c0_s2,071_ablate_c1_s0,072_ablate_c1_s1,073_ablate_c1_s2,080_ablate_c0_s0,081_ablate_c0_s1,082_ablate_c0_s2
+17:32:13 [23/50] DONE 085_ensemble ensemble/ensemble primary=0.63059 dP=+0.00000 dGAUC=+0.00000 inc=065_ensemble:0.63059 streak=9 wall=1.99h
+17:32:35 [24/50] START improve 086_multitask arm=multitask parent=065_ensemble phase=1_local
+17:34:22 [24/50] DONE 086_multitask improve/multitask primary=0.62377 dP=-0.00196 dGAUC=-0.00356 patch={'aux_click': True} inc=065_ensemble:0.63059 streak=10 wall=2.02h
+17:34:41 [25/50] START improve 087_capacity arm=capacity parent=065_ensemble phase=1_local
+17:36:31 [25/50] DONE 087_capacity improve/capacity primary=0.63208 dP=+0.00636 dGAUC=+0.00881 screen_pass patch={'k': 8} inc=065_ensemble:0.63059 streak=11 wall=2.06h
+17:37:26 [26/50] START ablate 088_ablate arm=ablate parent=087_capacity phase=1_local jobs=3 cache=0 workers=3
+       child 088_ablate_c0_s0 improve/ablate primary=0.63208 dP=+0.00636 dGAUC=+0.00225 confirmed patch={'k': 8, 'seed': 0}
+       child 089_ablate_c0_s1 improve/ablate primary=0.62970 dP=+0.00397 dGAUC=-0.00047 patch={'k': 8, 'seed': 1}
+       child 090_ablate_c0_s2 improve/ablate primary=0.63337 dP=+0.00764 dGAUC=+0.00463 patch={'k': 8, 'seed': 2}
+17:40:05 [26/50] DONE 091_ablate ablate/ablate primary=na inc=088_ablate_c0_s0:0.63172 streak=11 wall=2.12h
+17:40:06 [27/50] START ensemble 092_ensemble arm=ensemble parent=088_ablate_c0_s0 phase=3_ablate members=088_ablate_c0_s0,089_ablate_c0_s1,090_ablate_c0_s2
+17:40:08 [26/50] DONE 092_ensemble ensemble/ensemble primary=0.63335 dP=+0.00163 dGAUC=+0.00227 confirmed inc=092_ensemble:0.63335 streak=0 wall=2.12h
+17:40:25 [27/50] START ensemble 093_ensemble arm=ensemble parent=092_ensemble phase=3_ablate members=025_ablate_c0_s0,026_ablate_c0_s1,027_ablate_c0_s2,032_ablate_c0_s0,033_ablate_c0_s1,034_ablate_c0_s2,045_ablate_c0_s0,046_ablate_c0_s1,047_ablate_c0_s2,048_ablate_c1_s0,049_ablate_c1_s1,050_ablate_c1_s2,056_ablate_c0_s0,057_ablate_c0_s1,058_ablate_c0_s2,061_ablate_c0_s0,062_ablate_c0_s1,063_ablate_c0_s2,068_ablate_c0_s0,069_ablate_c0_s1,070_ablate_c0_s2,071_ablate_c1_s0,072_ablate_c1_s1,073_ablate_c1_s2,080_ablate_c0_s0,081_ablate_c0_s1,082_ablate_c0_s2,088_ablate_c0_s0,089_ablate_c0_s1,090_ablate_c0_s2
+17:40:28 [26/50] DONE 093_ensemble ensemble/ensemble primary=0.63335 dP=+0.00000 dGAUC=+0.00000 inc=092_ensemble:0.63335 streak=1 wall=2.12h
+17:41:39 [27/50] START read_paper 094_read_paper arm=features parent=092_ensemble phase=1_local SKILL.md
+17:41:39 [27/50] DONE 094_read_paper read_paper/features primary=na inc=092_ensemble:0.63335 streak=1 wall=2.14h
+17:41:50 [28/50] START improve 095_time_shift arm=time_shift parent=092_ensemble phase=1_local
+17:44:26 [28/50] DONE 095_time_shift improve/time_shift primary=0.62881 dP=-0.00291 dGAUC=-0.00383 patch={'use_hour': True} inc=092_ensemble:0.63335 streak=2 wall=2.19h
+17:45:30 [29/50] START ablate 096_ablate arm=ablate parent=095_time_shift phase=1_local jobs=6 cache=0 workers=3
+       child 096_ablate_c0_s0 improve/ablate primary=0.62881 dP=-0.00291 dGAUC=-0.00622 patch={'use_hour': True, 'seed': 0}
+       child 097_ablate_c0_s1 improve/ablate primary=0.63217 dP=+0.00046 dGAUC=-0.00211 patch={'use_hour': True, 'seed': 1}
+       child 098_ablate_c0_s2 improve/ablate primary=0.62471 dP=-0.00700 dGAUC=-0.01224 patch={'use_hour': True, 'seed': 2}
+       child 099_ablate_c1_s0 improve/ablate primary=0.62881 dP=-0.00291 dGAUC=-0.00622 patch={'bpr_decay_sample': False, 'seed': 0}
+       child 100_ablate_c1_s1 improve/ablate primary=0.63217 dP=+0.00046 dGAUC=-0.00211 patch={'bpr_decay_sample': False, 'seed': 1}
+       child 101_ablate_c1_s2 improve/ablate primary=0.62471 dP=-0.00700 dGAUC=-0.01224 patch={'bpr_decay_sample': False, 'seed': 2}
+17:50:05 [29/50] DONE 102_ablate ablate/ablate primary=na inc=092_ensemble:0.63335 streak=2 wall=2.28h
+17:50:23 [30/50] START ensemble 103_ensemble arm=ensemble parent=092_ensemble phase=3_ablate members=025_ablate_c0_s0,026_ablate_c0_s1,027_ablate_c0_s2,032_ablate_c0_s0,033_ablate_c0_s1,034_ablate_c0_s2,045_ablate_c0_s0,046_ablate_c0_s1,047_ablate_c0_s2,048_ablate_c1_s0,049_ablate_c1_s1,050_ablate_c1_s2,056_ablate_c0_s0,057_ablate_c0_s1,058_ablate_c0_s2,061_ablate_c0_s0,062_ablate_c0_s1,063_ablate_c0_s2,068_ablate_c0_s0,069_ablate_c0_s1,070_ablate_c0_s2,071_ablate_c1_s0,072_ablate_c1_s1,073_ablate_c1_s2,080_ablate_c0_s0,081_ablate_c0_s1,082_ablate_c0_s2,088_ablate_c0_s0,089_ablate_c0_s1,090_ablate_c0_s2,096_ablate_c0_s0,097_ablate_c0_s1,098_ablate_c0_s2,099_ablate_c1_s0,100_ablate_c1_s1,101_ablate_c1_s2
+17:50:25 [29/50] DONE 103_ensemble ensemble/ensemble primary=0.63335 dP=+0.00000 dGAUC=+0.00000 inc=092_ensemble:0.63335 streak=3 wall=2.29h
+17:51:11 [30/50] START improve 104_architecture arm=architecture parent=092_ensemble phase=1_local
+17:53:33 [30/50] DONE 104_architecture improve/architecture primary=0.63303 dP=+0.00131 dGAUC=+0.00026 patch={'arch': 'dcnv2'} inc=092_ensemble:0.63335 streak=4 wall=2.34h
+17:55:18 [31/50] START ablate 105_ablate arm=ablate parent=104_architecture phase=1_local jobs=6 cache=0 workers=3
+       child 105_ablate_c0_s0 improve/ablate primary=0.63303 dP=+0.00131 dGAUC=-0.00212 confirmed patch={'arch': 'dcnv2', 'seed': 0}
+       child 106_ablate_c0_s1 improve/ablate primary=0.63356 dP=+0.00185 dGAUC=-0.00096 patch={'arch': 'dcnv2', 'seed': 1}
+       child 107_ablate_c0_s2 improve/ablate primary=0.63495 dP=+0.00324 dGAUC=-0.00023 patch={'arch': 'dcnv2', 'seed': 2}
+       child 108_ablate_c1_s0 improve/ablate primary=0.63303 dP=+0.00131 dGAUC=-0.00212 patch={'bpr_pairs_cap': 64, 'seed': 0}
+       child 109_ablate_c1_s1 improve/ablate primary=0.63356 dP=+0.00185 dGAUC=-0.00096 patch={'bpr_pairs_cap': 64, 'seed': 1}
+       child 110_ablate_c1_s2 improve/ablate primary=0.63495 dP=+0.00324 dGAUC=-0.00023 patch={'bpr_pairs_cap': 64, 'seed': 2}
+18:02:48 [31/50] DONE 111_ablate ablate/ablate primary=na inc=105_ablate_c0_s0:0.63385 streak=4 wall=2.50h
+18:02:49 [32/50] START ensemble 112_ensemble arm=ensemble parent=105_ablate_c0_s0 phase=3_ablate members=105_ablate_c0_s0,106_ablate_c0_s1,107_ablate_c0_s2
+18:02:51 [31/50] DONE 112_ensemble ensemble/ensemble primary=0.63692 dP=+0.00307 dGAUC=+0.00543 confirmed inc=112_ensemble:0.63692 streak=0 wall=2.50h
+18:03:10 [32/50] START ensemble 113_ensemble arm=ensemble parent=112_ensemble phase=3_ablate members=025_ablate_c0_s0,026_ablate_c0_s1,027_ablate_c0_s2,032_ablate_c0_s0,033_ablate_c0_s1,034_ablate_c0_s2,045_ablate_c0_s0,046_ablate_c0_s1,047_ablate_c0_s2,048_ablate_c1_s0,049_ablate_c1_s1,050_ablate_c1_s2,056_ablate_c0_s0,057_ablate_c0_s1,058_ablate_c0_s2,061_ablate_c0_s0,062_ablate_c0_s1,063_ablate_c0_s2,068_ablate_c0_s0,069_ablate_c0_s1,070_ablate_c0_s2,071_ablate_c1_s0,072_ablate_c1_s1,073_ablate_c1_s2,108_ablate_c1_s0,109_ablate_c1_s1,110_ablate_c1_s2,080_ablate_c0_s0,081_ablate_c0_s1,082_ablate_c0_s2,088_ablate_c0_s0,089_ablate_c0_s1,090_ablate_c0_s2,096_ablate_c0_s0,097_ablate_c0_s1,098_ablate_c0_s2,099_ablate_c1_s0,100_ablate_c1_s1,101_ablate_c1_s2,105_ablate_c0_s0,106_ablate_c0_s1,107_ablate_c0_s2
+18:03:12 [31/50] DONE 113_ensemble ensemble/ensemble primary=0.63692 dP=+0.00000 dGAUC=+0.00000 inc=112_ensemble:0.63692 streak=1 wall=2.50h
+18:05:20 [32/50] START improve 114_features arm=features parent=000_fm_baseline phase=1_local
+18:06:38 [32/50] DONE 114_features improve/features primary=0.60306 dP=-0.03079 dGAUC=-0.04012 patch={'use_time_decay': True} inc=112_ensemble:0.63692 streak=2 wall=2.56h
+18:08:09 [33/50] START ablate 115_ablate arm=ablate parent=114_features phase=1_local jobs=6 cache=0 workers=3
+       child 115_ablate_c0_s0 improve/ablate primary=0.60306 dP=-0.03079 dGAUC=-0.04453 patch={'use_time_decay': True, 'seed': 0}
+       child 116_ablate_c0_s1 improve/ablate primary=0.60835 dP=-0.02550 dGAUC=-0.03855 patch={'use_time_decay': True, 'seed': 1}
+       child 117_ablate_c0_s2 improve/ablate primary=0.60726 dP=-0.02659 dGAUC=-0.03981 patch={'use_time_decay': True, 'seed': 2}
+       child 118_ablate_c1_s0 improve/ablate primary=0.61547 dP=-0.01838 dGAUC=-0.02830 patch={'loss': 'bpr_global', 'seed': 0}
+       child 119_ablate_c1_s1 improve/ablate primary=0.61629 dP=-0.01755 dGAUC=-0.02710 patch={'loss': 'bpr_global', 'seed': 1}
+       child 120_ablate_c1_s2 improve/ablate primary=0.61819 dP=-0.01566 dGAUC=-0.02345 patch={'loss': 'bpr_global', 'seed': 2}
+18:12:11 [33/50] DONE 121_ablate ablate/ablate primary=na inc=112_ensemble:0.63692 streak=2 wall=2.65h
+18:12:41 [34/50] START improve 122_architecture arm=architecture parent=112_ensemble phase=1_local
+18:13:19 [34/50] DONE 122_architecture improve/architecture primary=0.53574 dP=-0.09811 dGAUC=-0.13575 patch={'model_family': 'torch'} inc=112_ensemble:0.63692 streak=3 wall=2.67h
+18:17:15 [35/50] START ablate 123_ablate arm=ablate parent=122_architecture phase=1_local jobs=6 cache=0 workers=3
+       child 123_ablate_c0_s0 improve/ablate primary=0.53574 dP=-0.09811 dGAUC=-0.14017 patch={'model_family': 'torch', 'seed': 0}
+       child 124_ablate_c0_s1 improve/ablate primary=0.53258 dP=-0.10127 dGAUC=-0.14462 patch={'model_family': 'torch', 'seed': 1}
+       child 125_ablate_c0_s2 improve/ablate primary=0.53560 dP=-0.09825 dGAUC=-0.14020 patch={'model_family': 'torch', 'seed': 2}
+       child 126_ablate_c1_s0 improve/ablate primary=0.63061 dP=-0.00324 dGAUC=-0.00665 patch={'loss': 'logloss', 'seed': 0}
+       child 127_ablate_c1_s1 improve/ablate primary=0.63025 dP=-0.00360 dGAUC=-0.00728 patch={'loss': 'logloss', 'seed': 1}
+       child 128_ablate_c1_s2 improve/ablate primary=0.62696 dP=-0.00689 dGAUC=-0.01171 patch={'loss': 'logloss', 'seed': 2}
+18:18:54 [35/50] DONE 129_ablate ablate/ablate primary=na inc=112_ensemble:0.63692 streak=3 wall=2.76h
+18:19:32 [36/50] START improve 130_time_shift arm=time_shift parent=112_ensemble phase=1_local
+18:21:59 [36/50] DONE 130_time_shift improve/time_shift primary=0.63508 dP=+0.00123 dGAUC=+0.00166 screen_pass patch={'use_hour': True} inc=112_ensemble:0.63692 streak=4 wall=2.82h
+18:25:18 [37/50] START ablate 131_ablate arm=ablate parent=130_time_shift phase=1_local jobs=6 cache=0 workers=3
+       child 131_ablate_c0_s0 improve/ablate primary=0.63508 dP=+0.00123 dGAUC=-0.00276 patch={'use_hour': True, 'seed': 0}
+       child 132_ablate_c0_s1 improve/ablate primary=0.63224 dP=-0.00161 dGAUC=-0.00611 patch={'use_hour': True, 'seed': 1}
+       child 133_ablate_c0_s2 improve/ablate primary=0.63557 dP=+0.00172 dGAUC=-0.00221 patch={'use_hour': True, 'seed': 2}
+       child 134_ablate_c1_s0 improve/ablate primary=0.63508 dP=+0.00123 dGAUC=-0.00276 patch={'bpr_decay_sample': True, 'seed': 0}
+       child 135_ablate_c1_s1 improve/ablate primary=0.63224 dP=-0.00161 dGAUC=-0.00611 patch={'bpr_decay_sample': True, 'seed': 1}
+       child 136_ablate_c1_s2 improve/ablate primary=0.63557 dP=+0.00172 dGAUC=-0.00221 patch={'bpr_decay_sample': True, 'seed': 2}
+18:32:57 [37/50] DONE 137_ablate ablate/ablate primary=na inc=112_ensemble:0.63692 streak=4 wall=3.00h
+18:33:14 [38/50] START improve 138_multitask arm=multitask parent=112_ensemble phase=1_local
+18:35:36 [38/50] DONE 138_multitask improve/multitask primary=0.63558 dP=+0.00173 dGAUC=+0.00356 screen_pass patch={'aux_click': True} inc=112_ensemble:0.63692 streak=5 wall=3.04h
+18:36:35 [39/50] START ablate 139_ablate arm=ablate parent=138_multitask phase=1_local jobs=3 cache=0 workers=3
+       child 139_ablate_c0_s0 improve/ablate primary=0.63558 dP=+0.00173 dGAUC=-0.00085 patch={'aux_click': True, 'seed': 0}
+       child 140_ablate_c0_s1 improve/ablate primary=0.63321 dP=-0.00063 dGAUC=-0.00489 patch={'aux_click': True, 'seed': 1}
+       child 141_ablate_c0_s2 improve/ablate primary=0.63635 dP=+0.00250 dGAUC=-0.00078 patch={'aux_click': True, 'seed': 2}
+18:39:33 [39/50] DONE 142_ablate ablate/ablate primary=na inc=112_ensemble:0.63692 streak=5 wall=3.11h
+18:39:33 [40/50] START ensemble 143_ensemble arm=ensemble parent=112_ensemble phase=3_ablate members=139_ablate_c0_s0,140_ablate_c0_s1,141_ablate_c0_s2
+18:39:35 [39/50] DONE 143_ensemble ensemble/ensemble primary=0.63931 dP=+0.00239 dGAUC=+0.00325 confirmed inc=143_ensemble:0.63931 streak=0 wall=3.11h
+18:39:49 [40/50] START ensemble 144_ensemble arm=ensemble parent=143_ensemble phase=3_ablate members=105_ablate_c0_s0,106_ablate_c0_s1,107_ablate_c0_s2,139_ablate_c0_s0,140_ablate_c0_s1,141_ablate_c0_s2
+18:39:51 [39/50] DONE 144_ensemble ensemble/ensemble primary=0.63931 dP=+0.00000 dGAUC=+0.00000 inc=143_ensemble:0.63931 streak=1 wall=3.11h
+18:40:25 [40/50] START improve 145_capacity arm=capacity parent=143_ensemble phase=1_local
+18:45:11 [40/50] DONE 145_capacity improve/capacity primary=0.61945 dP=-0.01560 dGAUC=-0.02120 patch={'k': 32} inc=143_ensemble:0.63931 streak=2 wall=3.20h
+18:46:15 [41/50] START improve 146_loss arm=loss parent=143_ensemble phase=1_local
+18:48:37 [41/50] DONE 146_loss improve/loss primary=0.63558 dP=+0.00053 dGAUC=+0.00132 patch={'bpr_pairs_cap': 64} inc=143_ensemble:0.63931 streak=3 wall=3.26h
+18:49:13 [42/50] START improve 147_capacity arm=capacity parent=143_ensemble phase=1_local
+18:56:04 [42/50] DONE 147_capacity improve/capacity primary=0.61147 dP=-0.02358 dGAUC=-0.03056 patch={'k': 64} inc=143_ensemble:0.63931 streak=4 wall=3.38h
+18:57:07 [43/50] SKIP 148_watch_time arm=watch_time reason=cross-run CI_hi<0 graveyard
+18:57:34 [44/50] START improve 149_capacity arm=capacity parent=143_ensemble phase=1_local
+19:00:14 [44/50] DONE 149_capacity improve/capacity primary=0.62392 dP=-0.01113 dGAUC=-0.01529 patch={'k': 16} inc=143_ensemble:0.63931 streak=6 wall=3.45h
+19:00:37 [45/50] START improve 150_loss arm=loss parent=143_ensemble phase=1_local
+19:03:00 [45/50] DONE 150_loss improve/loss primary=0.63558 dP=+0.00053 dGAUC=+0.00132 patch={'bpr_pairs_cap': 16} inc=143_ensemble:0.63931 streak=7 wall=3.50h
+19:04:20 [46/50] START read_paper 151_read_paper arm=architecture parent=143_ensemble phase=1_local SKILL.md
+19:04:20 [46/50] DONE 151_read_paper read_paper/architecture primary=na inc=143_ensemble:0.63931 streak=7 wall=3.52h
+19:06:48 [47/50] START improve 152_architecture arm=architecture parent=143_ensemble phase=1_local
+19:07:09 [47/50] DONE 152_architecture improve/architecture primary=0.60584 dP=-0.02921 dGAUC=-0.04122 patch={'model_family': 'gbm'} inc=143_ensemble:0.63931 streak=8 wall=3.57h
+19:09:49 [48/50] START ablate 153_ablate arm=ablate parent=152_architecture phase=1_local jobs=3 cache=0 workers=3
+       child 153_ablate_c0_s0 improve/ablate primary=0.60584 dP=-0.02921 dGAUC=-0.04665 patch={'model_family': 'gbm', 'seed': 0}
+       child 154_ablate_c0_s1 improve/ablate primary=0.60593 dP=-0.02912 dGAUC=-0.04655 patch={'model_family': 'gbm', 'seed': 1}
+       child 155_ablate_c0_s2 improve/ablate primary=0.60617 dP=-0.02888 dGAUC=-0.04621 patch={'model_family': 'gbm', 'seed': 2}
+19:10:17 [48/50] DONE 156_ablate ablate/ablate primary=na inc=143_ensemble:0.63931 streak=8 wall=3.62h
+19:11:48 [49/50] SKIP 157_loss arm=loss reason=no valid config_patch for arm=loss
+19:12:29 [50/50] SKIP 158_capacity arm=capacity reason=duplicate of 145_capacity
+19:12:30 STOP reason=cap billed=50/50 incumbent=143_ensemble mean=0.63931 wall=3.66h

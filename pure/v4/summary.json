@@ -1,0 +1,1407 @@
+{
+  "incumbent": "143_ensemble",
+  "incumbent_primary": 0.6393102103380284,
+  "incumbent_mean": 0.6393102103380284,
+  "incumbent_identity": {
+    "node_id": "143_ensemble",
+    "is_bag": true,
+    "submit_primary": 0.6393102103380284,
+    "screen_bar": 0.6350486675898234,
+    "seed0_primary": 0.6355822086334229,
+    "member_mean": 0.6350486675898234,
+    "confirmed_mean": null,
+    "members": [
+      "139_ablate_c0_s0",
+      "140_ablate_c0_s1",
+      "141_ablate_c0_s2"
+    ]
+  },
+  "iterations": 50,
+  "iteration_cap": 50,
+  "journal_nodes": 159,
+  "manual_interventions": 0,
+  "build_time_ledger": 5,
+  "stop_reason": "cap",
+  "agent_wall_seconds": 13166.430051199975,
+  "cost": {
+    "tokens_in": 519555.0,
+    "tokens_out": 348260.0,
+    "wall_hours": 3.657341680888882,
+    "compute_hours": 5.121335001587868,
+    "gpu_hours": 0.0,
+    "gpu_note": "Feasibility uses process wall-clock (§2.5/§2.6); compute_hours sums trial elapsed (parallel 3-seed counted separately)",
+    "compute_sum_hours": 5.121335001587868,
+    "agent_wall_clock_hours": 3.657341680888882
+  },
+  "feasibility": {
+    "scored": "agent_wall_clock_hours",
+    "not_scored": "compute_sum_hours",
+    "agent_wall_clock_hours": 3.657341680888882,
+    "compute_sum_hours": 5.121335001587868,
+    "gpu_hours": 0.0,
+    "iterations": 50,
+    "iteration_cap": 50,
+    "tokens_in": 519555.0,
+    "tokens_out": 348260.0,
+    "tokens_total": 867815.0,
+    "non_skip_billed": 45,
+    "tokens_per_non_skip": 19284.777777777777
+  },
+  "stack_coverage": {
+    "draft": {
+      "billed": 3,
+      "skip": 0,
+      "scored": 3
+    },
+    "research": {
+      "billed": 0,
+      "skip": 0,
+      "scored": 0
+    },
+    "ablate": {
+      "billed": 17,
+      "skip": 0,
+      "scored": 0
+    },
+    "ensemble": {
+      "billed": 0,
+      "skip": 0,
+      "scored": 25
+    },
+    "multitask": {
+      "billed": 3,
+      "skip": 0,
+      "scored": 3
+    },
+    "features": {
+      "billed": 8,
+      "skip": 1,
+      "scored": 6
+    },
+    "watch_time": {
+      "billed": 3,
+      "skip": 2,
+      "scored": 1
+    },
+    "architecture": {
+      "billed": 5,
+      "skip": 0,
+      "scored": 4
+    },
+    "sequence": {
+      "billed": 1,
+      "skip": 0,
+      "scored": 1
+    },
+    "capacity": {
+      "billed": 5,
+      "skip": 1,
+      "scored": 4
+    },
+    "time_shift": {
+      "billed": 2,
+      "skip": 0,
+      "scored": 2
+    },
+    "loss": {
+      "billed": 3,
+      "skip": 1,
+      "scored": 2
+    }
+  },
+  "integrity": {
+    "start": {
+      "src_hash": "6147071d3c8e481e",
+      "git_head": "05b508e8162e679bf5b14990af81b4c8329f7358",
+      "git_dirty": 158,
+      "n_files": 103
+    },
+    "end": {
+      "src_hash": "6147071d3c8e481e",
+      "git_head": "05b508e8162e679bf5b14990af81b4c8329f7358",
+      "git_dirty": 158,
+      "n_files": 103
+    },
+    "unchanged": true
+  },
+  "knowledge": {
+    "n_research": 0,
+    "n_read_paper": 4,
+    "n_confirmed": 16,
+    "run_facts": "run_facts.md"
+  },
+  "nodes": [
+    {
+      "id": "000_fm_baseline",
+      "stage": "draft",
+      "arm": "draft",
+      "primary": 0.6014695167541504,
+      "buggy": false,
+      "hypothesis": "Reproduce official numpy FM on the kit split."
+    },
+    {
+      "id": "000_fm_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6017608642578125,
+      "buggy": false,
+      "hypothesis": "Reproduce official numpy FM on the kit split."
+    },
+    {
+      "id": "001_fm_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6010903120040894,
+      "buggy": false,
+      "hypothesis": "Reproduce official numpy FM on the kit split."
+    },
+    {
+      "id": "003_eda",
+      "stage": "eda",
+      "arm": "eda",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "pair_cover=0.016 new_video=0.001 new_user=0.019 pos_train=0.337 pos_valid=0.313 valid_p50=4 valid_p90=12 train_p50=31 train_p90=97 train_mean=43.5 valid_mean=5.6 rows_per_user train/valid=7.8x single_imp=0.175 pos_drift=0.0059"
+    },
+    {
+      "id": "004_research",
+      "stage": "research",
+      "arm": "research",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "Harness scan of arXiv and public GitHub for KuaiRand ranking (not a named trial)."
+    },
+    {
+      "id": "005_read_paper",
+      "stage": "read_paper",
+      "arm": "research",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "Harness README ingest (catalog; not a named trial)."
+    },
+    {
+      "id": "006_read_paper",
+      "stage": "read_paper",
+      "arm": "research",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "Harness README ingest (catalog; not a named trial)."
+    },
+    {
+      "id": "007_draft",
+      "stage": "draft",
+      "arm": "draft",
+      "primary": 0.6039175987243652,
+      "buggy": false,
+      "hypothesis": "The incumbent official FM uses pointwise logloss, which optimizes calibrated classification of long_view rather than the within-user ordering that GAUC and nDCG@5 measure. bpr_global is a pairwise global ranking loss that directly rewards larger score gaps between positive and negative pairs, so it should reorder each user's logged impressions more correctly and improve both ranking metrics. A prior 3-seed measurement on the same Pure task with this exact patch reached mean 0.60282 versus 0.60144 for the logloss baseline, so I expect a similar gain here. If the gain does not reproduce, it would suggest bpr_global overfits to global pair statistics rather than per-user rank position, and I would fall back to a feature-side or sequence-side patch."
+    },
+    {
+      "id": "008_draft",
+      "stage": "draft",
+      "arm": "draft",
+      "primary": 0.5771182775497437,
+      "buggy": false,
+      "hypothesis": "DeepFM extends the FM baseline with a deep tower over the same flattened fields, enabling higher-order nonlinear interactions between user, video, and content features that a linear FM cannot capture. In within-user ranking of logged impressions, this should better separate long-view from short-view items, especially for users with diverse interest profiles. The measured 3-seed cross-run gain for arch=deepfm (+0.0024 over FM) supports this mechanism, and it is a legal untried atomic patch on this parent."
+    },
+    {
+      "id": "009_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6039175987243652,
+      "buggy": false,
+      "hypothesis": "bpr_global already improves within-user ranking by optimizing pairwise order across the user's impression log, and the parent screen showed a clear gain over logloss. Adding bpr_decay_sample should weight more recent positive/negative pairs more heavily, which aligns training with the validation distribution where users have short, recent sessions and top-of-list precision matters. This should primarily improve nDCG@5 rather than GAUC, since recency is more important for the first few ranked items. The temporal front/back agreement in the parent screen also suggests recency-aware sampling can strengthen the signal. I expect a small positive delta relative to the parent, on the order of 0.0005-0.0015."
+    },
+    {
+      "id": "010_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.602493405342102,
+      "buggy": false,
+      "hypothesis": "bpr_global already improves within-user ranking by optimizing pairwise order across the user's impression log, and the parent screen showed a clear gain over logloss. Adding bpr_decay_sample should weight more recent positive/negative pairs more heavily, which aligns training with the validation distribution where users have short, recent sessions and top-of-list precision matters. This should primarily improve nDCG@5 rather than GAUC, since recency is more important for the first few ranked items. The temporal front/back agreement in the parent screen also suggests recency-aware sampling can strengthen the signal. I expect a small positive delta relative to the parent, on the order of 0.0005-0.0015."
+    },
+    {
+      "id": "011_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6020482778549194,
+      "buggy": false,
+      "hypothesis": "bpr_global already improves within-user ranking by optimizing pairwise order across the user's impression log, and the parent screen showed a clear gain over logloss. Adding bpr_decay_sample should weight more recent positive/negative pairs more heavily, which aligns training with the validation distribution where users have short, recent sessions and top-of-list precision matters. This should primarily improve nDCG@5 rather than GAUC, since recency is more important for the first few ranked items. The temporal front/back agreement in the parent screen also suggests recency-aware sampling can strengthen the signal. I expect a small positive delta relative to the parent, on the order of 0.0005-0.0015."
+    },
+    {
+      "id": "012_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=0 n_pos=3/3 mean_delta=0.0014 vs_mean=0.6014402310053507 pairwise=[]"
+    },
+    {
+      "id": "013_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.5771182775497437,
+      "buggy": false,
+      "hypothesis": "The incumbent uses global BPR (bpr_global) with uniform pair sampling. KuaiRand-Pure logs show strong temporal drift (train pos_rate 0.337 vs valid 0.313, 7.8x more rows per user in train, train mean watch 43.5s vs valid 5.6s), so old impressions may dominate pairwise gradients and drag ranking toward stale preferences. Enabling bpr_decay_sample should downweight/subsample pairs from older interactions and focus the pairwise loss on recent user state, which should transfer better to the shorter validation impressions. I expect a small positive delta in mean(GAUC, nDCG@5); if the gain does not exceed the ~0.0009 se_val noise, the hypothesis is falsified."
+    },
+    {
+      "id": "014_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.5779005289077759,
+      "buggy": false,
+      "hypothesis": "The incumbent uses global BPR (bpr_global) with uniform pair sampling. KuaiRand-Pure logs show strong temporal drift (train pos_rate 0.337 vs valid 0.313, 7.8x more rows per user in train, train mean watch 43.5s vs valid 5.6s), so old impressions may dominate pairwise gradients and drag ranking toward stale preferences. Enabling bpr_decay_sample should downweight/subsample pairs from older interactions and focus the pairwise loss on recent user state, which should transfer better to the shorter validation impressions. I expect a small positive delta in mean(GAUC, nDCG@5); if the gain does not exceed the ~0.0009 se_val noise, the hypothesis is falsified."
+    },
+    {
+      "id": "015_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.5781327486038208,
+      "buggy": false,
+      "hypothesis": "The incumbent uses global BPR (bpr_global) with uniform pair sampling. KuaiRand-Pure logs show strong temporal drift (train pos_rate 0.337 vs valid 0.313, 7.8x more rows per user in train, train mean watch 43.5s vs valid 5.6s), so old impressions may dominate pairwise gradients and drag ranking toward stale preferences. Enabling bpr_decay_sample should downweight/subsample pairs from older interactions and focus the pairwise loss on recent user state, which should transfer better to the shorter validation impressions. I expect a small positive delta in mean(GAUC, nDCG@5); if the gain does not exceed the ~0.0009 se_val noise, the hypothesis is falsified."
+    },
+    {
+      "id": "016_ablate_c1_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.5771182775497437,
+      "buggy": false,
+      "hypothesis": "The incumbent uses global BPR (bpr_global) with uniform pair sampling. KuaiRand-Pure logs show strong temporal drift (train pos_rate 0.337 vs valid 0.313, 7.8x more rows per user in train, train mean watch 43.5s vs valid 5.6s), so old impressions may dominate pairwise gradients and drag ranking toward stale preferences. Enabling bpr_decay_sample should downweight/subsample pairs from older interactions and focus the pairwise loss on recent user state, which should transfer better to the shorter validation impressions. I expect a small positive delta in mean(GAUC, nDCG@5); if the gain does not exceed the ~0.0009 se_val noise, the hypothesis is falsified."
+    },
+    {
+      "id": "017_ablate_c1_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.5779005289077759,
+      "buggy": false,
+      "hypothesis": "The incumbent uses global BPR (bpr_global) with uniform pair sampling. KuaiRand-Pure logs show strong temporal drift (train pos_rate 0.337 vs valid 0.313, 7.8x more rows per user in train, train mean watch 43.5s vs valid 5.6s), so old impressions may dominate pairwise gradients and drag ranking toward stale preferences. Enabling bpr_decay_sample should downweight/subsample pairs from older interactions and focus the pairwise loss on recent user state, which should transfer better to the shorter validation impressions. I expect a small positive delta in mean(GAUC, nDCG@5); if the gain does not exceed the ~0.0009 se_val noise, the hypothesis is falsified."
+    },
+    {
+      "id": "018_ablate_c1_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.5781327486038208,
+      "buggy": false,
+      "hypothesis": "The incumbent uses global BPR (bpr_global) with uniform pair sampling. KuaiRand-Pure logs show strong temporal drift (train pos_rate 0.337 vs valid 0.313, 7.8x more rows per user in train, train mean watch 43.5s vs valid 5.6s), so old impressions may dominate pairwise gradients and drag ranking toward stale preferences. Enabling bpr_decay_sample should downweight/subsample pairs from older interactions and focus the pairwise loss on recent user state, which should transfer better to the shorter validation impressions. I expect a small positive delta in mean(GAUC, nDCG@5); if the gain does not exceed the ~0.0009 se_val noise, the hypothesis is falsified."
+    },
+    {
+      "id": "019_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=None n_pos=0/0 mean_delta=0.0000 vs_mean=0.6028197606404623 pairwise=[{'left': 0, 'right': 1, 'seeds': [0, 1, 2], 'deltas_right_minus_left': [0.0, 0.0, 0.0], 'n_pos_right': 0, 'n_neg_right': 0, 'n_seeds': 3, 'mean_delta': 0.0}]"
+    },
+    {
+      "id": "020_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6044114755754368,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['009_ablate_c0_s0', '010_ablate_c0_s1', '011_ablate_c0_s2']."
+    },
+    {
+      "id": "021_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6018895975880066,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['000_fm_baseline', '000_fm_s1', '001_fm_s2']."
+    },
+    {
+      "id": "022_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6018895975880066,
+      "buggy": false,
+      "hypothesis": "Valid-only weighted blend of complementary identities ['000_fm_baseline', '000_fm_s1', '001_fm_s2', '009_ablate_c0_s0', '010_ablate_c0_s1', '011_ablate_c0_s2', '016_ablate_c1_s0', '017_ablate_c1_s1', '018_ablate_c1_s2', '013_ablate_c0_s0', '014_ablate_c0_s1', '015_ablate_c0_s2'] (low-corr pair; linear + product term; not ARIMA)."
+    },
+    {
+      "id": "023_multitask",
+      "stage": "improve",
+      "arm": "multitask",
+      "primary": 0.6035640239715576,
+      "buggy": false,
+      "hypothesis": "Auxiliary click prediction (aux_click) adds a second BCE head that shares the FM embedding/representation with the main long_view BPR loss. Because the data has 33.7% positive long_view but likely a denser click signal, the auxiliary task can provide extra supervision on user-item interactions, potentially improving representation quality and within-user ranking for users with sparse long_view labels. I expect a small positive delta around 0.001, similar to other multi-task gains. If the delta is negative or within CI of zero, it would suggest the auxiliary task introduces noise or competes with the BPR objective, falsifying the hypothesis."
+    },
+    {
+      "id": "024_features",
+      "stage": "improve",
+      "arm": "features",
+      "primary": 0.6154685020446777,
+      "buggy": false,
+      "hypothesis": "Within a user's logged impressions, the position of an item in the session carries recency information; the most recent impressions are more likely to reflect the user's current consumption context, while older impressions in the 7.8x longer train sessions add stale signal for the short 4-12 impression valid ranking window. use_time_decay applies a causal recency-decay to session features so the model up-weights recent items and down-weights old ones, changing the relative scores among a user's impressions. This is a pure feature/weighting change on top of the confirmed bpr_global identity, so it should not disturb the learned pairwise preference signal. Falsify if GAUC/nDCG@5 does not improve on the valid split by at least 0.0003 over the incumbent bag member mean."
+    },
+    {
+      "id": "025_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6154685020446777,
+      "buggy": false,
+      "hypothesis": "The screened parent identity (use_time_decay=True on top of the bpr_global FM) improved ranking substantially on the first seed. I hypothesize that this time-decay feature captures recency/session information that is complementary to the global pairwise loss. Adding bpr_decay_sample (decay-aware pairwise sampling) should further sharpen within-user ranking by downweighting stale interactions and focusing gradient steps on recent preference signal. The ablation will confirm the parent with 3 seeds and test whether the extra loss patch gives a small additional gain."
+    },
+    {
+      "id": "026_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6162947416305542,
+      "buggy": false,
+      "hypothesis": "The screened parent identity (use_time_decay=True on top of the bpr_global FM) improved ranking substantially on the first seed. I hypothesize that this time-decay feature captures recency/session information that is complementary to the global pairwise loss. Adding bpr_decay_sample (decay-aware pairwise sampling) should further sharpen within-user ranking by downweighting stale interactions and focusing gradient steps on recent preference signal. The ablation will confirm the parent with 3 seeds and test whether the extra loss patch gives a small additional gain."
+    },
+    {
+      "id": "027_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6181862950325012,
+      "buggy": false,
+      "hypothesis": "The screened parent identity (use_time_decay=True on top of the bpr_global FM) improved ranking substantially on the first seed. I hypothesize that this time-decay feature captures recency/session information that is complementary to the global pairwise loss. Adding bpr_decay_sample (decay-aware pairwise sampling) should further sharpen within-user ranking by downweighting stale interactions and focusing gradient steps on recent preference signal. The ablation will confirm the parent with 3 seeds and test whether the extra loss patch gives a small additional gain."
+    },
+    {
+      "id": "028_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=0 n_pos=3/3 mean_delta=0.0138 vs_mean=0.6028197606404623 pairwise=[]"
+    },
+    {
+      "id": "029_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6188331873926384,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['025_ablate_c0_s0', '026_ablate_c0_s1', '027_ablate_c0_s2']."
+    },
+    {
+      "id": "030_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6188331873926384,
+      "buggy": false,
+      "hypothesis": "Valid-only weighted blend of complementary identities ['000_fm_baseline', '000_fm_s1', '001_fm_s2', '009_ablate_c0_s0', '010_ablate_c0_s1', '011_ablate_c0_s2', '016_ablate_c1_s0', '017_ablate_c1_s1', '018_ablate_c1_s2', '025_ablate_c0_s0', '026_ablate_c0_s1', '027_ablate_c0_s2'] (low-corr pair; linear + product term; not ARIMA)."
+    },
+    {
+      "id": "031_watch_time",
+      "stage": "improve",
+      "arm": "watch_time",
+      "primary": 0.6168627738952637,
+      "buggy": false,
+      "hypothesis": "Long_view is a binary threshold on watch time, so examples with longer play_time carry stronger positive evidence for ranking. wlr_play re-weights the main loss by log1p(play_time), pushing the model to rank longer-watch items ahead within each user's logged impression list, which should transfer to GAUC/nDCG@5 on valid where play_time is available. The incumbent already benefits from bpr_global and time_decay; adding wlr_play is a complementary local weighting that does not change feature IDs. Risk is that over-weighting extremes distorts the binary target; if so the screen will show negative dP and confirm the low prior."
+    },
+    {
+      "id": "032_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6168627738952637,
+      "buggy": false,
+      "hypothesis": "The parent 031 identity adds wlr_play (play-time weighting) but hurt nDCG. I hypothesize that bpr_decay_sample, which decays the sampling weight of older interaction pairs in the bpr_global loss, will restore ranking quality by focusing BPR on recent user preference signals. This complements the already-active use_time_decay causal recency feature. If the 3-seed CI for c1 minus c0 has upper bound below 0, the hypothesis is falsified."
+    },
+    {
+      "id": "033_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6156612038612366,
+      "buggy": false,
+      "hypothesis": "The parent 031 identity adds wlr_play (play-time weighting) but hurt nDCG. I hypothesize that bpr_decay_sample, which decays the sampling weight of older interaction pairs in the bpr_global loss, will restore ranking quality by focusing BPR on recent user preference signals. This complements the already-active use_time_decay causal recency feature. If the 3-seed CI for c1 minus c0 has upper bound below 0, the hypothesis is falsified."
+    },
+    {
+      "id": "034_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6176638603210449,
+      "buggy": false,
+      "hypothesis": "The parent 031 identity adds wlr_play (play-time weighting) but hurt nDCG. I hypothesize that bpr_decay_sample, which decays the sampling weight of older interaction pairs in the bpr_global loss, will restore ranking quality by focusing BPR on recent user preference signals. This complements the already-active use_time_decay causal recency feature. If the 3-seed CI for c1 minus c0 has upper bound below 0, the hypothesis is falsified."
+    },
+    {
+      "id": "035_ablate_c1_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6168627738952637,
+      "buggy": false,
+      "hypothesis": "The parent 031 identity adds wlr_play (play-time weighting) but hurt nDCG. I hypothesize that bpr_decay_sample, which decays the sampling weight of older interaction pairs in the bpr_global loss, will restore ranking quality by focusing BPR on recent user preference signals. This complements the already-active use_time_decay causal recency feature. If the 3-seed CI for c1 minus c0 has upper bound below 0, the hypothesis is falsified."
+    },
+    {
+      "id": "036_ablate_c1_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6156612038612366,
+      "buggy": false,
+      "hypothesis": "The parent 031 identity adds wlr_play (play-time weighting) but hurt nDCG. I hypothesize that bpr_decay_sample, which decays the sampling weight of older interaction pairs in the bpr_global loss, will restore ranking quality by focusing BPR on recent user preference signals. This complements the already-active use_time_decay causal recency feature. If the 3-seed CI for c1 minus c0 has upper bound below 0, the hypothesis is falsified."
+    },
+    {
+      "id": "037_ablate_c1_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6176638603210449,
+      "buggy": false,
+      "hypothesis": "The parent 031 identity adds wlr_play (play-time weighting) but hurt nDCG. I hypothesize that bpr_decay_sample, which decays the sampling weight of older interaction pairs in the bpr_global loss, will restore ranking quality by focusing BPR on recent user preference signals. This complements the already-active use_time_decay causal recency feature. If the 3-seed CI for c1 minus c0 has upper bound below 0, the hypothesis is falsified."
+    },
+    {
+      "id": "038_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=None n_pos=0/0 mean_delta=0.0000 vs_mean=0.616649846235911 pairwise=[{'left': 0, 'right': 1, 'seeds': [0, 1, 2], 'deltas_right_minus_left': [0.0, 0.0, 0.0], 'n_pos_right': 0, 'n_neg_right': 0, 'n_seeds': 3, 'mean_delta': 0.0}]"
+    },
+    {
+      "id": "039_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6191916158132778,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['032_ablate_c0_s0', '033_ablate_c0_s1', '034_ablate_c0_s2']."
+    },
+    {
+      "id": "040_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6191916158132778,
+      "buggy": false,
+      "hypothesis": "Valid-only weighted blend of complementary identities ['025_ablate_c0_s0', '026_ablate_c0_s1', '027_ablate_c0_s2', '032_ablate_c0_s0', '033_ablate_c0_s1', '034_ablate_c0_s2'] (low-corr pair; linear + product term; not ARIMA)."
+    },
+    {
+      "id": "041_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6194007938005737,
+      "buggy": false,
+      "hypothesis": "Rank-average near-top distinct identities ['025_ablate_c0_s0', '026_ablate_c0_s1', '027_ablate_c0_s2', '032_ablate_c0_s0', '033_ablate_c0_s1', '034_ablate_c0_s2'] (not a same-config seed bag)."
+    },
+    {
+      "id": "042_crossover",
+      "stage": "improve",
+      "arm": "features",
+      "primary": 0.6168627738952637,
+      "buggy": false,
+      "hypothesis": "legal_untried fallback"
+    },
+    {
+      "id": "043_crossover",
+      "stage": "improve",
+      "arm": "features",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "Config crossover: keep incumbent identity, add {'use_time_decay': True} from a near-top partner (not an evolutionary search; at most 3 merges per run)."
+    },
+    {
+      "id": "044_features",
+      "stage": "improve",
+      "arm": "features",
+      "primary": 0.6167149543762207,
+      "buggy": false,
+      "hypothesis": "On KuaiRand-Pure, logged order within a user's impressions carries session-momentum and recency signals; the recent win of use_time_decay (+0.0127) shows causal positional features matter. use_beh_rank should add an item-side ordinal/behavioral-rank signal that is not captured by static IDs or by time-decay alone. This changes within-user ranking by up-weighting items that are behaviorally prominent in the user's immediate context, nudging long-view items above short-view distractors. I expect a small positive primary gain; if the 1-seed CI on this parent crosses below zero, the feature is not complementary to the current ensemble identity."
+    },
+    {
+      "id": "045_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6167149543762207,
+      "buggy": false,
+      "hypothesis": "Within-user logged impressions are highly session-structured (train/valid row ratio 7.8x, p50/p90 shifts 31->4 and 97->12, positive drift 0.0059), so uniformly sampled BPR pairs may under-weight recent negative impressions that matter for next-item ranking. bpr_decay_sample applies causal recency decay to the negative-sampling distribution, sharpening pairwise gradients toward temporally local comparisons while keeping the proven bpr_global loss. I will ablate the failed use_beh_rank identity (044) against this one legal loss patch to separate feature signal from loss-sampling signal. Expected small positive delta (~0.001) in mean(GAUC, nDCG@5); if c1 does not beat c0 by 3/3 seeds with a positive CI, the decay-sampling mechanism is not helping on this parent."
+    },
+    {
+      "id": "046_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6177133321762085,
+      "buggy": false,
+      "hypothesis": "Within-user logged impressions are highly session-structured (train/valid row ratio 7.8x, p50/p90 shifts 31->4 and 97->12, positive drift 0.0059), so uniformly sampled BPR pairs may under-weight recent negative impressions that matter for next-item ranking. bpr_decay_sample applies causal recency decay to the negative-sampling distribution, sharpening pairwise gradients toward temporally local comparisons while keeping the proven bpr_global loss. I will ablate the failed use_beh_rank identity (044) against this one legal loss patch to separate feature signal from loss-sampling signal. Expected small positive delta (~0.001) in mean(GAUC, nDCG@5); if c1 does not beat c0 by 3/3 seeds with a positive CI, the decay-sampling mechanism is not helping on this parent."
+    },
+    {
+      "id": "047_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6225053071975708,
+      "buggy": false,
+      "hypothesis": "Within-user logged impressions are highly session-structured (train/valid row ratio 7.8x, p50/p90 shifts 31->4 and 97->12, positive drift 0.0059), so uniformly sampled BPR pairs may under-weight recent negative impressions that matter for next-item ranking. bpr_decay_sample applies causal recency decay to the negative-sampling distribution, sharpening pairwise gradients toward temporally local comparisons while keeping the proven bpr_global loss. I will ablate the failed use_beh_rank identity (044) against this one legal loss patch to separate feature signal from loss-sampling signal. Expected small positive delta (~0.001) in mean(GAUC, nDCG@5); if c1 does not beat c0 by 3/3 seeds with a positive CI, the decay-sampling mechanism is not helping on this parent."
+    },
+    {
+      "id": "048_ablate_c1_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6167149543762207,
+      "buggy": false,
+      "hypothesis": "Within-user logged impressions are highly session-structured (train/valid row ratio 7.8x, p50/p90 shifts 31->4 and 97->12, positive drift 0.0059), so uniformly sampled BPR pairs may under-weight recent negative impressions that matter for next-item ranking. bpr_decay_sample applies causal recency decay to the negative-sampling distribution, sharpening pairwise gradients toward temporally local comparisons while keeping the proven bpr_global loss. I will ablate the failed use_beh_rank identity (044) against this one legal loss patch to separate feature signal from loss-sampling signal. Expected small positive delta (~0.001) in mean(GAUC, nDCG@5); if c1 does not beat c0 by 3/3 seeds with a positive CI, the decay-sampling mechanism is not helping on this parent."
+    },
+    {
+      "id": "049_ablate_c1_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6177133321762085,
+      "buggy": false,
+      "hypothesis": "Within-user logged impressions are highly session-structured (train/valid row ratio 7.8x, p50/p90 shifts 31->4 and 97->12, positive drift 0.0059), so uniformly sampled BPR pairs may under-weight recent negative impressions that matter for next-item ranking. bpr_decay_sample applies causal recency decay to the negative-sampling distribution, sharpening pairwise gradients toward temporally local comparisons while keeping the proven bpr_global loss. I will ablate the failed use_beh_rank identity (044) against this one legal loss patch to separate feature signal from loss-sampling signal. Expected small positive delta (~0.001) in mean(GAUC, nDCG@5); if c1 does not beat c0 by 3/3 seeds with a positive CI, the decay-sampling mechanism is not helping on this parent."
+    },
+    {
+      "id": "050_ablate_c1_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6225053071975708,
+      "buggy": false,
+      "hypothesis": "Within-user logged impressions are highly session-structured (train/valid row ratio 7.8x, p50/p90 shifts 31->4 and 97->12, positive drift 0.0059), so uniformly sampled BPR pairs may under-weight recent negative impressions that matter for next-item ranking. bpr_decay_sample applies causal recency decay to the negative-sampling distribution, sharpening pairwise gradients toward temporally local comparisons while keeping the proven bpr_global loss. I will ablate the failed use_beh_rank identity (044) against this one legal loss patch to separate feature signal from loss-sampling signal. Expected small positive delta (~0.001) in mean(GAUC, nDCG@5); if c1 does not beat c0 by 3/3 seeds with a positive CI, the decay-sampling mechanism is not helping on this parent."
+    },
+    {
+      "id": "051_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=None n_pos=0/0 mean_delta=0.0000 vs_mean=0.6167292793591818 pairwise=[{'left': 0, 'right': 1, 'seeds': [0, 1, 2], 'deltas_right_minus_left': [0.0, 0.0, 0.0], 'n_pos_right': 0, 'n_neg_right': 0, 'n_seeds': 3, 'mean_delta': 0.0}]"
+    },
+    {
+      "id": "052_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6212906903100947,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['045_ablate_c0_s0', '046_ablate_c0_s1', '047_ablate_c0_s2']."
+    },
+    {
+      "id": "053_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6212906903100947,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['048_ablate_c1_s0', '049_ablate_c1_s1', '050_ablate_c1_s2']."
+    },
+    {
+      "id": "054_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6212906903100947,
+      "buggy": false,
+      "hypothesis": "Valid-only weighted blend of complementary identities ['045_ablate_c0_s0', '046_ablate_c0_s1', '047_ablate_c0_s2', '048_ablate_c1_s0', '049_ablate_c1_s1', '050_ablate_c1_s2'] (low-corr pair; linear + product term; not ARIMA)."
+    },
+    {
+      "id": "055_crossover",
+      "stage": "improve",
+      "arm": "features",
+      "primary": 0.6167149543762207,
+      "buggy": false,
+      "hypothesis": "Config crossover: keep incumbent identity, add {'bpr_decay_sample': True} from a near-top partner (not an evolutionary search; at most 3 merges per run)."
+    },
+    {
+      "id": "056_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6167149543762207,
+      "buggy": false,
+      "hypothesis": "This ablate tests the screened parent identity from 055_crossover, which added bpr_decay_sample=True on top of the incumbent 052_ensemble. The 1-seed screen measured primary 0.61671, a -0.00226 delta against the vs_object bar of 0.61898, suggesting that the decayed pairwise sampling hurts within-user ranking rather than helping. We will run the same identity on seeds 0/1/2 to obtain a 3-seed mean and determine whether the negative delta is reliable or just noise. If the mean remains below vs_object with CI excluding zero, bpr_decay_sample stays rejected; if it falls within noise, the patch may be reconsidered on a future parent. Since the arm is loss/local ranking, this directly validates the loss-side patch before any further exploration."
+    },
+    {
+      "id": "057_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6177133321762085,
+      "buggy": false,
+      "hypothesis": "This ablate tests the screened parent identity from 055_crossover, which added bpr_decay_sample=True on top of the incumbent 052_ensemble. The 1-seed screen measured primary 0.61671, a -0.00226 delta against the vs_object bar of 0.61898, suggesting that the decayed pairwise sampling hurts within-user ranking rather than helping. We will run the same identity on seeds 0/1/2 to obtain a 3-seed mean and determine whether the negative delta is reliable or just noise. If the mean remains below vs_object with CI excluding zero, bpr_decay_sample stays rejected; if it falls within noise, the patch may be reconsidered on a future parent. Since the arm is loss/local ranking, this directly validates the loss-side patch before any further exploration."
+    },
+    {
+      "id": "058_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6225053071975708,
+      "buggy": false,
+      "hypothesis": "This ablate tests the screened parent identity from 055_crossover, which added bpr_decay_sample=True on top of the incumbent 052_ensemble. The 1-seed screen measured primary 0.61671, a -0.00226 delta against the vs_object bar of 0.61898, suggesting that the decayed pairwise sampling hurts within-user ranking rather than helping. We will run the same identity on seeds 0/1/2 to obtain a 3-seed mean and determine whether the negative delta is reliable or just noise. If the mean remains below vs_object with CI excluding zero, bpr_decay_sample stays rejected; if it falls within noise, the patch may be reconsidered on a future parent. Since the arm is loss/local ranking, this directly validates the loss-side patch before any further exploration."
+    },
+    {
+      "id": "059_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=None n_pos=0/0 mean_delta=0.0000 vs_mean=0.6189778645833334 pairwise=[]"
+    },
+    {
+      "id": "060_architecture",
+      "stage": "improve",
+      "arm": "architecture",
+      "primary": 0.6273303031921387,
+      "buggy": false,
+      "hypothesis": "The incumbent is a bagged FM with time-decay, global BPR, and play-time weighting. Switching the interaction architecture from FM to DeepFM adds a hidden MLP over the flattened field embeddings, which can capture nonlinear feature crosses that the plain FM inner product misses. On this within-user ranking task, richer interaction modeling should produce more accurate relative scores for each user's logged impressions, improving both GAUC and nDCG@5. The change is atomic and keeps all other incumbent flags fixed, so any movement is attributable to the architecture. If DeepFM does not help, it would suggest the existing time-decay and ranking losses already capture the useful signal."
+    },
+    {
+      "id": "061_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6273303031921387,
+      "buggy": false,
+      "hypothesis": "The screened parent identity (deepfm) improves ranking by capturing higher-order feature interactions, which may change the optimal pairwise sampling budget for the BPR global loss. Increasing bpr_pairs_cap from 32 to 64 gives each user more negative samples per positive, potentially improving within-user ranking for users with many impressions (train p50=31). If the loss is already saturated, the extra cap may have negligible or negative effect by overemphasizing heavy users. This ablate confirms the deepfm parent with 3 seeds and tests the atomic bpr_pairs_cap patch."
+    },
+    {
+      "id": "062_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6257636547088623,
+      "buggy": false,
+      "hypothesis": "The screened parent identity (deepfm) improves ranking by capturing higher-order feature interactions, which may change the optimal pairwise sampling budget for the BPR global loss. Increasing bpr_pairs_cap from 32 to 64 gives each user more negative samples per positive, potentially improving within-user ranking for users with many impressions (train p50=31). If the loss is already saturated, the extra cap may have negligible or negative effect by overemphasizing heavy users. This ablate confirms the deepfm parent with 3 seeds and tests the atomic bpr_pairs_cap patch."
+    },
+    {
+      "id": "063_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6240842342376709,
+      "buggy": false,
+      "hypothesis": "The screened parent identity (deepfm) improves ranking by capturing higher-order feature interactions, which may change the optimal pairwise sampling budget for the BPR global loss. Increasing bpr_pairs_cap from 32 to 64 gives each user more negative samples per positive, potentially improving within-user ranking for users with many impressions (train p50=31). If the loss is already saturated, the extra cap may have negligible or negative effect by overemphasizing heavy users. This ablate confirms the deepfm parent with 3 seeds and tests the atomic bpr_pairs_cap patch."
+    },
+    {
+      "id": "064_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=0 n_pos=3/3 mean_delta=0.0067 vs_mean=0.6189778645833334 pairwise=[]"
+    },
+    {
+      "id": "065_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6305947627446515,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['061_ablate_c0_s0', '062_ablate_c0_s1', '063_ablate_c0_s2']."
+    },
+    {
+      "id": "066_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6305947627446515,
+      "buggy": false,
+      "hypothesis": "Valid-only weighted blend of complementary identities ['000_fm_baseline', '000_fm_s1', '001_fm_s2', '009_ablate_c0_s0', '010_ablate_c0_s1', '011_ablate_c0_s2', '016_ablate_c1_s0', '017_ablate_c1_s1', '018_ablate_c1_s2', '035_ablate_c1_s0', '036_ablate_c1_s1', '037_ablate_c1_s2', '025_ablate_c0_s0', '026_ablate_c0_s1', '027_ablate_c0_s2', '032_ablate_c0_s0', '033_ablate_c0_s1', '034_ablate_c0_s2', '045_ablate_c0_s0', '046_ablate_c0_s1', '047_ablate_c0_s2', '048_ablate_c1_s0', '049_ablate_c1_s1', '050_ablate_c1_s2', '056_ablate_c0_s0', '057_ablate_c0_s1', '058_ablate_c0_s2', '061_ablate_c0_s0', '062_ablate_c0_s1', '063_ablate_c0_s2'] (low-corr pair; linear + product term; not ARIMA)."
+    },
+    {
+      "id": "067_sequence",
+      "stage": "improve",
+      "arm": "sequence",
+      "primary": 0.6256461143493652,
+      "buggy": false,
+      "hypothesis": "The incumbent deepfm scores each candidate from user/item ID and global features but ignores the user's own logged impression history, so within-user ranking cannot adapt to which past items a user engaged with. Adding target-aware DIN-lite attention over the last 20 logged impressions lets each candidate's score be conditioned on the relevance of that user's history to the candidate, changing within-user order even when the user ID is identical. Valid sessions are short (median 4, p90 12), so a sequence length of 20 covers nearly the whole validation history without diluting the signal, while in training it still captures meaningful recent behavior. This should improve both GAUC and nDCG@5 over the deepfm-only member."
+    },
+    {
+      "id": "068_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6256461143493652,
+      "buggy": false,
+      "hypothesis": "The 067_sequence screen added din-sequence features on top of the strong deepfm incumbent but showed a small negative primary delta at 1 seed, so a 3-seed ablate is needed to measure the parent identity precisely. Since the current loss is bpr_global with a default bpr_pairs_cap of 32, I also propose raising the cap to 64 as a legal loss-arm patch; more negative pairs per user may give the sequence features a stronger ranking gradient. If the sequence module is genuinely unhelpful, config 0 should confirm a negative delta; if the cap change interacts positively with the deepfm/sequence representation, config 1 may recover some of the loss. Either way, the ablate gives a reliable 3-seed estimate for the next improvement step."
+    },
+    {
+      "id": "069_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6245526075363159,
+      "buggy": false,
+      "hypothesis": "The 067_sequence screen added din-sequence features on top of the strong deepfm incumbent but showed a small negative primary delta at 1 seed, so a 3-seed ablate is needed to measure the parent identity precisely. Since the current loss is bpr_global with a default bpr_pairs_cap of 32, I also propose raising the cap to 64 as a legal loss-arm patch; more negative pairs per user may give the sequence features a stronger ranking gradient. If the sequence module is genuinely unhelpful, config 0 should confirm a negative delta; if the cap change interacts positively with the deepfm/sequence representation, config 1 may recover some of the loss. Either way, the ablate gives a reliable 3-seed estimate for the next improvement step."
+    },
+    {
+      "id": "070_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6270582675933838,
+      "buggy": false,
+      "hypothesis": "The 067_sequence screen added din-sequence features on top of the strong deepfm incumbent but showed a small negative primary delta at 1 seed, so a 3-seed ablate is needed to measure the parent identity precisely. Since the current loss is bpr_global with a default bpr_pairs_cap of 32, I also propose raising the cap to 64 as a legal loss-arm patch; more negative pairs per user may give the sequence features a stronger ranking gradient. If the sequence module is genuinely unhelpful, config 0 should confirm a negative delta; if the cap change interacts positively with the deepfm/sequence representation, config 1 may recover some of the loss. Either way, the ablate gives a reliable 3-seed estimate for the next improvement step."
+    },
+    {
+      "id": "071_ablate_c1_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6256461143493652,
+      "buggy": false,
+      "hypothesis": "The 067_sequence screen added din-sequence features on top of the strong deepfm incumbent but showed a small negative primary delta at 1 seed, so a 3-seed ablate is needed to measure the parent identity precisely. Since the current loss is bpr_global with a default bpr_pairs_cap of 32, I also propose raising the cap to 64 as a legal loss-arm patch; more negative pairs per user may give the sequence features a stronger ranking gradient. If the sequence module is genuinely unhelpful, config 0 should confirm a negative delta; if the cap change interacts positively with the deepfm/sequence representation, config 1 may recover some of the loss. Either way, the ablate gives a reliable 3-seed estimate for the next improvement step."
+    },
+    {
+      "id": "072_ablate_c1_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6245526075363159,
+      "buggy": false,
+      "hypothesis": "The 067_sequence screen added din-sequence features on top of the strong deepfm incumbent but showed a small negative primary delta at 1 seed, so a 3-seed ablate is needed to measure the parent identity precisely. Since the current loss is bpr_global with a default bpr_pairs_cap of 32, I also propose raising the cap to 64 as a legal loss-arm patch; more negative pairs per user may give the sequence features a stronger ranking gradient. If the sequence module is genuinely unhelpful, config 0 should confirm a negative delta; if the cap change interacts positively with the deepfm/sequence representation, config 1 may recover some of the loss. Either way, the ablate gives a reliable 3-seed estimate for the next improvement step."
+    },
+    {
+      "id": "073_ablate_c1_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6270582675933838,
+      "buggy": false,
+      "hypothesis": "The 067_sequence screen added din-sequence features on top of the strong deepfm incumbent but showed a small negative primary delta at 1 seed, so a 3-seed ablate is needed to measure the parent identity precisely. Since the current loss is bpr_global with a default bpr_pairs_cap of 32, I also propose raising the cap to 64 as a legal loss-arm patch; more negative pairs per user may give the sequence features a stronger ranking gradient. If the sequence module is genuinely unhelpful, config 0 should confirm a negative delta; if the cap change interacts positively with the deepfm/sequence representation, config 1 may recover some of the loss. Either way, the ablate gives a reliable 3-seed estimate for the next improvement step."
+    },
+    {
+      "id": "074_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=None n_pos=0/0 mean_delta=0.0000 vs_mean=0.625726064046224 pairwise=[{'left': 0, 'right': 1, 'seeds': [0, 1, 2], 'deltas_right_minus_left': [0.0, 0.0, 0.0], 'n_pos_right': 0, 'n_neg_right': 0, 'n_seeds': 3, 'mean_delta': 0.0}]"
+    },
+    {
+      "id": "075_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.628088589047948,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['068_ablate_c0_s0', '069_ablate_c0_s1', '070_ablate_c0_s2']."
+    },
+    {
+      "id": "076_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.628088589047948,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['071_ablate_c1_s0', '072_ablate_c1_s1', '073_ablate_c1_s2']."
+    },
+    {
+      "id": "077_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6305947627446515,
+      "buggy": false,
+      "hypothesis": "Valid-only weighted blend of complementary identities ['061_ablate_c0_s0', '062_ablate_c0_s1', '063_ablate_c0_s2', '068_ablate_c0_s0', '069_ablate_c0_s1', '070_ablate_c0_s2', '071_ablate_c1_s0', '072_ablate_c1_s1', '073_ablate_c1_s2'] (low-corr pair; linear + product term; not ARIMA)."
+    },
+    {
+      "id": "078_watch_time",
+      "stage": "improve",
+      "arm": "watch_time",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "The incumbent deepfm bag already applies wlr_play weighting and time-decay features but has never activated the censored watch-time auxiliary head on this parent. On the current identity, an auxiliary cwm head can regularize the shared feature representation with a cleaner watch-time signal, which may improve within-user long_view ranking on the validation distribution where watch times are much shorter than in training (valid p50=4 vs train p50=31). Although cwm_censor was negative on an older FM baseline, that is a parent-scoped 1-seed result, not a family ban, so a fresh 1-seed screen on the deepfm identity is informative. The effect is expected to be small and possibly negative, but the arm has no other untried watch_time patch."
+    },
+    {
+      "id": "079_features",
+      "stage": "improve",
+      "arm": "features",
+      "primary": 0.6273303031921387,
+      "buggy": false,
+      "hypothesis": "Adding item-based collaborative filtering features (use_itemcf) may improve within-user ranking by capturing item popularity and co-occurrence signals that complement the existing deepfm with time-decay and behavior-rank features. The previous itemcf attempt on an earlier parent was inconclusive, and the current stronger parent (deepfm + time_decay + beh_rank) may interact differently. If itemcf introduces useful cross-item signal, GAUC and nDCG@5 should increase slightly; if it adds noise or redundant features, the effect may be near zero or negative."
+    },
+    {
+      "id": "080_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6273303031921387,
+      "buggy": false,
+      "hypothesis": "The parent identity adds use_itemcf on top of the incumbent deepfm+bpr_global config. Item-based CF scores should provide complementary collaborative signal beyond the existing beh_rank and time-decay features, especially for cold items with low interaction counts. The 1-seed screen showed a +0.0016 primary gain; ablating across three seeds will confirm whether this improvement is stable or just seed noise. If confirmed, the use_itemcf patch becomes part of the new incumbent for the loss arm."
+    },
+    {
+      "id": "081_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6257636547088623,
+      "buggy": false,
+      "hypothesis": "The parent identity adds use_itemcf on top of the incumbent deepfm+bpr_global config. Item-based CF scores should provide complementary collaborative signal beyond the existing beh_rank and time-decay features, especially for cold items with low interaction counts. The 1-seed screen showed a +0.0016 primary gain; ablating across three seeds will confirm whether this improvement is stable or just seed noise. If confirmed, the use_itemcf patch becomes part of the new incumbent for the loss arm."
+    },
+    {
+      "id": "082_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6240842342376709,
+      "buggy": false,
+      "hypothesis": "The parent identity adds use_itemcf on top of the incumbent deepfm+bpr_global config. Item-based CF scores should provide complementary collaborative signal beyond the existing beh_rank and time-decay features, especially for cold items with low interaction counts. The 1-seed screen showed a +0.0016 primary gain; ablating across three seeds will confirm whether this improvement is stable or just seed noise. If confirmed, the use_itemcf patch becomes part of the new incumbent for the loss arm."
+    },
+    {
+      "id": "083_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=None n_pos=0/0 mean_delta=0.0000 vs_mean=0.625726064046224 pairwise=[]"
+    },
+    {
+      "id": "084_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6305947627446515,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['080_ablate_c0_s0', '081_ablate_c0_s1', '082_ablate_c0_s2']."
+    },
+    {
+      "id": "085_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6305947627446515,
+      "buggy": false,
+      "hypothesis": "Valid-only weighted blend of complementary identities ['061_ablate_c0_s0', '062_ablate_c0_s1', '063_ablate_c0_s2', '068_ablate_c0_s0', '069_ablate_c0_s1', '070_ablate_c0_s2', '071_ablate_c1_s0', '072_ablate_c1_s1', '073_ablate_c1_s2', '080_ablate_c0_s0', '081_ablate_c0_s1', '082_ablate_c0_s2'] (low-corr pair; linear + product term; not ARIMA)."
+    },
+    {
+      "id": "086_multitask",
+      "stage": "improve",
+      "arm": "multitask",
+      "primary": 0.623769223690033,
+      "buggy": false,
+      "hypothesis": "Adding the auxiliary click task (aux_click=True) should improve long-view ranking on the current deepfm+time-decay identity. The previous aux_click screen failed on the much weaker FM parent (020_ensemble), where the shared trunk lacked capacity and the dNDCG penalty outweighed GAUC gains. On the current parent, the deepfm trunk, itemcf/time-decay features, and bpr_global ranking loss provide a stronger shared representation, so the click auxiliary should regularize the watch-time main task and improve within-user ordering. If this does not raise primary vs the 0.62573 member mean, the click signal is not complementary to the current watch-time features."
+    },
+    {
+      "id": "087_capacity",
+      "stage": "improve",
+      "arm": "capacity",
+      "primary": 0.6320827007293701,
+      "buggy": false,
+      "hypothesis": "The incumbent DeepFM uses embedding dimension 16; the strong time-decay, itemcf, and global-BPR features already capture most signal, so the model may be over-parameterized on Pure. Reducing k to 8 shrinks item/user embedding capacity, acting as a regularizer that should improve within-user ranking on the small validation exposure sets without losing the cross-feature interactions. If generalization improves, GAUC and nDCG@5 should both rise modestly; if the extra capacity was needed, nDCG@5 or GAUC will fall instead."
+    },
+    {
+      "id": "088_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6320827007293701,
+      "buggy": false,
+      "hypothesis": "Screen 087_capacity found that reducing the FM embedding dimension from 16 to 8 improves primary by about 0.006 over the screen bar on the Pure split, with both GAUC and nDCG moving in the same direction. This suggests that a smaller capacity acts as a regularizer for the within-user ranking task, given the moderate number of rows per user. We ablate this identity with three seeds to confirm that the gain is stable and not a seed artifact, and to obtain a reliable 3-seed mean for comparison against the incumbent. If confirmed, k=8 will become the new capacity setting, and subsequent loss exploration can build on this stronger base."
+    },
+    {
+      "id": "089_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6296977996826172,
+      "buggy": false,
+      "hypothesis": "Screen 087_capacity found that reducing the FM embedding dimension from 16 to 8 improves primary by about 0.006 over the screen bar on the Pure split, with both GAUC and nDCG moving in the same direction. This suggests that a smaller capacity acts as a regularizer for the within-user ranking task, given the moderate number of rows per user. We ablate this identity with three seeds to confirm that the gain is stable and not a seed artifact, and to obtain a reliable 3-seed mean for comparison against the incumbent. If confirmed, k=8 will become the new capacity setting, and subsequent loss exploration can build on this stronger base."
+    },
+    {
+      "id": "090_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6333686709403992,
+      "buggy": false,
+      "hypothesis": "Screen 087_capacity found that reducing the FM embedding dimension from 16 to 8 improves primary by about 0.006 over the screen bar on the Pure split, with both GAUC and nDCG moving in the same direction. This suggests that a smaller capacity acts as a regularizer for the within-user ranking task, given the moderate number of rows per user. We ablate this identity with three seeds to confirm that the gain is stable and not a seed artifact, and to obtain a reliable 3-seed mean for comparison against the incumbent. If confirmed, k=8 will become the new capacity setting, and subsequent loss exploration can build on this stronger base."
+    },
+    {
+      "id": "091_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=0 n_pos=3/3 mean_delta=0.0060 vs_mean=0.625726064046224 pairwise=[]"
+    },
+    {
+      "id": "092_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6333496022436537,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['088_ablate_c0_s0', '089_ablate_c0_s1', '090_ablate_c0_s2']."
+    },
+    {
+      "id": "093_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6333496022436537,
+      "buggy": false,
+      "hypothesis": "Valid-only weighted blend of complementary identities ['025_ablate_c0_s0', '026_ablate_c0_s1', '027_ablate_c0_s2', '032_ablate_c0_s0', '033_ablate_c0_s1', '034_ablate_c0_s2', '045_ablate_c0_s0', '046_ablate_c0_s1', '047_ablate_c0_s2', '048_ablate_c1_s0', '049_ablate_c1_s1', '050_ablate_c1_s2', '056_ablate_c0_s0', '057_ablate_c0_s1', '058_ablate_c0_s2', '061_ablate_c0_s0', '062_ablate_c0_s1', '063_ablate_c0_s2', '068_ablate_c0_s0', '069_ablate_c0_s1', '070_ablate_c0_s2', '071_ablate_c1_s0', '072_ablate_c1_s1', '073_ablate_c1_s2', '080_ablate_c0_s0', '081_ablate_c0_s1', '082_ablate_c0_s2', '088_ablate_c0_s0', '089_ablate_c0_s1', '090_ablate_c0_s2'] (low-corr pair; linear + product term; not ARIMA)."
+    },
+    {
+      "id": "094_read_paper",
+      "stage": "read_paper",
+      "arm": "features",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "Features arm already has use_itemcf, use_beh_rank, and use_time_decay enabled; the only omitted feature key is use_beh_cross, which is a cross-run grave. Reading the time-decay skill may reveal a tuning or mechanism for use_time_decay/bpr_decay_sample that informs the next legal improve patch on this parent."
+    },
+    {
+      "id": "095_time_shift",
+      "stage": "improve",
+      "arm": "time_shift",
+      "primary": 0.6288083791732788,
+      "buggy": false,
+      "hypothesis": "Hour-of-day captures temporal context in the logged within-user sequence: long-view propensity in KuaiRand-Pure varies by hour, and the current model only uses recency decay, not the absolute time bucket. Adding use_hour gives the deep FM a lightweight time-shift feature that can re-rank impressions within a user when the same or similar videos are seen at different hours, without relying on static IDs. The expected gain is modest because recency already explains part of the temporal signal, but the residual hour effect should improve GAUC more than nDCG@5. If the model already saturates temporal information, the patch will show no positive delta."
+    },
+    {
+      "id": "096_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6288083791732788,
+      "buggy": false,
+      "hypothesis": "The parent use_hour screen failed on a 1-seed run, so this ablate obtains a reliable 3-seed estimate of that identity. The extra config turns off bpr_decay_sample, a local ranking-loss sampling component that was harmful on an earlier parent (055_crossover, dP=-0.00226). If bpr_decay_sample's negative effect persists on the current deepfm/k=8 incumbent, disabling it should yield a small gain in mean(GAUC, nDCG@5). This is a legal one-atomic loss-arm patch and does not touch the hidden test or eval split."
+    },
+    {
+      "id": "097_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6321725845336914,
+      "buggy": false,
+      "hypothesis": "The parent use_hour screen failed on a 1-seed run, so this ablate obtains a reliable 3-seed estimate of that identity. The extra config turns off bpr_decay_sample, a local ranking-loss sampling component that was harmful on an earlier parent (055_crossover, dP=-0.00226). If bpr_decay_sample's negative effect persists on the current deepfm/k=8 incumbent, disabling it should yield a small gain in mean(GAUC, nDCG@5). This is a legal one-atomic loss-arm patch and does not touch the hidden test or eval split."
+    },
+    {
+      "id": "098_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6247130632400513,
+      "buggy": false,
+      "hypothesis": "The parent use_hour screen failed on a 1-seed run, so this ablate obtains a reliable 3-seed estimate of that identity. The extra config turns off bpr_decay_sample, a local ranking-loss sampling component that was harmful on an earlier parent (055_crossover, dP=-0.00226). If bpr_decay_sample's negative effect persists on the current deepfm/k=8 incumbent, disabling it should yield a small gain in mean(GAUC, nDCG@5). This is a legal one-atomic loss-arm patch and does not touch the hidden test or eval split."
+    },
+    {
+      "id": "099_ablate_c1_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6288083791732788,
+      "buggy": false,
+      "hypothesis": "The parent use_hour screen failed on a 1-seed run, so this ablate obtains a reliable 3-seed estimate of that identity. The extra config turns off bpr_decay_sample, a local ranking-loss sampling component that was harmful on an earlier parent (055_crossover, dP=-0.00226). If bpr_decay_sample's negative effect persists on the current deepfm/k=8 incumbent, disabling it should yield a small gain in mean(GAUC, nDCG@5). This is a legal one-atomic loss-arm patch and does not touch the hidden test or eval split."
+    },
+    {
+      "id": "100_ablate_c1_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6321725845336914,
+      "buggy": false,
+      "hypothesis": "The parent use_hour screen failed on a 1-seed run, so this ablate obtains a reliable 3-seed estimate of that identity. The extra config turns off bpr_decay_sample, a local ranking-loss sampling component that was harmful on an earlier parent (055_crossover, dP=-0.00226). If bpr_decay_sample's negative effect persists on the current deepfm/k=8 incumbent, disabling it should yield a small gain in mean(GAUC, nDCG@5). This is a legal one-atomic loss-arm patch and does not touch the hidden test or eval split."
+    },
+    {
+      "id": "101_ablate_c1_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6247130632400513,
+      "buggy": false,
+      "hypothesis": "The parent use_hour screen failed on a 1-seed run, so this ablate obtains a reliable 3-seed estimate of that identity. The extra config turns off bpr_decay_sample, a local ranking-loss sampling component that was harmful on an earlier parent (055_crossover, dP=-0.00226). If bpr_decay_sample's negative effect persists on the current deepfm/k=8 incumbent, disabling it should yield a small gain in mean(GAUC, nDCG@5). This is a legal one-atomic loss-arm patch and does not touch the hidden test or eval split."
+    },
+    {
+      "id": "102_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=None n_pos=0/0 mean_delta=0.0000 vs_mean=0.6317163904507955 pairwise=[{'left': 0, 'right': 1, 'seeds': [0, 1, 2], 'deltas_right_minus_left': [0.0, 0.0, 0.0], 'n_pos_right': 0, 'n_neg_right': 0, 'n_seeds': 3, 'mean_delta': 0.0}]"
+    },
+    {
+      "id": "103_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6333496022436537,
+      "buggy": false,
+      "hypothesis": "Valid-only weighted blend of complementary identities ['025_ablate_c0_s0', '026_ablate_c0_s1', '027_ablate_c0_s2', '032_ablate_c0_s0', '033_ablate_c0_s1', '034_ablate_c0_s2', '045_ablate_c0_s0', '046_ablate_c0_s1', '047_ablate_c0_s2', '048_ablate_c1_s0', '049_ablate_c1_s1', '050_ablate_c1_s2', '056_ablate_c0_s0', '057_ablate_c0_s1', '058_ablate_c0_s2', '061_ablate_c0_s0', '062_ablate_c0_s1', '063_ablate_c0_s2', '068_ablate_c0_s0', '069_ablate_c0_s1', '070_ablate_c0_s2', '071_ablate_c1_s0', '072_ablate_c1_s1', '073_ablate_c1_s2', '080_ablate_c0_s0', '081_ablate_c0_s1', '082_ablate_c0_s2', '088_ablate_c0_s0', '089_ablate_c0_s1', '090_ablate_c0_s2', '096_ablate_c0_s0', '097_ablate_c0_s1', '098_ablate_c0_s2', '099_ablate_c1_s0', '100_ablate_c1_s1', '101_ablate_c1_s2'] (low-corr pair; linear + product term; not ARIMA)."
+    },
+    {
+      "id": "104_architecture",
+      "stage": "improve",
+      "arm": "architecture",
+      "primary": 0.6330267786979675,
+      "buggy": false,
+      "hypothesis": "DCNv2's explicit cross layer should model interactions among the existing time-decay, behavior-rank, and item-CF fields more directly than the DeepFM MLP, improving within-user ordering of long-view impressions. The incumbent bag already relies on a strong bpr_global loss with small k=8 embeddings, so a single cross layer is a minimal architecture step that preserves the confirmed features. This should re-rank borderline pairs using captured higher-order interaction evidence and lift GAUC/nDCG@5 on valid. If the cross network mostly adds noise, the screen delta will be negative."
+    },
+    {
+      "id": "105_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6330267786979675,
+      "buggy": false,
+      "hypothesis": "The dcnv2 variant of the incumbent (104_architecture) improved primary by +0.0013 over the screen bar but failed to reach significance because its confidence interval crossed zero. This ablation tests whether the within-user ranking loss is the bottleneck for that identity. Increasing bpr_pairs_cap from 32 to 64 doubles the number of sampled negative pairs per user, giving the model more ranking supervision, which may improve GAUC/nDCG@5 on long_view. If the c1 variant outperforms c0 across three seeds, the loss sampling is limiting dcnv2 and can be promoted as a new identity."
+    },
+    {
+      "id": "106_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.633564829826355,
+      "buggy": false,
+      "hypothesis": "The dcnv2 variant of the incumbent (104_architecture) improved primary by +0.0013 over the screen bar but failed to reach significance because its confidence interval crossed zero. This ablation tests whether the within-user ranking loss is the bottleneck for that identity. Increasing bpr_pairs_cap from 32 to 64 doubles the number of sampled negative pairs per user, giving the model more ranking supervision, which may improve GAUC/nDCG@5 on long_view. If the c1 variant outperforms c0 across three seeds, the loss sampling is limiting dcnv2 and can be promoted as a new identity."
+    },
+    {
+      "id": "107_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6349545121192932,
+      "buggy": false,
+      "hypothesis": "The dcnv2 variant of the incumbent (104_architecture) improved primary by +0.0013 over the screen bar but failed to reach significance because its confidence interval crossed zero. This ablation tests whether the within-user ranking loss is the bottleneck for that identity. Increasing bpr_pairs_cap from 32 to 64 doubles the number of sampled negative pairs per user, giving the model more ranking supervision, which may improve GAUC/nDCG@5 on long_view. If the c1 variant outperforms c0 across three seeds, the loss sampling is limiting dcnv2 and can be promoted as a new identity."
+    },
+    {
+      "id": "108_ablate_c1_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6330267786979675,
+      "buggy": false,
+      "hypothesis": "The dcnv2 variant of the incumbent (104_architecture) improved primary by +0.0013 over the screen bar but failed to reach significance because its confidence interval crossed zero. This ablation tests whether the within-user ranking loss is the bottleneck for that identity. Increasing bpr_pairs_cap from 32 to 64 doubles the number of sampled negative pairs per user, giving the model more ranking supervision, which may improve GAUC/nDCG@5 on long_view. If the c1 variant outperforms c0 across three seeds, the loss sampling is limiting dcnv2 and can be promoted as a new identity."
+    },
+    {
+      "id": "109_ablate_c1_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.633564829826355,
+      "buggy": false,
+      "hypothesis": "The dcnv2 variant of the incumbent (104_architecture) improved primary by +0.0013 over the screen bar but failed to reach significance because its confidence interval crossed zero. This ablation tests whether the within-user ranking loss is the bottleneck for that identity. Increasing bpr_pairs_cap from 32 to 64 doubles the number of sampled negative pairs per user, giving the model more ranking supervision, which may improve GAUC/nDCG@5 on long_view. If the c1 variant outperforms c0 across three seeds, the loss sampling is limiting dcnv2 and can be promoted as a new identity."
+    },
+    {
+      "id": "110_ablate_c1_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6349545121192932,
+      "buggy": false,
+      "hypothesis": "The dcnv2 variant of the incumbent (104_architecture) improved primary by +0.0013 over the screen bar but failed to reach significance because its confidence interval crossed zero. This ablation tests whether the within-user ranking loss is the bottleneck for that identity. Increasing bpr_pairs_cap from 32 to 64 doubles the number of sampled negative pairs per user, giving the model more ranking supervision, which may improve GAUC/nDCG@5 on long_view. If the c1 variant outperforms c0 across three seeds, the loss sampling is limiting dcnv2 and can be promoted as a new identity."
+    },
+    {
+      "id": "111_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=0 n_pos=3/3 mean_delta=0.0021 vs_mean=0.6317163904507955 pairwise=[{'left': 0, 'right': 1, 'seeds': [0, 1, 2], 'deltas_right_minus_left': [0.0, 0.0, 0.0], 'n_pos_right': 0, 'n_neg_right': 0, 'n_seeds': 3, 'mean_delta': 0.0}]"
+    },
+    {
+      "id": "112_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6369171931922233,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['105_ablate_c0_s0', '106_ablate_c0_s1', '107_ablate_c0_s2']."
+    },
+    {
+      "id": "113_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6369171931922233,
+      "buggy": false,
+      "hypothesis": "Valid-only weighted blend of complementary identities ['025_ablate_c0_s0', '026_ablate_c0_s1', '027_ablate_c0_s2', '032_ablate_c0_s0', '033_ablate_c0_s1', '034_ablate_c0_s2', '045_ablate_c0_s0', '046_ablate_c0_s1', '047_ablate_c0_s2', '048_ablate_c1_s0', '049_ablate_c1_s1', '050_ablate_c1_s2', '056_ablate_c0_s0', '057_ablate_c0_s1', '058_ablate_c0_s2', '061_ablate_c0_s0', '062_ablate_c0_s1', '063_ablate_c0_s2', '068_ablate_c0_s0', '069_ablate_c0_s1', '070_ablate_c0_s2', '071_ablate_c1_s0', '072_ablate_c1_s1', '073_ablate_c1_s2', '108_ablate_c1_s0', '109_ablate_c1_s1', '110_ablate_c1_s2', '080_ablate_c0_s0', '081_ablate_c0_s1', '082_ablate_c0_s2', '088_ablate_c0_s0', '089_ablate_c0_s1', '090_ablate_c0_s2', '096_ablate_c0_s0', '097_ablate_c0_s1', '098_ablate_c0_s2', '099_ablate_c1_s0', '100_ablate_c1_s1', '101_ablate_c1_s2', '105_ablate_c0_s0', '106_ablate_c0_s1', '107_ablate_c0_s2'] (low-corr pair; linear + product term; not ARIMA)."
+    },
+    {
+      "id": "114_features",
+      "stage": "improve",
+      "arm": "features",
+      "primary": 0.603063702583313,
+      "buggy": false,
+      "hypothesis": "Adding explicit causal recency-decay features (use_time_decay) should improve within-user ranking of long-view items because user interest in a video decays over time, and the current dcnv2 model does not directly condition on recency. The features attach decay_rate/decay_act/decay_tab and last-interaction signals to each impression, allowing the model to down-rank stale items and up-rank recently engaged ones in the logged session. This should lift both GAUC and nDCG@5 on the valid split without touching the eval split. If the recency signal is already captured by existing features or the model, the delta will be near zero and the hypothesis is falsified."
+    },
+    {
+      "id": "115_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.603063702583313,
+      "buggy": false,
+      "hypothesis": "Parent 114_features added use_time_decay to the plain FM baseline and collapsed (dP ≈ -0.031, CI_hi<0), but that screen was 1-seed and parent-scoped. This ablate reruns the parent identity with 3 seeds to confirm the failure and tests whether switching the default logloss to bpr_global — the confirmed ranking loss used by the incumbent — changes the within-user ranking enough to rescue or at least isolate the loss effect. If bpr_global improves the parent's ranking, the loss patch may be worth promoting on a better base; if both configs stay far below the incumbent, the parent's feature choice is the problem, not the loss."
+    },
+    {
+      "id": "116_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6083459854125977,
+      "buggy": false,
+      "hypothesis": "Parent 114_features added use_time_decay to the plain FM baseline and collapsed (dP ≈ -0.031, CI_hi<0), but that screen was 1-seed and parent-scoped. This ablate reruns the parent identity with 3 seeds to confirm the failure and tests whether switching the default logloss to bpr_global — the confirmed ranking loss used by the incumbent — changes the within-user ranking enough to rescue or at least isolate the loss effect. If bpr_global improves the parent's ranking, the loss patch may be worth promoting on a better base; if both configs stay far below the incumbent, the parent's feature choice is the problem, not the loss."
+    },
+    {
+      "id": "117_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6072568893432617,
+      "buggy": false,
+      "hypothesis": "Parent 114_features added use_time_decay to the plain FM baseline and collapsed (dP ≈ -0.031, CI_hi<0), but that screen was 1-seed and parent-scoped. This ablate reruns the parent identity with 3 seeds to confirm the failure and tests whether switching the default logloss to bpr_global — the confirmed ranking loss used by the incumbent — changes the within-user ranking enough to rescue or at least isolate the loss effect. If bpr_global improves the parent's ranking, the loss patch may be worth promoting on a better base; if both configs stay far below the incumbent, the parent's feature choice is the problem, not the loss."
+    },
+    {
+      "id": "118_ablate_c1_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6154685020446777,
+      "buggy": false,
+      "hypothesis": "Parent 114_features added use_time_decay to the plain FM baseline and collapsed (dP ≈ -0.031, CI_hi<0), but that screen was 1-seed and parent-scoped. This ablate reruns the parent identity with 3 seeds to confirm the failure and tests whether switching the default logloss to bpr_global — the confirmed ranking loss used by the incumbent — changes the within-user ranking enough to rescue or at least isolate the loss effect. If bpr_global improves the parent's ranking, the loss patch may be worth promoting on a better base; if both configs stay far below the incumbent, the parent's feature choice is the problem, not the loss."
+    },
+    {
+      "id": "119_ablate_c1_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6162947416305542,
+      "buggy": false,
+      "hypothesis": "Parent 114_features added use_time_decay to the plain FM baseline and collapsed (dP ≈ -0.031, CI_hi<0), but that screen was 1-seed and parent-scoped. This ablate reruns the parent identity with 3 seeds to confirm the failure and tests whether switching the default logloss to bpr_global — the confirmed ranking loss used by the incumbent — changes the within-user ranking enough to rescue or at least isolate the loss effect. If bpr_global improves the parent's ranking, the loss patch may be worth promoting on a better base; if both configs stay far below the incumbent, the parent's feature choice is the problem, not the loss."
+    },
+    {
+      "id": "120_ablate_c1_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6181862950325012,
+      "buggy": false,
+      "hypothesis": "Parent 114_features added use_time_decay to the plain FM baseline and collapsed (dP ≈ -0.031, CI_hi<0), but that screen was 1-seed and parent-scoped. This ablate reruns the parent identity with 3 seeds to confirm the failure and tests whether switching the default logloss to bpr_global — the confirmed ranking loss used by the incumbent — changes the within-user ranking enough to rescue or at least isolate the loss effect. If bpr_global improves the parent's ranking, the loss patch may be worth promoting on a better base; if both configs stay far below the incumbent, the parent's feature choice is the problem, not the loss."
+    },
+    {
+      "id": "121_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=1 n_pos=0/3 mean_delta=-0.0172 vs_mean=0.6338487068812052 pairwise=[{'left': 0, 'right': 1, 'seeds': [0, 1, 2], 'deltas_right_minus_left': [0.012404799461364746, 0.007948756217956543, 0.010929405689239502], 'n_pos_right': 3, 'n_neg_right': 0, 'n_seeds': 3, 'mean_delta': 0.010427653789520264}]"
+    },
+    {
+      "id": "122_architecture",
+      "stage": "improve",
+      "arm": "architecture",
+      "primary": 0.5357427597045898,
+      "buggy": false,
+      "hypothesis": "The incumbent identity is an FM-family dcnv2 model with numpy training. Switching model_family to torch replaces the entire training/architecture stack with a PyTorch FM implementation, which has different initialization, optimizer dynamics, and numerical/feature-interaction behavior. This is the only untried architecture change on the current incumbent, and a distinct model family should produce diverse within-user ranking scores that either pass the screen on its own or contribute new signal to the ensemble. The expected gain is modest because the current bag already exceeds vs_object, but torch is a legal and deterministic alternative that has not yet been measured on this incumbent."
+    },
+    {
+      "id": "123_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.5357427597045898,
+      "buggy": false,
+      "hypothesis": "The torch model screen (122) collapsed to primary 0.5357, far below the incumbent FM ensemble at 0.6369. The parent identity inherits the bpr_global ranking loss, which may be incompatible with the torch implementation or optimization. This ablation replaces the loss with logloss on the torch parent (config1) while keeping the parent untouched (config0). If torch+logloss substantially recovers the gap, the bpr_global loss is the culprit; if it remains low, the torch model family itself is the problem. This is a 3-seed diagnostic comparison, not a promotion attempt."
+    },
+    {
+      "id": "124_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.5325825810432434,
+      "buggy": false,
+      "hypothesis": "The torch model screen (122) collapsed to primary 0.5357, far below the incumbent FM ensemble at 0.6369. The parent identity inherits the bpr_global ranking loss, which may be incompatible with the torch implementation or optimization. This ablation replaces the loss with logloss on the torch parent (config1) while keeping the parent untouched (config0). If torch+logloss substantially recovers the gap, the bpr_global loss is the culprit; if it remains low, the torch model family itself is the problem. This is a 3-seed diagnostic comparison, not a promotion attempt."
+    },
+    {
+      "id": "125_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.5356018543243408,
+      "buggy": false,
+      "hypothesis": "The torch model screen (122) collapsed to primary 0.5357, far below the incumbent FM ensemble at 0.6369. The parent identity inherits the bpr_global ranking loss, which may be incompatible with the torch implementation or optimization. This ablation replaces the loss with logloss on the torch parent (config1) while keeping the parent untouched (config0). If torch+logloss substantially recovers the gap, the bpr_global loss is the culprit; if it remains low, the torch model family itself is the problem. This is a 3-seed diagnostic comparison, not a promotion attempt."
+    },
+    {
+      "id": "126_ablate_c1_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6306072473526001,
+      "buggy": false,
+      "hypothesis": "The torch model screen (122) collapsed to primary 0.5357, far below the incumbent FM ensemble at 0.6369. The parent identity inherits the bpr_global ranking loss, which may be incompatible with the torch implementation or optimization. This ablation replaces the loss with logloss on the torch parent (config1) while keeping the parent untouched (config0). If torch+logloss substantially recovers the gap, the bpr_global loss is the culprit; if it remains low, the torch model family itself is the problem. This is a 3-seed diagnostic comparison, not a promotion attempt."
+    },
+    {
+      "id": "127_ablate_c1_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6302513480186462,
+      "buggy": false,
+      "hypothesis": "The torch model screen (122) collapsed to primary 0.5357, far below the incumbent FM ensemble at 0.6369. The parent identity inherits the bpr_global ranking loss, which may be incompatible with the torch implementation or optimization. This ablation replaces the loss with logloss on the torch parent (config1) while keeping the parent untouched (config0). If torch+logloss substantially recovers the gap, the bpr_global loss is the culprit; if it remains low, the torch model family itself is the problem. This is a 3-seed diagnostic comparison, not a promotion attempt."
+    },
+    {
+      "id": "128_ablate_c1_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6269555687904358,
+      "buggy": false,
+      "hypothesis": "The torch model screen (122) collapsed to primary 0.5357, far below the incumbent FM ensemble at 0.6369. The parent identity inherits the bpr_global ranking loss, which may be incompatible with the torch implementation or optimization. This ablation replaces the loss with logloss on the torch parent (config1) while keeping the parent untouched (config0). If torch+logloss substantially recovers the gap, the bpr_global loss is the culprit; if it remains low, the torch model family itself is the problem. This is a 3-seed diagnostic comparison, not a promotion attempt."
+    },
+    {
+      "id": "129_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=1 n_pos=0/3 mean_delta=-0.0046 vs_mean=0.6338487068812052 pairwise=[{'left': 0, 'right': 1, 'seeds': [0, 1, 2], 'deltas_right_minus_left': [0.09486448764801025, 0.09766876697540283, 0.09135371446609497], 'n_pos_right': 3, 'n_neg_right': 0, 'n_seeds': 3, 'mean_delta': 0.09462898969650269}]"
+    },
+    {
+      "id": "130_time_shift",
+      "stage": "improve",
+      "arm": "time_shift",
+      "primary": 0.6350809335708618,
+      "buggy": false,
+      "hypothesis": "Hour-of-day is a local context feature that may capture time-of-day browsing preferences, which can shift long-view propensity within a user's logged impressions when those impressions span multiple hours. On the stronger dcnv2+itemcf+beh_rank incumbent identity, the hour feature may add signal that was not available to the earlier parent where use_hour was screened. For single-session users the feature is nearly constant and will be absorbed by user bias, so any gain should come from cross-hour users. Falsify if the primary delta is again negative with CI_hi<0, indicating hour is collinear with user or sequence context."
+    },
+    {
+      "id": "131_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6350809335708618,
+      "buggy": false,
+      "hypothesis": "The 130_time_shift screen showed that adding use_hour improves primary by ~0.0012, but this gain might be confounded by the ranking loss setup. This ablation compares the parent identity (use_hour on the incumbent) against an atomic loss patch (bpr_decay_sample) on the same base. If bpr_decay_sample alone matches or exceeds the parent, the current loss configuration is the more important driver and the time feature can be reconsidered. If use_hour remains superior, the recency feature is a genuine additive improvement."
+    },
+    {
+      "id": "132_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6322363615036011,
+      "buggy": false,
+      "hypothesis": "The 130_time_shift screen showed that adding use_hour improves primary by ~0.0012, but this gain might be confounded by the ranking loss setup. This ablation compares the parent identity (use_hour on the incumbent) against an atomic loss patch (bpr_decay_sample) on the same base. If bpr_decay_sample alone matches or exceeds the parent, the current loss configuration is the more important driver and the time feature can be reconsidered. If use_hour remains superior, the recency feature is a genuine additive improvement."
+    },
+    {
+      "id": "133_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6355730295181274,
+      "buggy": false,
+      "hypothesis": "The 130_time_shift screen showed that adding use_hour improves primary by ~0.0012, but this gain might be confounded by the ranking loss setup. This ablation compares the parent identity (use_hour on the incumbent) against an atomic loss patch (bpr_decay_sample) on the same base. If bpr_decay_sample alone matches or exceeds the parent, the current loss configuration is the more important driver and the time feature can be reconsidered. If use_hour remains superior, the recency feature is a genuine additive improvement."
+    },
+    {
+      "id": "134_ablate_c1_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6350809335708618,
+      "buggy": false,
+      "hypothesis": "The 130_time_shift screen showed that adding use_hour improves primary by ~0.0012, but this gain might be confounded by the ranking loss setup. This ablation compares the parent identity (use_hour on the incumbent) against an atomic loss patch (bpr_decay_sample) on the same base. If bpr_decay_sample alone matches or exceeds the parent, the current loss configuration is the more important driver and the time feature can be reconsidered. If use_hour remains superior, the recency feature is a genuine additive improvement."
+    },
+    {
+      "id": "135_ablate_c1_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6322363615036011,
+      "buggy": false,
+      "hypothesis": "The 130_time_shift screen showed that adding use_hour improves primary by ~0.0012, but this gain might be confounded by the ranking loss setup. This ablation compares the parent identity (use_hour on the incumbent) against an atomic loss patch (bpr_decay_sample) on the same base. If bpr_decay_sample alone matches or exceeds the parent, the current loss configuration is the more important driver and the time feature can be reconsidered. If use_hour remains superior, the recency feature is a genuine additive improvement."
+    },
+    {
+      "id": "136_ablate_c1_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6355730295181274,
+      "buggy": false,
+      "hypothesis": "The 130_time_shift screen showed that adding use_hour improves primary by ~0.0012, but this gain might be confounded by the ranking loss setup. This ablation compares the parent identity (use_hour on the incumbent) against an atomic loss patch (bpr_decay_sample) on the same base. If bpr_decay_sample alone matches or exceeds the parent, the current loss configuration is the more important driver and the time feature can be reconsidered. If use_hour remains superior, the recency feature is a genuine additive improvement."
+    },
+    {
+      "id": "137_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=None n_pos=0/0 mean_delta=0.0000 vs_mean=0.6338487068812052 pairwise=[{'left': 0, 'right': 1, 'seeds': [0, 1, 2], 'deltas_right_minus_left': [0.0, 0.0, 0.0], 'n_pos_right': 0, 'n_neg_right': 0, 'n_seeds': 3, 'mean_delta': 0.0}]"
+    },
+    {
+      "id": "138_multitask",
+      "stage": "improve",
+      "arm": "multitask",
+      "primary": 0.6355822086334229,
+      "buggy": false,
+      "hypothesis": "Auxiliary click supervision (aux_click) shares the representation with the long_view ranking head and adds gradient signal from the more abundant click labels, which can regularize user/item embeddings and improve within-user ranking of long_view, especially where long-view labels are sparse. The current incumbent is a bagged ensemble that already benefits from diverse signals, so adding a click auxiliary head may further stabilize the learned representations rather than change the ranking logits directly. However, click and long-view are related but not identical, so the auxiliary loss can also bias the ranking head; prior 1-seed screens on older ensemble parents showed small negative deltas. I therefore expect a small, possibly positive effect on this new parent identity, where the patch is still legal_untried."
+    },
+    {
+      "id": "139_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6355822086334229,
+      "buggy": false,
+      "hypothesis": "The screened parent 138 (aux_click=True) adds the click BCE auxiliary head to the incumbent dcnv2 + bpr_global + time-decay identity and showed +0.0017 primary over the incumbent bag in a 1-seed screen. This ablate re-measures that identity with 3 seeds to confirm the gain is not seed noise before it can be promoted. Since the loss arm already has bpr_global and bpr_decay_sample active in the incumbent, the only remaining atomic loss patch is bpr_pairs_cap; raising it from 32 to 64 tests whether more within-user pairwise comparisons further improve the local ranking loss on this identity. If the parent fails 3/3 vs the incumbent, aux_click is parent-scoped falsified and the multitask arm is done."
+    },
+    {
+      "id": "140_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6332147121429443,
+      "buggy": false,
+      "hypothesis": "The screened parent 138 (aux_click=True) adds the click BCE auxiliary head to the incumbent dcnv2 + bpr_global + time-decay identity and showed +0.0017 primary over the incumbent bag in a 1-seed screen. This ablate re-measures that identity with 3 seeds to confirm the gain is not seed noise before it can be promoted. Since the loss arm already has bpr_global and bpr_decay_sample active in the incumbent, the only remaining atomic loss patch is bpr_pairs_cap; raising it from 32 to 64 tests whether more within-user pairwise comparisons further improve the local ranking loss on this identity. If the parent fails 3/3 vs the incumbent, aux_click is parent-scoped falsified and the multitask arm is done."
+    },
+    {
+      "id": "141_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.636349081993103,
+      "buggy": false,
+      "hypothesis": "The screened parent 138 (aux_click=True) adds the click BCE auxiliary head to the incumbent dcnv2 + bpr_global + time-decay identity and showed +0.0017 primary over the incumbent bag in a 1-seed screen. This ablate re-measures that identity with 3 seeds to confirm the gain is not seed noise before it can be promoted. Since the loss arm already has bpr_global and bpr_decay_sample active in the incumbent, the only remaining atomic loss patch is bpr_pairs_cap; raising it from 32 to 64 tests whether more within-user pairwise comparisons further improve the local ranking loss on this identity. If the parent fails 3/3 vs the incumbent, aux_click is parent-scoped falsified and the multitask arm is done."
+    },
+    {
+      "id": "142_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=None n_pos=0/0 mean_delta=0.0000 vs_mean=0.6338487068812052 pairwise=[]"
+    },
+    {
+      "id": "143_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6393102103380284,
+      "buggy": false,
+      "hypothesis": "Rank-average same-config seeds ['139_ablate_c0_s0', '140_ablate_c0_s1', '141_ablate_c0_s2']."
+    },
+    {
+      "id": "144_ensemble",
+      "stage": "ensemble",
+      "arm": "ensemble",
+      "primary": 0.6393102103380284,
+      "buggy": false,
+      "hypothesis": "Valid-only weighted blend of complementary identities ['105_ablate_c0_s0', '106_ablate_c0_s1', '107_ablate_c0_s2', '139_ablate_c0_s0', '140_ablate_c0_s1', '141_ablate_c0_s2'] (low-corr pair; linear + product term; not ARIMA)."
+    },
+    {
+      "id": "145_capacity",
+      "stage": "improve",
+      "arm": "capacity",
+      "primary": 0.6194502115249634,
+      "buggy": false,
+      "hypothesis": "The incumbent uses embedding size k=8, which improved over the default k=16 and suggests a regularization benefit on this small Pure dataset. However, after accumulating feature interactions (itemcf, beh_rank, aux_click, dcnv2), the model may be capacity-limited at k=8. A modest increase to k=32 could provide better representational capacity for the enriched feature set while staying below the overfitting threshold, improving within-user ranking of logged impressions."
+    },
+    {
+      "id": "146_loss",
+      "stage": "improve",
+      "arm": "loss",
+      "primary": 0.6355822086334229,
+      "buggy": false,
+      "hypothesis": "The incumbent uses bpr_global with bpr_pairs_cap=32. Increasing the cap to 64 exposes the pairwise ranking loss to more negative examples per user, which should stabilize and improve within-user ordering on long_view, especially with 17.5% single-impression users where local contrast is scarce. If the global BPR loss ignores the cap, this patch will be near-neutral, but the cost is low."
+    },
+    {
+      "id": "147_capacity",
+      "stage": "improve",
+      "arm": "capacity",
+      "primary": 0.6114686131477356,
+      "buggy": false,
+      "hypothesis": "k=8 is already confirmed as the best embedding size for this Pure FM/ensemble identity, and k=32 was sharply negative on this parent (dP=-0.0156, CI high<0), consistent with overfitting sparse video ID interactions (pair_cover=0.016, single_imp=0.175). Increasing to k=64 should exaggerate the same capacity overfit, lowering within-user GAUC/nDCG because larger embeddings memorize rare co-occurrences rather than generalizing rank order. This trial bounds the capacity response and verifies the small-k optimum; it would only be a positive surprise if the extra dimensions recover signal lost at k=8. Falsify if dP vs vs_object is positive."
+    },
+    {
+      "id": "148_watch_time",
+      "stage": "improve",
+      "arm": "watch_time",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "The 143 ensemble already adds WLR play-time reweighting to the main loss, but it does not model the censoring mechanism that determines observed play time. Enabling cwm_censor adds an auxiliary head that predicts whether watch time is censored, which can sharpen the main tower's long-view ranking in the valid regime where play times are much shorter than in training (valid p50=4 vs train p50=31). The earlier cross-run falsification of cwm_censor was measured on an older parent identity; the current parent's richer feature set (dcnv2, k=8, aux_click, time decay, itemcf) may interact positively with the censor signal. I therefore expect a small positive delta on GAUC/nDCG@5."
+    },
+    {
+      "id": "149_capacity",
+      "stage": "improve",
+      "arm": "capacity",
+      "primary": 0.6239222288131714,
+      "buggy": false,
+      "hypothesis": "The incumbent uses k=8, which passed as a positive capacity screen, while k=32 and k=64 both fail badly on this parent (dP -0.016 and -0.024). This suggests an embedding-dimension sweet spot below 32. k=16 is the remaining untried grid point between the proven k=8 and the failing larger sizes. If the capacity curve is unimodal, k=16 should land near or slightly above k=8, improving within-user ranking via a better bias-variance trade-off for the sparse Pure IDs. Falsify if k=16 underperforms k=8 by more than the standard error, indicating the k=8 benefit is not monotonic and capacity should stay at 8."
+    },
+    {
+      "id": "150_loss",
+      "stage": "improve",
+      "arm": "loss",
+      "primary": 0.6355822086334229,
+      "buggy": false,
+      "hypothesis": "The incumbent already uses bpr_global with bpr_decay_sample, so residual gains in local ranking should come from pairwise sampling quality rather than a new loss family. Raising bpr_pairs_cap to 64 hurt, likely because very long user sessions (train_p90=97) produce noisy dominant gradients from repeated negatives, while the shorter validation sessions (valid_p50=4) benefit from cleaner per-user pair estimates. Lowering bpr_pairs_cap to 16 should make each user's gradient a more balanced local preference signal, improving GAUC and nDCG@5 without changing the architecture or feature set. If this hypothesis is wrong, the 1-seed screen should show a clear drop in primary relative to vs_object=0.63505."
+    },
+    {
+      "id": "151_read_paper",
+      "stage": "read_paper",
+      "arm": "architecture",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "The incumbent is an FM-family dcnv2 model with several feature flags already on. Within the architecture arm the main unmeasured family on this parent is GBM, and the gbm-native skill warns that a default ID-only GBM is not a family ban, suggesting small-tree LightGBM on numeric columns may be viable. Reading the skill should clarify whether the existing itemcf/beh_rank/time-decay signals are usable by GBM and what gbm_leaves/rounds are appropriate. This cheap read will let me propose a more informed atomic architecture patch instead of blindly retrying arch=deepfm or model_family=torch."
+    },
+    {
+      "id": "152_architecture",
+      "stage": "improve",
+      "arm": "architecture",
+      "primary": 0.6058388948440552,
+      "buggy": false,
+      "hypothesis": "Switching this FM/dcnv2 ensemble identity to a tuned LightGBM (model_family=gbm, gbm_leaves=8) tests a genuinely different architecture on the same engineered feature set. Trees can represent non-linear interactions among itemcf, behavior-rank, and time-decay features that pairwise FM cannot, which should sharpen within-user ordering of long-view vs skipped impressions. This is a parent-scoped hypothesis; if GBM's default feature encoding is too weak on Pure, the 1-seed CI will fall below vs_object and falsify the family switch here."
+    },
+    {
+      "id": "153_ablate_c0_s0",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6058388948440552,
+      "buggy": false,
+      "hypothesis": "The 152_architecture screen replaced the incumbent FM/dcnv2 identity with a default LightGBM (model_family=gbm) and produced a large negative primary delta (-0.029) with a 1-seed CI excluding zero. This ablate runs the same GBM identity across three seeds to obtain a stable 3-seed mean. Because the loss arm is a no-op under GBM, no extra loss patch is included; the ablate isolates the family switch. We expect the negative delta to persist and the 3-seed CI to remain below zero, confirming that the default ID-only GBM is not competitive for within-user long-view ranking on Pure."
+    },
+    {
+      "id": "154_ablate_c0_s1",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6059321165084839,
+      "buggy": false,
+      "hypothesis": "The 152_architecture screen replaced the incumbent FM/dcnv2 identity with a default LightGBM (model_family=gbm) and produced a large negative primary delta (-0.029) with a 1-seed CI excluding zero. This ablate runs the same GBM identity across three seeds to obtain a stable 3-seed mean. Because the loss arm is a no-op under GBM, no extra loss patch is included; the ablate isolates the family switch. We expect the negative delta to persist and the 3-seed CI to remain below zero, confirming that the default ID-only GBM is not competitive for within-user long-view ranking on Pure."
+    },
+    {
+      "id": "155_ablate_c0_s2",
+      "stage": "improve",
+      "arm": "ablate",
+      "primary": 0.6061676740646362,
+      "buggy": false,
+      "hypothesis": "The 152_architecture screen replaced the incumbent FM/dcnv2 identity with a default LightGBM (model_family=gbm) and produced a large negative primary delta (-0.029) with a 1-seed CI excluding zero. This ablate runs the same GBM identity across three seeds to obtain a stable 3-seed mean. Because the loss arm is a no-op under GBM, no extra loss patch is included; the ablate isolates the family switch. We expect the negative delta to persist and the 3-seed CI to remain below zero, confirming that the default ID-only GBM is not competitive for within-user long-view ranking on Pure."
+    },
+    {
+      "id": "156_ablate",
+      "stage": "ablate",
+      "arm": "ablate",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "ablate winner=None n_pos=0/0 mean_delta=0.0000 vs_mean=0.6350486675898234 pairwise=[]"
+    },
+    {
+      "id": "157_loss",
+      "stage": "improve",
+      "arm": "loss",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "Adding a short pooled sequence of the user's recently viewed items gives the FM a recency-aware user representation that can interact with item content/popularity terms, changing relative scores within the same user's impression list. KuaiRand-Pure valid sessions are very short (median 4, p90 12), so a 10-step history covers nearly all non-trivial sessions while limiting padding; mean pooling is more robust than attention when many users have only a single impression (17.5%). This should mainly help nDCG@5 by sharpening the borderline positive/negative decisions on the few scored impressions per user. Risk: if the pooled vector acts mostly as a user-side first-order term, within-user ranking will not move, and the gain will be near zero."
+    },
+    {
+      "id": "158_capacity",
+      "stage": "improve",
+      "arm": "capacity",
+      "primary": null,
+      "buggy": false,
+      "hypothesis": "legal_untried fallback"
+    }
+  ]
+}

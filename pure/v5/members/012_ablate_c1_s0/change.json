@@ -1,0 +1,27 @@
+{
+  "id": "012_ablate_c1_s0",
+  "parent": "007_draft",
+  "stage": "improve",
+  "arm": "ablate",
+  "billed": 3,
+  "hypothesis": "The screened parent identity (DeepFM) re-ranks within-user impressions via learned feature crosses. The loss arm should test whether switching from logloss to bpr_global, which uses within-user and global pairwise preferences, further improves the ranking objective on top of DeepFM. Across runs, bpr_global alone was measured at ~0.6028 mean and DeepFM at ~0.6039, so combining them may push the identity above the current 0.60144 screen bar.",
+  "diff": "ablate_child",
+  "config_patch": {
+    "loss": "bpr_global",
+    "seed": 0
+  },
+  "files": [],
+  "primary": 0.6036239862442017,
+  "delta_primary": 0.0021837552388509485,
+  "delta_gauc": 0.002783536911010742,
+  "screen_pass": null,
+  "confirmed": false,
+  "buggy": false,
+  "skip": false,
+  "skip_reason": null,
+  "exec_status": "ok",
+  "recovery": null,
+  "incumbent": "009_ablate_c0_s0",
+  "incumbent_mean": 0.6038620670636495,
+  "wall_hours": 0.1025
+}
