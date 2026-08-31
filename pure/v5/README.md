@@ -1,11 +1,11 @@
-# Pure v5 — contest run
+# Submitted Pure (`pure/v5`)
 
 3-seed rank average of `loss=bpr_global` on the numpy FM (DeepFM parent). Search used train + valid only. Finalize retrained members `012` / `013` / `014` on train.
 
 | | GAUC | nDCG@5 | primary |
 |---|---|---|---|
 | Official FM (valid) | 0.6674 | 0.5357 | 0.6016 |
-| This bag (valid) | 0.67105 | 0.53774 | **0.60440** |
+| Submitted Pure (valid) | 0.67105 | 0.53774 | **0.60440** |
 
 | | |
 |---|---|

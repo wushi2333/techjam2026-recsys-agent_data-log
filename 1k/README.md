@@ -1,4 +1,4 @@
-# KuaiRand-1K (bonus)
+# Bonus 1K
 
 Optional scale. **Not** the contest primary. User and item ids are re-indexed, so these numbers are not comparable with Pure.
 

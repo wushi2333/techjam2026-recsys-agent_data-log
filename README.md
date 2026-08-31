@@ -14,20 +14,20 @@ KuaiRand-Pure — label `long_view`, primary = mean(GAUC, nDCG@5). Kit `evaluate
 | | GAUC | nDCG@5 | primary | vs FM |
 |---|---|---|---|---|
 | Official FM (valid) | 0.6674 | 0.5357 | 0.6016 | — |
-| **v5 bag (valid)** — contest CSV | 0.67105 | 0.53774 | **0.60440** | **+0.00280** |
+| **Submitted Pure (valid)** — contest CSV | 0.67105 | 0.53774 | **0.60440** | **+0.00280** |
 | Official FM (published test) | 0.6610 | 0.5282 | 0.5946 | — |
-| v5 CSV, scored once after search | — | — | 0.59766 | +0.00306 |
-| v4 leaky bag (valid) | 0.71748 | 0.56202 | 0.63975 | inflated |
-| v4 CSV, scored once after search | — | — | 0.56790 | worse than FM |
+| Contest CSV, scored once after search | — | — | 0.59766 | +0.00306 |
+| Leaky Pure (valid) | 0.71748 | 0.56202 | 0.63975 | inflated |
+| Leaky CSV, scored once after search | — | — | 0.56790 | worse than FM |
 
 KuaiRand-1K is optional and uses a **different id space**. Do not compare it to Pure.
 
 | | GAUC | nDCG@5 | primary | vs 1K FM |
 |---|---|---|---|---|
 | Official FM (1K valid) | 0.67461 | 0.60944 | 0.64203 | — |
-| **1K finalize bag (valid)** | 0.67654 | 0.62348 | **0.65001** | **+0.00798** |
+| **Bonus 1K (valid)** | 0.67654 | 0.62348 | **0.65001** | **+0.00798** |
 
-| | Pure v5 (contest) | Pure v4 (leaky, not submitted) | 1K (bonus) |
+| | Submitted Pure | Leaky Pure (not submitted) | Bonus 1K |
 |---|---|---|---|
 | Billed iterations | 50 / 50 | 50 / 50 | 31 / 50 |
 | Stop | cap | cap | 6 h wall |
@@ -36,7 +36,7 @@ KuaiRand-1K is optional and uses a **different id space**. Do not compare it to 
 | Runtime interventions | **0** | 0 | **0** |
 | Test rows in CSV | 170,588 | 170,588 | 4,132,081 |
 
-v4 looked strong on valid because recency features could see valid labels, and missing test labels were stored as 0. v5 stores unseen labels as missing (`-1`) and updates decay / last-k from **train only**.
+Leaky Pure looked strong on valid because recency features could see valid labels, and missing test labels were stored as 0. Submitted Pure stores unseen labels as missing (`-1`) and updates decay / last-k from **train only**.
 
 ## Open first
 
@@ -55,9 +55,9 @@ v4 looked strong on valid because recency features could see valid labels, and m
 ## Layout
 
 ```
-pure/v5/     designated contest run (run_pure_v5)
-pure/v4/     earlier leaky run (run_pure_v4) — evidence only
-1k/          bonus KuaiRand-1K (run_1k_aug31)
+pure/v5/     Submitted Pure (run_pure_v5) — contest CSV
+pure/v4/     Leaky Pure (run_pure_v4) — evidence only
+1k/          Bonus 1K (run_1k_aug31)
 ```
 
 Each run folder has the journal, progress log, cost / status JSON, a `tables/` slice, and (where we had them) member `trial_config.json` + `curves.csv`. Member folders do **not** include `.npz` score dumps.

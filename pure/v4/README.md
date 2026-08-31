@@ -1,6 +1,6 @@
-# Pure v4 — leaky run (not submitted)
+# Leaky Pure (`pure/v4`, not submitted)
 
-This is the run the write-up calls a useful failure. Recency features could read valid `long_view`, and missing test labels were stored as **0**. Valid primary went to **0.63975**. The same CSV, scored once afterwards, was **0.56790** on test — below the official FM 0.5946.
+The write-up calls this a useful failure. Recency features could read valid `long_view`, and missing test labels were stored as **0**. Valid primary went to **0.63975**. The same CSV, scored once afterwards, was **0.56790** on test — below the official FM 0.5946.
 
 | | valid | after-the-fact test |
 |---|---|---|
