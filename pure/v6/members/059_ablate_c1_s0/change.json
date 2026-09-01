@@ -1,0 +1,27 @@
+{
+  "id": "059_ablate_c1_s0",
+  "parent": "045_ablate_c0_s0",
+  "stage": "improve",
+  "arm": "ablate",
+  "billed": 16,
+  "hypothesis": "The incumbent already combines bpr_global loss, deepfm architecture, and seq_len=100 pooling, and the last ablate showed bpr_global is worse than the incumbent on this parent (0/3 positive, mean_delta=-0.00051). The remaining untried legal patches are mostly sequence variants (seq_len 10/20/50 with pool or din) and regularization (l2). Since seq_len=100 pool is already confirmed, trying a shorter sequence (e.g., seq_len=50 pool) may reduce noise from long histories and improve ranking, but the expected gain is small. Alternatively, increasing l2 from 1e-6 to 1e-5 could regularize the model given the large Pure dataset and may yield a small positive delta. Given the incumbent is already strong and the last ablate challenger failed, I will ablate the incumbent identity (c0) against a single atomic patch: l2=1e-5, which is a legal untried regularization patch and may improve generalization without changing the sequence or architecture.",
+  "diff": "ablate_child",
+  "config_patch": {
+    "l2": 1e-05,
+    "seed": 0
+  },
+  "files": [],
+  "primary": 0.6043288707733154,
+  "delta_primary": 0.00037366151809692383,
+  "delta_gauc": 0.0006798505783081055,
+  "screen_pass": null,
+  "confirmed": false,
+  "buggy": false,
+  "skip": false,
+  "skip_reason": null,
+  "exec_status": "ok",
+  "recovery": null,
+  "incumbent": "045_ablate_c0_s0",
+  "incumbent_mean": 0.6039552092552185,
+  "wall_hours": 0.9487
+}

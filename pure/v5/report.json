@@ -26,5 +26,6 @@
   },
   "log_random_note": "Off-policy check on log_random_* impressions; not the official random-score baseline (primary 0.4753).",
   "search_valid_primary": 0.6043970584869385,
-  "finalize_valid_drift": 0.0
+  "finalize_valid_drift": 0.0,
+  "note": "Repeat freeze-eval. Not the contest CSV."
 }

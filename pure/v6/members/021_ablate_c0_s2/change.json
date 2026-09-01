@@ -1,0 +1,27 @@
+{
+  "id": "021_ablate_c0_s2",
+  "parent": "018_architecture",
+  "stage": "improve",
+  "arm": "ablate",
+  "billed": 6,
+  "hypothesis": "The incumbent bpr_global loss is confirmed and strong, but the architecture screen for deepfm failed narrowly (dP=+0.00080, CI includes 0, top1 agreement 0.805). Since the loss arm is already at the confirmed bpr_global identity, the next atomic improvement is to try a different architecture (dcnv2) which adds a cross layer on flattened FM fields. This may capture feature interactions that the plain FM and deepfm miss, improving within-user ranking order. The expected delta is modest, around 0.001, consistent with the observed screen deltas.",
+  "diff": "ablate_child",
+  "config_patch": {
+    "arch": "deepfm",
+    "seed": 2
+  },
+  "files": [],
+  "primary": 0.6029953360557556,
+  "delta_primary": 0.00017557541529333864,
+  "delta_gauc": -0.0008092522621154785,
+  "screen_pass": null,
+  "confirmed": false,
+  "buggy": false,
+  "skip": false,
+  "skip_reason": null,
+  "exec_status": "ok",
+  "recovery": null,
+  "incumbent": "019_ablate_c0_s0",
+  "incumbent_mean": 0.603394627571106,
+  "wall_hours": 0.2173
+}

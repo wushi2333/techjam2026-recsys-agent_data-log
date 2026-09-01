@@ -1,7 +1,5 @@
 # Highest valid primaries
 
-Contest CSV is the **3-seed BPR bag** (`017_ensemble` / `160_finalize`, **0.60440**), not the max 1-seed (`071` at 0.60463).
-
 | node | arm | primary | GAUC | nDCG@5 | Δ vs screen | patch |
 |---|---|---|---|---|---|---|
 | `071_ablate_c1_s0` | ablate | 0.60463 | 0.67099 | 0.53827 | 0.00077 | {"loss": "bpr_global", "seed": 0} |

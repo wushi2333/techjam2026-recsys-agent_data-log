@@ -1,0 +1,28 @@
+{
+  "id": "045_ablate_c0_s0",
+  "parent": "044_sequence",
+  "stage": "improve",
+  "arm": "ablate",
+  "billed": 13,
+  "hypothesis": "The incumbent uses bpr_global loss with deepfm architecture. The sequence arm with seq_len=100, seq_mode=pool showed a positive delta (+0.00057) but failed the screen due to CI overlap. Since the parent is the loss arm, we should ablate the incumbent identity (deepfm + bpr_global) to confirm its 3-seed mean, and also test a legal untried sequence patch (seq_len=50, seq_mode=pool) as a second config to see if a shorter pooling window can improve ranking stability. The sequence feature may add useful within-user context, but the previous 100-length pool was too noisy; a 50-length pool might capture recent interactions better.",
+  "diff": "ablate_child",
+  "config_patch": {
+    "seq_len": 100,
+    "seq_mode": "pool",
+    "seed": 0
+  },
+  "files": [],
+  "primary": 0.6039601564407349,
+  "delta_primary": 0.0005655288696289062,
+  "delta_gauc": 0.00014799833297729492,
+  "screen_pass": null,
+  "confirmed": true,
+  "buggy": false,
+  "skip": false,
+  "skip_reason": null,
+  "exec_status": "ok",
+  "recovery": null,
+  "incumbent": "045_ablate_c0_s0",
+  "incumbent_mean": 0.6039552092552185,
+  "wall_hours": 0.7201
+}

@@ -28,5 +28,5 @@
   "search_valid_primary": 0.6504466789120106,
   "finalize_valid_drift": -0.000437,
   "delta_vs_1k_fm": 0.00798,
-  "note": "delta_vs_baseline subtracts Pure FM 0.6016. Use delta_vs_1k_fm (+0.00798) against official 1K FM 0.64203."
+  "note": "delta_vs_baseline subtracts Pure FM 0.6016. Use delta_vs_1k_fm (+0.00798) against official 1K FM 0.64203. Contest Pure is pure/v6, not this CSV."
 }

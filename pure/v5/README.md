@@ -1,11 +1,15 @@
-# Submitted Pure (`pure/v5`)
+# Repeat freeze-eval Pure (`pure/v5`)
 
-3-seed rank average of `loss=bpr_global` on the numpy FM (DeepFM parent). Search used train + valid only. Finalize retrained members `012` / `013` / `014` on train.
+**Not** the contest CSV. A second freeze-eval search that independently shipped 3-seed DeepFM + `loss=bpr_global` and also beat the official FM. Search used train + valid only. Finalize retrained members `012` / `013` / `014` on train.
 
-| | GAUC | nDCG@5 | primary |
-|---|---|---|---|
-| Official FM (valid) | 0.6674 | 0.5357 | 0.6016 |
-| Submitted Pure (valid) | 0.67105 | 0.53774 | **0.60440** |
+Contest file: [`../v6/submission.csv`](../v6/submission.csv).
+
+| | GAUC | nDCG@5 | primary | vs FM |
+|---|---|---|---|---|
+| Official FM (valid) | 0.6674 | 0.5357 | 0.6016 | — |
+| Repeat bag (valid) | 0.67105 | 0.53774 | **0.60440** | **+0.00280** |
+| Official FM (hidden test) | 0.6610 | 0.5282 | 0.5946 | — |
+| Repeat CSV (hidden, once after search) | 0.66486 | 0.53046 | **0.59766** | **+0.00306** |
 
 | | |
 |---|---|
@@ -22,7 +26,7 @@ Search incumbent at stop was `098` (DeepFM + DIN-50, mean 0.60395). Finalize’s
 
 | File | What it is |
 |---|---|
-| `submission.csv` | Contest scores, kit test order |
+| `submission.csv` | Repeat-search scores (not the contest file) |
 | `progress.log` | Readable trace |
 | `journal.jsonl` | Hypothesis / patch / metrics |
 | `changelog.jsonl` | Code/config diffs |

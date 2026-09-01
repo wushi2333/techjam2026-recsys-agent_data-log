@@ -12,4 +12,4 @@ The write-up calls this a useful failure. Recency features could read valid `lon
 
 Members of the leaky blend: `139`–`141` and `088`–`090`. Configs and curves are under `members/`.
 
-v5 rebuilt label handling (`-1` for missing, train-only decay) and is the contest CSV.
+Submitted Pure ([`../v6/`](../v6/)) rebuilt label handling (`-1` for missing, train-only decay) and is the contest CSV. A later freeze-eval search ([`../v5/`](../v5/)) independently shipped DeepFM + BPR under the same gates.

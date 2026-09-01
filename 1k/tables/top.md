@@ -1,7 +1,5 @@
 # Highest valid primaries
 
-CSV members are `039`–`041` (`use_time_decay` bag, finalize **0.65001**). `049` DCNv2 at 0.65280 is a **1-seed**; the 6 h wall hit before a 3-seed, so it is not in the CSV.
-
 | node | arm | primary | GAUC | nDCG@5 | Δ vs screen | patch |
 |---|---|---|---|---|---|---|
 | `049_architecture` | architecture | 0.65280 | 0.67630 | 0.62940 | 0.00638 | {"arch": "dcnv2", "data_scale": "1k"} |

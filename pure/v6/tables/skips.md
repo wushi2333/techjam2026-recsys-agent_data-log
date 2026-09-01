@@ -1,0 +1,26 @@
+# Skips, duplicates, errors
+
+- `017_crossover` arm=features skip=True error=duplicate of 007_draft
+- `038_loss` arm=loss skip=True error=no valid config_patch for arm=loss
+- `039_architecture` arm=architecture skip=True error=no valid config_patch for arm=architecture
+- `054_architecture` arm=architecture skip=True error=no valid config_patch for arm=architecture
+- `055_loss` arm=loss skip=True error=no valid config_patch for arm=loss
+- `066_architecture` arm=architecture skip=True error=no valid config_patch for arm=architecture
+- `067_loss` arm=loss skip=True error=no valid config_patch for arm=loss
+- `075_architecture` arm=architecture skip=True error=no valid config_patch for arm=architecture
+- `077_architecture` arm=architecture skip=True error=no valid config_patch for arm=architecture
+- `078_regularization` arm=regularization skip=True error=duplicate of 076_regularization
+- `083_regularization` arm=regularization skip=True error=duplicate of 076_regularization
+- `094_crossover` arm=features skip=True error=duplicate of 084_sequence
+- `095_architecture` arm=architecture skip=True error=no valid config_patch for arm=architecture
+- `115_crossover` arm=features skip=True error=duplicate of 104_sequence
+- `124_regularization` arm=regularization skip=True error=duplicate of 076_regularization
+- `125_regularization` arm=regularization skip=True error=duplicate of 076_regularization
+- `134_regularization` arm=regularization skip=True error=duplicate of 076_regularization
+- `135_regularization` arm=regularization skip=True error=duplicate of 076_regularization
+- `136_architecture` arm=architecture skip=True error=All legal_untried patches in the architecture arm are already screened (deepfm, dcnv2) or belong to exhausted arms (loss, regularization, sequence). The only untried sequence patch (seq_len=20, seq_mode=din) was falsified on this parent with CI_hi<0. No promising atomic improvement remains; skipping avoids a likely negative trial.
+- `137_architecture` arm=architecture skip=True error=All legal_untried patches on this parent are either banned (bpr_global, seq_len 10/20 pool, seq_len 20/50 din, seq_len 50 pool) or falsified (seq_len 10 pool, seq_len 20 din). The remaining untried sequence variants (seq_len 50 din, seq_len 20 din) have consistently underperformed pool mode in prior screens. Architecture arm is exhausted; deepfm/dcnv2 failed. No atomic config_patch is expected to improve the incumbent.
+- `138_architecture` arm=architecture skip=True error=no valid config_patch for arm=architecture
+- `139_architecture` arm=architecture skip=True error=cross-run CI_hi<0 graveyard
+- `140_architecture` arm=architecture skip=True error=no valid config_patch for arm=architecture
+- `141_architecture` arm=architecture skip=True error=no valid config_patch for arm=architecture

@@ -1,0 +1,144 @@
+node_id,parent_id,stage,arm,primary,GAUC,nDCG@5,delta_primary,ci95_lo,ci95_hi,confirmed,skip,buggy,error,patch,tokens_in,tokens_out,gpu_seconds
+000_fm_baseline,,draft,draft,0.60147,0.66713,0.53581,,,,true,false,false,,"{""aux_click_weight"": 0.3, ""cwm_weight"": 0.2}",0,0,93.9
+000_fm_s1,000_fm_baseline,improve,ablate,0.60176,0.66739,0.53613,,,,,false,false,,"{""aux_click_weight"": 0.3, ""cwm_weight"": 0.2}",0,0,75.4
+001_fm_s2,000_fm_baseline,improve,ablate,0.60109,0.66706,0.53512,,,,,false,false,,"{""aux_click_weight"": 0.3, ""cwm_weight"": 0.2}",0,0,95.7
+003_eda,000_fm_baseline,eda,eda,,,,,,,,false,false,,eda,0,0,0.0
+004_research,000_fm_baseline,research,research,,,,,,,,false,false,,research:KuaiRand Pure long_view ranking TechJam track2,0,0,0.0
+005_read_paper,000_fm_baseline,read_paper,research,,,,,,,,false,false,,read_paper:github/chermaxne_kuairand-research-agent/README.md,0,0,0.0
+006_read_paper,000_fm_baseline,read_paper,research,,,,,,,,false,false,,read_paper:github/Y0306S_recagent/README.md,0,0,0.0
+007_draft,,draft,draft,0.60392,0.67040,0.53743,0.00248,0.00057,0.00424,,false,false,,"{""loss"": ""bpr_global""}",6146,218,141.6
+008_draft,,draft,draft,0.57712,0.63148,0.52276,-0.02432,-0.02754,-0.02093,,false,false,,"{""model_family"": ""gbm""}",6213,218,24.8
+009_ablate_c0_s0,007_draft,improve,ablate,0.60392,0.67040,0.53743,0.00248,0.00057,0.00424,true,false,false,,"{""loss"": ""bpr_global"", ""seed"": 0}",0,0,84.6
+010_ablate_c0_s1,007_draft,improve,ablate,0.60249,0.66865,0.53634,0.00105,-0.00090,0.00297,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 1}",0,0,73.0
+011_ablate_c0_s2,007_draft,improve,ablate,0.60205,0.66797,0.53612,0.00061,-0.00117,0.00227,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 2}",0,0,55.6
+012_ablate,007_draft,ablate,ablate,,,,,,,,false,false,,ablate,6606,298,0.0
+013_ensemble,009_ablate_c0_s0,ensemble,ensemble,0.60441,0.67100,0.53782,0.00159,-0.00061,0.00149,false,false,false,,"ensemble:009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2",0,0,0.0
+014_ensemble,009_ablate_c0_s0,ensemble,ensemble,0.60189,0.66766,0.53612,-0.00093,-0.00368,-0.00018,false,false,false,,"ensemble:000_fm_baseline,000_fm_s1,001_fm_s2",0,0,0.0
+015_ensemble,009_ablate_c0_s0,ensemble,ensemble,0.60441,0.67100,0.53782,0.00159,-0.00061,0.00149,false,false,false,,"ensemble:000_fm_baseline,000_fm_s1,001_fm_s2,009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2",0,0,0.0
+016_ensemble,009_ablate_c0_s0,ensemble,ensemble,0.60382,0.67039,0.53726,0.00100,-0.00133,0.00124,false,false,false,,"ensemble:000_fm_baseline,000_fm_s1,001_fm_s2,009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2",0,0,0.0
+017_crossover,009_ablate_c0_s0,improve,features,,,,,,,,true,false,duplicate of 007_draft,skip,0,0,0.0
+018_architecture,009_ablate_c0_s0,improve,architecture,0.60362,0.66992,0.53733,0.00080,-0.00167,0.00122,false,false,false,,"{""arch"": ""deepfm""}",9429,244,67.1
+019_ablate_c0_s0,018_architecture,improve,ablate,0.60362,0.66992,0.53733,0.00080,-0.00167,0.00122,true,false,false,,"{""arch"": ""deepfm"", ""seed"": 0}",0,0,84.9
+020_ablate_c0_s1,018_architecture,improve,ablate,0.60356,0.67050,0.53663,0.00074,-0.00198,0.00123,false,false,false,,"{""arch"": ""deepfm"", ""seed"": 1}",0,0,73.9
+021_ablate_c0_s2,018_architecture,improve,ablate,0.60300,0.66959,0.53640,0.00018,-0.00247,0.00055,false,false,false,,"{""arch"": ""deepfm"", ""seed"": 2}",0,0,73.3
+022_ablate_c1_s0,018_architecture,improve,ablate,0.60392,0.67040,0.53743,0.00110,0.00000,0.00000,false,false,false,,"{""arch"": ""fm"", ""loss"": ""bpr_global"", ""seed"": 0}",0,0,77.8
+023_ablate_c1_s1,018_architecture,improve,ablate,0.60249,0.66865,0.53634,-0.00033,-0.00305,0.00025,false,false,false,,"{""arch"": ""fm"", ""loss"": ""bpr_global"", ""seed"": 1}",0,0,67.9
+024_ablate_c1_s2,018_architecture,improve,ablate,0.60205,0.66797,0.53612,-0.00077,-0.00354,-0.00025,false,false,false,,"{""arch"": ""fm"", ""loss"": ""bpr_global"", ""seed"": 2}",0,0,51.9
+025_ablate,018_architecture,ablate,ablate,,,,,,,,false,false,,ablate,6938,274,0.0
+026_ensemble,019_ablate_c0_s0,ensemble,ensemble,0.60440,0.67105,0.53774,0.00100,-0.00018,0.00187,false,false,false,,"ensemble:019_ablate_c0_s0,020_ablate_c0_s1,021_ablate_c0_s2",0,0,0.0
+027_ensemble,019_ablate_c0_s0,ensemble,ensemble,0.60440,0.67105,0.53774,0.00100,-0.00018,0.00187,false,false,false,,"ensemble:000_fm_baseline,000_fm_s1,001_fm_s2,009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2,022_ablate_c1_s0,023_ablate_c1_s1,024_ablate_c1_s2,019_ablate_c0_s0,020_ablate_c0_s1,021_ablate_c0_s2",0,0,0.0
+028_architecture,000_fm_baseline,improve,architecture,0.60289,0.66910,0.53669,-0.00050,-0.00218,0.00051,false,false,false,,"{""arch"": ""dcnv2""}",10534,227,52.1
+029_ablate_c0_s0,028_architecture,improve,ablate,0.60289,0.66910,0.53669,-0.00050,-0.00218,0.00051,false,false,false,,"{""arch"": ""dcnv2"", ""seed"": 0}",0,0,72.8
+030_ablate_c0_s1,028_architecture,improve,ablate,0.60374,0.67032,0.53715,0.00034,-0.00118,0.00120,false,false,false,,"{""arch"": ""dcnv2"", ""seed"": 1}",0,0,63.3
+031_ablate_c0_s2,028_architecture,improve,ablate,0.60369,0.67002,0.53736,0.00030,-0.00126,0.00114,false,false,false,,"{""arch"": ""dcnv2"", ""seed"": 2}",0,0,72.9
+032_ablate_c1_s0,028_architecture,improve,ablate,0.60301,0.66887,0.53714,-0.00039,-0.00201,0.00092,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 0}",0,0,64.8
+033_ablate_c1_s1,028_architecture,improve,ablate,0.60305,0.66926,0.53684,-0.00034,-0.00193,0.00092,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 1}",0,0,63.7
+034_ablate_c1_s2,028_architecture,improve,ablate,0.60183,0.66766,0.53601,-0.00156,-0.00319,-0.00056,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 2}",0,0,72.0
+035_ablate,028_architecture,ablate,ablate,,,,,,,,false,false,,ablate,7333,258,0.0
+036_ensemble,019_ablate_c0_s0,ensemble,ensemble,0.60361,0.67007,0.53715,0.00021,-0.00141,0.00115,false,false,false,,"ensemble:029_ablate_c0_s0,030_ablate_c0_s1,031_ablate_c0_s2",0,0,0.0
+037_ensemble,019_ablate_c0_s0,ensemble,ensemble,0.60361,0.67007,0.53715,0.00021,-0.00141,0.00115,false,false,false,,"ensemble:009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2,022_ablate_c1_s0,023_ablate_c1_s1,024_ablate_c1_s2,032_ablate_c1_s0,033_ablate_c1_s1,034_ablate_c1_s2,019_ablate_c0_s0,020_ablate_c0_s1,021_ablate_c0_s2,029_ablate_c0_s0,030_ablate_c0_s1,031_ablate_c0_s2",0,0,0.0
+038_loss,019_ablate_c0_s0,improve,loss,,,,,,,,true,false,no valid config_patch for arm=loss,skip,11392,250,0.0
+039_architecture,019_ablate_c0_s0,improve,architecture,,,,,,,,true,false,no valid config_patch for arm=architecture,skip,11418,248,0.0
+040_ablate_c0_s0,019_ablate_c0_s0,improve,ablate,0.60362,0.66992,0.53733,0.00023,0.00000,0.00000,false,false,false,,"{""arch"": ""deepfm"", ""seed"": 0}",0,0,120.3
+041_ablate_c0_s1,019_ablate_c0_s0,improve,ablate,0.60356,0.67050,0.53663,0.00017,-0.00168,0.00134,false,false,false,,"{""arch"": ""deepfm"", ""seed"": 1}",0,0,106.6
+042_ablate_c0_s2,019_ablate_c0_s0,improve,ablate,0.60300,0.66959,0.53640,-0.00040,-0.00196,0.00065,false,false,false,,"{""arch"": ""deepfm"", ""seed"": 2}",0,0,106.7
+043_ablate,019_ablate_c0_s0,ablate,ablate,,,,,,,,false,false,,ablate,7437,318,0.0
+044_sequence,019_ablate_c0_s0,improve,sequence,0.60396,0.67006,0.53786,0.00057,-0.00099,0.00162,false,false,false,,"{""seq_len"": 100, ""seq_mode"": ""pool""}",11189,202,379.3
+045_ablate_c0_s0,044_sequence,improve,ablate,0.60396,0.67006,0.53786,0.00057,-0.00099,0.00162,true,false,false,,"{""seed"": 0, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,359.4
+046_ablate_c0_s1,044_sequence,improve,ablate,0.60389,0.67008,0.53770,0.00049,-0.00120,0.00162,false,false,false,,"{""seed"": 1, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,467.2
+047_ablate_c0_s2,044_sequence,improve,ablate,0.60402,0.67048,0.53756,0.00062,-0.00104,0.00166,false,false,false,,"{""seed"": 2, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,466.7
+048_ablate_c1_s0,044_sequence,improve,ablate,0.60352,0.66969,0.53734,0.00012,-0.00142,0.00127,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 0}",0,0,494.7
+049_ablate_c1_s1,044_sequence,improve,ablate,0.60360,0.67022,0.53697,0.00020,-0.00140,0.00148,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 1}",0,0,477.2
+050_ablate_c1_s2,044_sequence,improve,ablate,0.60321,0.67004,0.53639,-0.00018,-0.00176,0.00088,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 2}",0,0,477.3
+051_ablate,044_sequence,ablate,ablate,,,,,,,,false,false,,ablate,7409,284,0.0
+052_ensemble,045_ablate_c0_s0,ensemble,ensemble,0.60438,0.67079,0.53797,0.00043,-0.00027,0.00108,false,false,false,,"ensemble:045_ablate_c0_s0,046_ablate_c0_s1,047_ablate_c0_s2",0,0,0.0
+053_ensemble,045_ablate_c0_s0,ensemble,ensemble,0.60438,0.67079,0.53797,0.00043,-0.00027,0.00108,false,false,false,,"ensemble:009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2,022_ablate_c1_s0,023_ablate_c1_s1,024_ablate_c1_s2,032_ablate_c1_s0,033_ablate_c1_s1,034_ablate_c1_s2,048_ablate_c1_s0,049_ablate_c1_s1,050_ablate_c1_s2,019_ablate_c0_s0,020_ablate_c0_s1,021_ablate_c0_s2,040_ablate_c0_s0,041_ablate_c0_s1,042_ablate_c0_s2,029_ablate_c0_s0,030_ablate_c0_s1,031_ablate_c0_s2,045_ablate_c0_s0,046_ablate_c0_s1,047_ablate_c0_s2",0,0,0.0
+054_architecture,045_ablate_c0_s0,improve,architecture,,,,,,,,true,false,no valid config_patch for arm=architecture,skip,12161,261,0.0
+055_loss,045_ablate_c0_s0,improve,loss,,,,,,,,true,false,no valid config_patch for arm=loss,skip,12135,207,0.0
+056_ablate_c0_s0,045_ablate_c0_s0,improve,ablate,0.60396,0.67006,0.53786,0.00000,0.00000,0.00000,false,false,false,,"{""seed"": 0, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,313.3
+057_ablate_c0_s1,045_ablate_c0_s0,improve,ablate,0.60389,0.67008,0.53770,-0.00007,-0.00111,0.00094,false,false,false,,"{""seed"": 1, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,402.8
+058_ablate_c0_s2,045_ablate_c0_s0,improve,ablate,0.60402,0.67048,0.53756,0.00006,-0.00100,0.00106,false,false,false,,"{""seed"": 2, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,403.1
+059_ablate_c1_s0,045_ablate_c0_s0,improve,ablate,0.60433,0.67074,0.53791,0.00037,-0.00051,0.00128,false,false,false,,"{""l2"": 1e-05, ""seed"": 0}",0,0,393.9
+060_ablate_c1_s1,045_ablate_c0_s0,improve,ablate,0.60380,0.66998,0.53762,-0.00016,-0.00136,0.00102,false,false,false,,"{""l2"": 1e-05, ""seed"": 1}",0,0,248.4
+061_ablate_c1_s2,045_ablate_c0_s0,improve,ablate,0.60464,0.67132,0.53796,0.00068,-0.00038,0.00178,false,false,false,,"{""l2"": 1e-05, ""seed"": 2}",0,0,337.3
+062_ablate,045_ablate_c0_s0,ablate,ablate,,,,,,,,false,false,,ablate,7856,343,0.0
+063_ensemble,045_ablate_c0_s0,ensemble,ensemble,0.60457,0.67099,0.53816,0.00062,-0.00026,0.00148,false,false,false,,"ensemble:059_ablate_c1_s0,060_ablate_c1_s1,061_ablate_c1_s2",0,0,0.0
+064_ensemble,045_ablate_c0_s0,ensemble,ensemble,0.60457,0.67099,0.53816,0.00062,-0.00026,0.00148,false,false,false,,"ensemble:009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2,022_ablate_c1_s0,023_ablate_c1_s1,024_ablate_c1_s2,032_ablate_c1_s0,033_ablate_c1_s1,034_ablate_c1_s2,048_ablate_c1_s0,049_ablate_c1_s1,050_ablate_c1_s2,019_ablate_c0_s0,020_ablate_c0_s1,021_ablate_c0_s2,040_ablate_c0_s0,041_ablate_c0_s1,042_ablate_c0_s2,029_ablate_c0_s0,030_ablate_c0_s1,031_ablate_c0_s2,045_ablate_c0_s0,046_ablate_c0_s1,047_ablate_c0_s2,056_ablate_c0_s0,057_ablate_c0_s1,058_ablate_c0_s2,059_ablate_c1_s0,060_ablate_c1_s1,061_ablate_c1_s2",0,0,0.0
+065_regularization,045_ablate_c0_s0,improve,regularization,0.60306,0.66891,0.53721,-0.00090,-0.00221,0.00052,false,false,false,,"{""l2"": 1e-05}",12290,251,376.9
+066_architecture,045_ablate_c0_s0,improve,architecture,,,,,,,,true,false,no valid config_patch for arm=architecture,skip,12539,220,0.0
+067_loss,019_ablate_c0_s0,improve,loss,,,,,,,,true,false,no valid config_patch for arm=loss,skip,12427,202,0.0
+068_ablate_c0_s0,045_ablate_c0_s0,improve,ablate,0.60396,0.67006,0.53786,0.00000,0.00000,0.00000,false,false,false,,"{""seed"": 0, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,0.0
+069_ablate_c0_s1,045_ablate_c0_s0,improve,ablate,0.60389,0.67008,0.53770,-0.00007,-0.00111,0.00094,false,false,false,,"{""seed"": 1, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,0.0
+070_ablate_c0_s2,045_ablate_c0_s0,improve,ablate,0.60402,0.67048,0.53756,0.00006,-0.00100,0.00106,false,false,false,,"{""seed"": 2, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,0.0
+071_ablate_c1_s0,045_ablate_c0_s0,improve,ablate,0.60352,0.66969,0.53734,-0.00044,-0.00178,0.00095,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 0}",0,0,543.2
+072_ablate_c1_s1,045_ablate_c0_s0,improve,ablate,0.60360,0.67022,0.53697,-0.00036,-0.00167,0.00116,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 1}",0,0,543.4
+073_ablate_c1_s2,045_ablate_c0_s0,improve,ablate,0.60321,0.67004,0.53639,-0.00074,-0.00194,0.00062,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 2}",0,0,543.4
+074_ablate,045_ablate_c0_s0,ablate,ablate,,,,,,,,false,false,,ablate,8034,342,0.0
+075_architecture,045_ablate_c0_s0,improve,architecture,,,,,,,,true,false,no valid config_patch for arm=architecture,skip,12448,231,0.0
+076_regularization,045_ablate_c0_s0,improve,regularization,0.60327,0.66960,0.53694,-0.00069,-0.00202,0.00085,false,false,false,,"{""l2"": 5e-06}",12420,251,464.4
+077_architecture,045_ablate_c0_s0,improve,architecture,,,,,,,,true,false,no valid config_patch for arm=architecture,skip,12618,220,0.0
+078_regularization,045_ablate_c0_s0,improve,regularization,,,,,,,,true,false,duplicate of 076_regularization,skip,12590,204,0.0
+079_ablate_c0_s0,045_ablate_c0_s0,improve,ablate,0.60396,0.67006,0.53786,0.00000,0.00000,0.00000,false,false,false,,"{""seed"": 0, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,0.0
+080_ablate_c0_s1,045_ablate_c0_s0,improve,ablate,0.60389,0.67008,0.53770,-0.00007,-0.00111,0.00094,false,false,false,,"{""seed"": 1, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,0.0
+081_ablate_c0_s2,045_ablate_c0_s0,improve,ablate,0.60402,0.67048,0.53756,0.00006,-0.00100,0.00106,false,false,false,,"{""seed"": 2, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,0.0
+082_ablate,045_ablate_c0_s0,ablate,ablate,,,,,,,,false,false,,ablate,8133,316,0.0
+083_regularization,045_ablate_c0_s0,improve,regularization,,,,,,,,true,false,duplicate of 076_regularization,skip,12251,208,0.0
+084_sequence,045_ablate_c0_s0,improve,sequence,0.60295,0.66916,0.53674,-0.00101,-0.00237,0.00056,false,false,false,,"{""seq_len"": 50, ""seq_mode"": ""pool""}",12254,217,268.4
+085_ablate_c0_s0,084_sequence,improve,ablate,0.60295,0.66916,0.53674,-0.00101,-0.00237,0.00056,false,false,false,,"{""seed"": 0, ""seq_len"": 50, ""seq_mode"": ""pool""}",0,0,208.6
+086_ablate_c0_s1,084_sequence,improve,ablate,0.60261,0.66888,0.53635,-0.00134,-0.00275,-0.00007,false,false,false,,"{""seed"": 1, ""seq_len"": 50, ""seq_mode"": ""pool""}",0,0,192.5
+087_ablate_c0_s2,084_sequence,improve,ablate,0.60197,0.66765,0.53628,-0.00199,-0.00340,-0.00049,false,false,false,,"{""seed"": 2, ""seq_len"": 50, ""seq_mode"": ""pool""}",0,0,158.8
+088_ablate_c1_s0,084_sequence,improve,ablate,0.60436,0.67080,0.53792,0.00041,-0.00109,0.00205,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 0}",0,0,315.1
+089_ablate_c1_s1,084_sequence,improve,ablate,0.60200,0.66789,0.53611,-0.00196,-0.00351,-0.00032,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 1}",0,0,189.2
+090_ablate_c1_s2,084_sequence,improve,ablate,0.60158,0.66729,0.53588,-0.00237,-0.00385,-0.00078,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 2}",0,0,187.9
+091_ablate,084_sequence,ablate,ablate,,,,,,,,false,false,,ablate,8074,276,0.0
+092_ensemble,045_ablate_c0_s0,ensemble,ensemble,0.60317,0.66964,0.53671,-0.00078,-0.00217,0.00057,false,false,false,,"ensemble:085_ablate_c0_s0,086_ablate_c0_s1,087_ablate_c0_s2",0,0,0.0
+093_ensemble,045_ablate_c0_s0,ensemble,ensemble,0.60457,0.67099,0.53816,0.00062,-0.00026,0.00148,false,false,false,,"ensemble:009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2,022_ablate_c1_s0,023_ablate_c1_s1,024_ablate_c1_s2,032_ablate_c1_s0,033_ablate_c1_s1,034_ablate_c1_s2,048_ablate_c1_s0,049_ablate_c1_s1,050_ablate_c1_s2,071_ablate_c1_s0,072_ablate_c1_s1,073_ablate_c1_s2,088_ablate_c1_s0,089_ablate_c1_s1,090_ablate_c1_s2,019_ablate_c0_s0,020_ablate_c0_s1,021_ablate_c0_s2,040_ablate_c0_s0,041_ablate_c0_s1,042_ablate_c0_s2,029_ablate_c0_s0,030_ablate_c0_s1,031_ablate_c0_s2,045_ablate_c0_s0,046_ablate_c0_s1,047_ablate_c0_s2,056_ablate_c0_s0,057_ablate_c0_s1,058_ablate_c0_s2,059_ablate_c1_s0,060_ablate_c1_s1,061_ablate_c1_s2,085_ablate_c0_s0,086_ablate_c0_s1,087_ablate_c0_s2",0,0,0.0
+094_crossover,045_ablate_c0_s0,improve,features,,,,,,,,true,false,duplicate of 084_sequence,skip,0,0,0.0
+095_architecture,019_ablate_c0_s0,improve,architecture,,,,,,,,true,false,no valid config_patch for arm=architecture,skip,12825,228,0.0
+096_ablate_c0_s0,045_ablate_c0_s0,improve,ablate,0.60396,0.67006,0.53786,0.00000,0.00000,0.00000,false,false,false,,"{""seed"": 0, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,0.0
+097_ablate_c0_s1,045_ablate_c0_s0,improve,ablate,0.60389,0.67008,0.53770,-0.00007,-0.00111,0.00094,false,false,false,,"{""seed"": 1, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,0.0
+098_ablate_c0_s2,045_ablate_c0_s0,improve,ablate,0.60402,0.67048,0.53756,0.00006,-0.00100,0.00106,false,false,false,,"{""seed"": 2, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,0.0
+099_ablate_c1_s0,045_ablate_c0_s0,improve,ablate,0.60352,0.66969,0.53734,-0.00044,-0.00178,0.00095,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 0}",0,0,0.0
+100_ablate_c1_s1,045_ablate_c0_s0,improve,ablate,0.60360,0.67022,0.53697,-0.00036,-0.00167,0.00116,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 1}",0,0,0.0
+101_ablate_c1_s2,045_ablate_c0_s0,improve,ablate,0.60321,0.67004,0.53639,-0.00074,-0.00194,0.00062,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 2}",0,0,0.0
+102_ablate,045_ablate_c0_s0,ablate,ablate,,,,,,,,false,false,,ablate,8321,304,0.0
+103_sequence,045_ablate_c0_s0,improve,sequence,0.60257,0.66874,0.53641,-0.00138,-0.00271,-0.00001,false,false,false,,"{""seq_len"": 20, ""seq_mode"": ""din""}",12748,174,73.4
+104_sequence,045_ablate_c0_s0,improve,sequence,0.60290,0.66906,0.53675,-0.00105,-0.00260,0.00055,false,false,false,,"{""seq_len"": 50, ""seq_mode"": ""din""}",13264,239,188.5
+105_ablate_c0_s0,104_sequence,improve,ablate,0.60290,0.66906,0.53675,-0.00105,-0.00260,0.00055,false,false,false,,"{""seed"": 0, ""seq_len"": 50, ""seq_mode"": ""din""}",0,0,200.3
+106_ablate_c0_s1,104_sequence,improve,ablate,0.60245,0.66868,0.53622,-0.00151,-0.00294,-0.00023,false,false,false,,"{""seed"": 1, ""seq_len"": 50, ""seq_mode"": ""din""}",0,0,182.6
+107_ablate_c0_s2,104_sequence,improve,ablate,0.60185,0.66797,0.53573,-0.00211,-0.00367,-0.00047,false,false,false,,"{""seed"": 2, ""seq_len"": 50, ""seq_mode"": ""din""}",0,0,200.2
+108_ablate_c1_s0,104_sequence,improve,ablate,0.60290,0.66906,0.53675,-0.00105,-0.00260,0.00055,false,false,false,,"{""loss"": ""logloss"", ""seed"": 0}",0,0,202.6
+109_ablate_c1_s1,104_sequence,improve,ablate,0.60245,0.66868,0.53622,-0.00151,-0.00294,-0.00023,false,false,false,,"{""loss"": ""logloss"", ""seed"": 1}",0,0,188.2
+110_ablate_c1_s2,104_sequence,improve,ablate,0.60185,0.66797,0.53573,-0.00211,-0.00367,-0.00047,false,false,false,,"{""loss"": ""logloss"", ""seed"": 2}",0,0,204.5
+111_ablate,104_sequence,ablate,ablate,,,,,,,,false,false,,ablate,8615,283,0.0
+112_ensemble,045_ablate_c0_s0,ensemble,ensemble,0.60308,0.66942,0.53674,-0.00088,-0.00236,0.00052,false,false,false,,"ensemble:105_ablate_c0_s0,106_ablate_c0_s1,107_ablate_c0_s2",0,0,0.0
+113_ensemble,045_ablate_c0_s0,ensemble,ensemble,0.60308,0.66942,0.53674,-0.00088,-0.00236,0.00052,false,false,false,,"ensemble:108_ablate_c1_s0,109_ablate_c1_s1,110_ablate_c1_s2",0,0,0.0
+114_ensemble,045_ablate_c0_s0,ensemble,ensemble,0.60457,0.67099,0.53816,0.00062,-0.00026,0.00148,false,false,false,,"ensemble:009_ablate_c0_s0,010_ablate_c0_s1,011_ablate_c0_s2,022_ablate_c1_s0,023_ablate_c1_s1,024_ablate_c1_s2,032_ablate_c1_s0,033_ablate_c1_s1,034_ablate_c1_s2,048_ablate_c1_s0,049_ablate_c1_s1,050_ablate_c1_s2,071_ablate_c1_s0,072_ablate_c1_s1,073_ablate_c1_s2,088_ablate_c1_s0,089_ablate_c1_s1,090_ablate_c1_s2,019_ablate_c0_s0,020_ablate_c0_s1,021_ablate_c0_s2,040_ablate_c0_s0,041_ablate_c0_s1,042_ablate_c0_s2,029_ablate_c0_s0,030_ablate_c0_s1,031_ablate_c0_s2,045_ablate_c0_s0,046_ablate_c0_s1,047_ablate_c0_s2,056_ablate_c0_s0,057_ablate_c0_s1,058_ablate_c0_s2,059_ablate_c1_s0,060_ablate_c1_s1,061_ablate_c1_s2,085_ablate_c0_s0,086_ablate_c0_s1,087_ablate_c0_s2,105_ablate_c0_s0,106_ablate_c0_s1,107_ablate_c0_s2,108_ablate_c1_s0,109_ablate_c1_s1,110_ablate_c1_s2",0,0,0.0
+115_crossover,045_ablate_c0_s0,improve,features,,,,,,,,true,false,duplicate of 104_sequence,skip,0,0,0.0
+116_sequence,045_ablate_c0_s0,improve,sequence,0.60280,0.66864,0.53695,-0.00116,-0.00248,0.00038,false,false,false,,"{""seq_len"": 20, ""seq_mode"": ""pool""}",13599,224,59.4
+117_ablate_c0_s0,116_sequence,improve,ablate,0.60280,0.66864,0.53695,-0.00116,-0.00248,0.00038,false,false,false,,"{""seed"": 0, ""seq_len"": 20, ""seq_mode"": ""pool""}",0,0,62.6
+118_ablate_c0_s1,116_sequence,improve,ablate,0.60229,0.66834,0.53624,-0.00167,-0.00305,-0.00027,false,false,false,,"{""seed"": 1, ""seq_len"": 20, ""seq_mode"": ""pool""}",0,0,80.2
+119_ablate_c0_s2,116_sequence,improve,ablate,0.60167,0.66745,0.53590,-0.00228,-0.00376,-0.00072,false,false,false,,"{""seed"": 2, ""seq_len"": 20, ""seq_mode"": ""pool""}",0,0,71.4
+120_ablate_c1_s0,116_sequence,improve,ablate,0.60280,0.66864,0.53695,-0.00116,-0.00248,0.00038,false,false,false,,"{""loss"": ""logloss"", ""seed"": 0}",0,0,63.3
+121_ablate_c1_s1,116_sequence,improve,ablate,0.60229,0.66834,0.53624,-0.00167,-0.00305,-0.00027,false,false,false,,"{""loss"": ""logloss"", ""seed"": 1}",0,0,79.7
+122_ablate_c1_s2,116_sequence,improve,ablate,0.60167,0.66745,0.53590,-0.00228,-0.00376,-0.00072,false,false,false,,"{""loss"": ""logloss"", ""seed"": 2}",0,0,71.0
+123_ablate,116_sequence,ablate,ablate,,,,,,,,false,false,,ablate,8758,281,0.0
+124_regularization,045_ablate_c0_s0,improve,regularization,,,,,,,,true,false,duplicate of 076_regularization,skip,14009,308,0.0
+125_regularization,045_ablate_c0_s0,improve,regularization,,,,,,,,true,false,duplicate of 076_regularization,skip,14009,220,0.0
+126_ablate_c0_s0,045_ablate_c0_s0,improve,ablate,0.60396,0.67006,0.53786,0.00000,0.00000,0.00000,false,false,false,,"{""seed"": 0, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,0.0
+127_ablate_c0_s1,045_ablate_c0_s0,improve,ablate,0.60389,0.67008,0.53770,-0.00007,-0.00111,0.00094,false,false,false,,"{""seed"": 1, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,0.0
+128_ablate_c0_s2,045_ablate_c0_s0,improve,ablate,0.60402,0.67048,0.53756,0.00006,-0.00100,0.00106,false,false,false,,"{""seed"": 2, ""seq_len"": 100, ""seq_mode"": ""pool""}",0,0,0.0
+129_ablate_c1_s0,045_ablate_c0_s0,improve,ablate,0.60352,0.66969,0.53734,-0.00044,-0.00178,0.00095,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 0}",0,0,0.0
+130_ablate_c1_s1,045_ablate_c0_s0,improve,ablate,0.60360,0.67022,0.53697,-0.00036,-0.00167,0.00116,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 1}",0,0,0.0
+131_ablate_c1_s2,045_ablate_c0_s0,improve,ablate,0.60321,0.67004,0.53639,-0.00074,-0.00194,0.00062,false,false,false,,"{""loss"": ""bpr_global"", ""seed"": 2}",0,0,0.0
+132_ablate,045_ablate_c0_s0,ablate,ablate,,,,,,,,false,false,,ablate,8836,254,0.0
+133_sequence,045_ablate_c0_s0,improve,sequence,0.60191,0.66758,0.53624,-0.00204,-0.00337,-0.00057,false,false,false,,"{""seq_len"": 10, ""seq_mode"": ""pool""}",13871,220,49.0
+134_regularization,045_ablate_c0_s0,improve,regularization,,,,,,,,true,false,duplicate of 076_regularization,skip,14217,284,0.0
+135_regularization,045_ablate_c0_s0,improve,regularization,,,,,,,,true,false,duplicate of 076_regularization,skip,14217,212,0.0
+136_architecture,045_ablate_c0_s0,improve,architecture,,,,,,,,true,false,"All legal_untried patches in the architecture arm are already screened (deepfm, dcnv2) or belong to exhausted arms (loss, regularization, sequence). The only untried sequence patch (seq_len=20, seq_mode=din) was falsified on this parent with CI_hi<0. No promising atomic improvement remains; skipping avoids a likely negative trial.",skip,14245,418,0.0
+137_architecture,045_ablate_c0_s0,improve,architecture,,,,,,,,true,false,"All legal_untried patches on this parent are either banned (bpr_global, seq_len 10/20 pool, seq_len 20/50 din, seq_len 50 pool) or falsified (seq_len 10 pool, seq_len 20 din). The remaining untried sequence variants (seq_len 50 din, seq_len 20 din) have consistently underperformed pool mode in prior screens. Architecture arm is exhausted; deepfm/dcnv2 failed. No atomic config_patch is expected to improve the incumbent.",skip,14245,426,0.0
+138_architecture,045_ablate_c0_s0,improve,architecture,,,,,,,,true,false,no valid config_patch for arm=architecture,skip,14245,332,0.0
+139_architecture,045_ablate_c0_s0,improve,architecture,,,,,,,,true,false,cross-run CI_hi<0 graveyard,skip,14245,253,0.0
+140_architecture,045_ablate_c0_s0,improve,architecture,,,,,,,,true,false,no valid config_patch for arm=architecture,skip,14245,337,0.0
+141_architecture,045_ablate_c0_s0,improve,architecture,,,,,,,,true,false,no valid config_patch for arm=architecture,skip,14245,439,0.0
+142_finalize,059_ablate_c1_s0,finalize,finalize,0.60458,0.67099,0.53816,,,,,false,false,,finalize,0,0,0.0
