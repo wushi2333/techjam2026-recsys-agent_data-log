@@ -2,7 +2,7 @@
 
 > **Contest file:** [`pure/v6/submission.csv`](pure/v6/submission.csv) (170,588 rows).  
 > Code and write-up: [wushi2333/techjam2026-recsys-agent](https://github.com/wushi2333/techjam2026-recsys-agent).  
-> Walkthrough (~3 min): [https://youtu.be/Yeg-JrrjtO4](https://youtu.be/Yeg-JrrjtO4).
+> Walkthrough (~3 min): [https://youtu.be/UvwHHWfqQhs](https://youtu.be/UvwHHWfqQhs).
 
 This repo is the training record the code tree does not host: extra tables, full journals, the leaky v4 evidence, a second freeze-eval Pure search, and the 4.1M-row **KuaiRand-1K** CSV.
 
